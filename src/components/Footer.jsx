@@ -8,11 +8,8 @@ const navigation = {
   company: [
     { name: 'Om oss', href: '/om-oss' },
     { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
-    { name: 'Jobba med oss', href: '/jobba-med-oss' },
-  ],
-  company2: [
-    { name: 'Om oss', href: '/om-oss' },
-    { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
+    // { name: 'Faktabanken', href: '/faktabanken' },
+    // { name: 'Ordlista', href: '/ordlista' },
     { name: 'Jobba med oss', href: '/jobba-med-oss' },
   ],
   legal: [
