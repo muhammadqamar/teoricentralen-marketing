@@ -29,7 +29,6 @@ Finally, open [http://localhost:3000](http://localhost:3000) in your browser to 
 - [ ] Manifest.json
 - [ ] Open Graph images
 - [ ] Robots txt
-- [ ] What CMS to use for long term content?
 - [ ] Set up json-ld schemas, natively or with https://github.com/garmeeh/next-seo ?
 - [ ] Sitemap.xml
 - [ ] Internationalization (default language sv-SE)
