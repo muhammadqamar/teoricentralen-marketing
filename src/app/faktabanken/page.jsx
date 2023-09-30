@@ -1,6 +1,5 @@
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { getAllFacts } from '@/lib/facts'
 import { formatDate } from '@/lib/formatDate'
 
 function Article({ article }) {

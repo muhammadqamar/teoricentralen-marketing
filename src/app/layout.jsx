@@ -26,12 +26,11 @@ export const metadata = {
       'sv-SE': '/sv-SE',
     },
   },
-  openGraph: {},
   openGraph: {
     title: 'Teoricentralen',
     description: 'Teoricentralen - en utbildningsplattform för körkortsteori',
     url: process.env.NEXT_PUBLIC_SITE_URL,
-    siteName: 'Next.js',
+    siteName: 'Teoricentralen',
     images: [
       {
         url: '/og-image.png',

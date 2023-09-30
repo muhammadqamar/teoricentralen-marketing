@@ -1,16 +1,10 @@
-const POST_GRAPHQL_FIELDS = `
+const FACT_GRAPHQL_FIELDS = `
   slug
   title
-  coverImage {
+  image {
     url
   }
   date
-  author {
-    name
-    picture {
-      url
-    }
-  }
   excerpt
   content {
     json
@@ -60,7 +54,7 @@ async function getPreviewPostBySlug(slug) {
     `query {
       postCollection(where: { slug: "${slug}" }, preview: true, limit: 1) {
         items {
-          ${POST_GRAPHQL_FIELDS}
+          ${FACT_GRAPHQL_FIELDS}
         }
       }
     }`,
@@ -69,22 +63,22 @@ async function getPreviewPostBySlug(slug) {
   return extractPost(entry)
 }
 
-async function getAllPosts(isDraftMode) {
-  isDraftMode = true
+async function getAllFacts(isDraftMode) {
+  console.log('hello')
 
-  const entries = await fetchGraphQL(
-    `query {
-      postCollection(where: { slug_exists: true }, order: date_DESC, preview: ${
-        isDraftMode ? 'true' : 'false'
-      }) {
-        items {
-          ${POST_GRAPHQL_FIELDS}
-        }
-      }
-    }`,
-    isDraftMode,
-  )
-  return extractPostEntries(entries)
+  // const entries = await fetchGraphQL(
+  //   `query {
+  //     postCollection(where: { slug_exists: true }, order: date_DESC, preview: ${
+  //       isDraftMode ? 'true' : 'false'
+  //     }) {
+  //       items {
+  //         ${FACT_GRAPHQL_FIELDS}
+  //       }
+  //     }
+  //   }`,
+  //   isDraftMode,
+  // )
+  // return extractPostEntries(entries)
 }
 
 async function getPostAndMorePosts(slug, preview) {
@@ -94,7 +88,7 @@ async function getPostAndMorePosts(slug, preview) {
         preview ? 'true' : 'false'
       }, limit: 1) {
         items {
-          ${POST_GRAPHQL_FIELDS}
+          ${FACT_GRAPHQL_FIELDS}
         }
       }
     }`,
@@ -106,7 +100,7 @@ async function getPostAndMorePosts(slug, preview) {
         preview ? 'true' : 'false'
       }, limit: 2) {
         items {
-          ${POST_GRAPHQL_FIELDS}
+          ${FACT_GRAPHQL_FIELDS}
         }
       }
     }`,
