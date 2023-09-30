@@ -3,12 +3,14 @@
 import Link from 'next/link'
 
 const navigation = {
-  educations: [{ name: 'Alla utbildningar', href: '/utbildningar' }],
+  educations: [
+    { name: 'Alla utbildningar', href: '/utbildningar' },
+    { name: 'Faktabanken', href: '/faktabanken' },
+    { name: 'Ordlista', href: '/ordlista' },
+  ],
   company: [
     { name: 'Om oss', href: '/om-oss' },
     // { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
-    { name: 'Faktabanken', href: '/faktabanken' },
-    // { name: 'Ordlista', href: '/ordlista' },
     { name: 'Jobba med oss', href: '/jobba-med-oss' },
   ],
   support: [{ name: 'Kontakta oss', href: '/kontakt' }],

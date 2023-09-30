@@ -1,5 +1,4 @@
 import { SimpleLayout } from '@/components/SimpleLayout'
-
 import { getAllFacts } from '@/lib/contentful'
 
 export default async function Page({ params }) {
