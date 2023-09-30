@@ -1,6 +1,19 @@
 import { SimpleLayout } from '@/components/SimpleLayout'
+import { getAllWords } from '@/lib/words'
 
-export default async function Page({ params }) {
+export async function generateStaticParams() {
+  const allWords = await getAllWords(false)
+
+  console.log(allWords)
+
+  return allWords.map((word) => ({
+    slug: word.slug,
+  }))
+}
+
+export default function Page({ params }) {
+  const { slug } = params
+
   return (
     <SimpleLayout
       title="Ordlista. Massa trafikrelaterade ord."

@@ -8,19 +8,20 @@ import { draftMode } from 'next/headers'
 // import CoverImage from "../../cover-image"
 
 // import { Markdown } from '@/lib/markdown'
-import { getAllPosts, getPostAndMorePosts } from '@/lib/api'
+import { getAllFacts } from '@/lib/facts'
 
-// export async function generateStaticParams() {
-//   const allPosts = await getAllPosts(false)
+export async function generateStaticParams() {
+  const allFacts = await getAllFacts(false)
 
-//   return allPosts.map((post) => ({
-//     slug: post.slug,
-//   }))
-// }
+  console.log(allFacts)
 
-export default async function FactPage({ params }) {
-  const { isEnabled } = draftMode()
-  const { post, morePosts } = await getPostAndMorePosts(params.slug, isEnabled)
+  return allFacts.map((fact) => ({
+    slug: fact.slug,
+  }))
+}
+
+export default function Page({ params }) {
+  const { slug } = params
 
   return (
     <div className="container mx-auto px-5">

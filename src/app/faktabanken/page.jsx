@@ -1,5 +1,5 @@
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { getAllFacts } from '@/lib/api'
+import { getAllFacts } from '@/lib/facts'
 import { draftMode } from 'next/headers'
 
 export default async function Page() {
