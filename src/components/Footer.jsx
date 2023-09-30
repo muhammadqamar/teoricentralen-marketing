@@ -20,8 +20,8 @@ const navigation = {
 
 export function Footer() {
   return (
-    <footer className="mt-32 flex-none">
-      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+    <footer className="mt-32 flex-none bg-gray-100">
+      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <img
