@@ -62,7 +62,7 @@ function NavItem({ href, children }) {
     <Link
       href={href}
       className={clsx(
-        'hover:text-primary relative block text-sm font-semibold leading-6 transition',
+        'relative block text-sm font-semibold leading-6 transition hover:text-primary',
         isActive ? 'text-primary' : 'text-dark',
       )}
     >
@@ -106,7 +106,7 @@ export function Header() {
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-6">
           <Popover>
-            <Popover.Button className="text-dark hover:text-primary relative flex items-center gap-x-1 text-sm font-semibold leading-6 outline-none transition">
+            <Popover.Button className="relative flex items-center gap-x-1 text-sm font-semibold leading-6 text-dark outline-none transition hover:text-primary">
               Alla utbildningar
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
@@ -171,9 +171,8 @@ export function Header() {
           </Popover>
 
           <NavItem href="/om-oss">Om oss</NavItem>
-          {/* <NavItem href="/fragor-och-svar">Frågor och svar</NavItem> */}
-          <NavItem href="/recensioner">Recensioner</NavItem>
           <NavItem href="/demo">Kontakt</NavItem>
+          {/* <NavItem href="/fragor-och-svar">Frågor och svar</NavItem> */}
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Button href="/demo" variant="primary">
@@ -240,12 +239,14 @@ export function Header() {
                   )}
                 </Disclosure>
                 <Link
-                  href="/demo"
+                  onClick={() => setMobileMenuOpen(false)}
+                  href="/om-oss"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Om oss
                 </Link>
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   href="/demo"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
@@ -253,13 +254,11 @@ export function Header() {
                 </Link>
               </div>
               <div className="py-6">
-                {/* <Link
+                <Button
+                  onClick={() => setMobileMenuOpen(false)}
                   href="/demo"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  variant="primary"
                 >
-                  Boka demo
-                </Link> */}
-                <Button href="/demo" variant="primary">
                   Boka demo
                 </Button>
               </div>
