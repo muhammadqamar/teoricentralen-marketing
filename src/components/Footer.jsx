@@ -3,16 +3,8 @@
 import Link from 'next/link'
 
 const navigation = {
-  educations: [
-    { name: 'Alla utbildningar', href: '/utbildningar' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
-  ],
-  support: [
-    { name: 'Kontakta oss', href: '/kontakt' },
-    { name: 'Dokumentation', href: '#' },
-  ],
+  educations: [{ name: 'Alla utbildningar', href: '/utbildningar' }],
+  support: [{ name: 'Kontakta oss', href: '/kontakt' }],
   company: [
     { name: 'Om oss', href: '/om-oss' },
     { name: 'Körkortsbloggen', href: '/korkortsbloggen' },

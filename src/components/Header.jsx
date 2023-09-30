@@ -105,7 +105,7 @@ export function Header() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-6">
-          <Popover>
+          {/* <Popover>
             <Popover.Button className="relative flex items-center gap-x-1 text-sm font-semibold leading-6 text-dark outline-none transition hover:text-primary">
               Alla utbildningar
               <ChevronDownIcon
@@ -168,10 +168,10 @@ export function Header() {
                 </div>
               </Popover.Panel>
             </Transition>
-          </Popover>
+          </Popover> */}
 
-          <NavItem href="/om-oss">Om oss</NavItem>
-          <NavItem href="/demo">Kontakt</NavItem>
+          {/* <NavItem href="/om-oss">Om oss</NavItem> */}
+          <NavItem href="/recensioner">Recensioner</NavItem>
           {/* <NavItem href="/fragor-och-svar">Frågor och svar</NavItem> */}
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -210,7 +210,7 @@ export function Header() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                <Disclosure as="div" className="-mx-3">
+                {/* <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
@@ -237,7 +237,7 @@ export function Header() {
                       </Disclosure.Panel>
                     </>
                   )}
-                </Disclosure>
+                </Disclosure> */}
                 <Link
                   onClick={() => setMobileMenuOpen(false)}
                   href="/om-oss"
