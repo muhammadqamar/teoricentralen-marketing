@@ -1,0 +1,132 @@
+// import { ContainerInner, ContainerOuter } from '@/components/Container'
+
+import Link from 'next/link'
+
+const navigation = {
+  educations: [
+    { name: 'Marketing', href: '#' },
+    { name: 'Analytics', href: '#' },
+    { name: 'Commerce', href: '#' },
+    { name: 'Insights', href: '#' },
+  ],
+  support: [
+    { name: 'Kontakta oss', href: '/kontakt' },
+    { name: 'Dokumentation', href: '#' },
+  ],
+  company: [
+    { name: 'Om oss', href: '/om-oss' },
+    { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
+    { name: 'Jobba med oss', href: '/jobba-med-oss' },
+  ],
+  company2: [
+    { name: 'Om oss', href: '/om-oss' },
+    { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
+    { name: 'Jobba med oss', href: '/jobba-med-oss' },
+  ],
+  legal: [
+    { name: 'Användarvillkor', href: '/anvandarvillkor' },
+    { name: 'Integritetspolicy', href: '/integritetspolicy' },
+  ],
+}
+
+export function Footer() {
+  return (
+    <footer className="mt-32 flex-none">
+      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div className="space-y-8">
+            <img
+              className="h-7"
+              src="https://cdn.teoricentralen.se/teoricentralen/mark.svg"
+              alt="Teoricentralen"
+            />
+            <p className="text-sm leading-6 text-gray-600">
+              Plattformen som hjälper trafikskolor att växa. Utvecklat
+              tillsammans med Trafikskolor i Sverige.
+            </p>
+          </div>
+          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 className="text-dark text-sm font-semibold leading-6">
+                  Utbildningar
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.educations.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        href={item.href}
+                        className="hover:text-dark text-sm leading-6 text-gray-600"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-10 md:mt-0">
+                <h3 className="text-dark text-sm font-semibold leading-6">
+                  Support
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.support.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        href={item.href}
+                        className="hover:text-dark text-sm leading-6 text-gray-600"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 className="text-dark text-sm font-semibold leading-6">
+                  Teoricentralen
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.company.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        href={item.href}
+                        className="hover:text-dark text-sm leading-6 text-gray-600"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-10 md:mt-0">
+                <h3 className="text-dark text-sm font-semibold leading-6">
+                  Juridik
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.legal.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        href={item.href}
+                        className="hover:text-dark text-sm leading-6 text-gray-600"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+          <p className="text-xs leading-5 text-gray-500">
+            Copyright &copy; {new Date().getFullYear()} Teoricentralen Sverige
+            AB. Alla rättigheter reserveras.
+          </p>
+        </div>
+      </div>
+    </footer>
+  )
+}
