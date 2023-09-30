@@ -6,8 +6,8 @@ const navigation = {
   educations: [{ name: 'Alla utbildningar', href: '/utbildningar' }],
   company: [
     { name: 'Om oss', href: '/om-oss' },
-    { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
-    // { name: 'Faktabanken', href: '/faktabanken' },
+    // { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
+    { name: 'Faktabanken', href: '/faktabanken' },
     // { name: 'Ordlista', href: '/ordlista' },
     { name: 'Jobba med oss', href: '/jobba-med-oss' },
   ],
