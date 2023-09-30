@@ -4,7 +4,6 @@ import Link from 'next/link'
 
 const navigation = {
   educations: [{ name: 'Alla utbildningar', href: '/utbildningar' }],
-  support: [{ name: 'Kontakta oss', href: '/kontakt' }],
   company: [
     { name: 'Om oss', href: '/om-oss' },
     { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
@@ -12,6 +11,7 @@ const navigation = {
     // { name: 'Ordlista', href: '/ordlista' },
     { name: 'Jobba med oss', href: '/jobba-med-oss' },
   ],
+  support: [{ name: 'Kontakta oss', href: '/kontakt' }],
   legal: [
     { name: 'Användarvillkor', href: '/anvandarvillkor' },
     { name: 'Integritetspolicy', href: '/integritetspolicy' },
@@ -55,10 +55,10 @@ export function Footer() {
               </div>
               <div className="mt-10 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-dark">
-                  Support
+                  Teoricentralen
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
-                  {navigation.support.map((item) => (
+                  {navigation.company.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
@@ -74,10 +74,10 @@ export function Footer() {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-dark">
-                  Teoricentralen
+                  Kundservice
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
-                  {navigation.company.map((item) => (
+                  {navigation.support.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
