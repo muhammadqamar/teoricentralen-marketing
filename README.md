@@ -25,12 +25,7 @@ Finally, open [http://localhost:3000](http://localhost:3000) in your browser to 
 ## Todo list
 
 - [ ] How can we quickly migrate over the pages at teoricentralen.se
-- [ ] Favicon, Icon and Apple Icon
-- [ ] Manifest.json
-- [ ] Open Graph images
-- [ ] Robots txt
 - [ ] Set up json-ld schemas, natively or with https://github.com/garmeeh/next-seo ?
-- [ ] Sitemap.xml
 - [ ] Internationalization (default language sv-SE)
 
 ## Other links
