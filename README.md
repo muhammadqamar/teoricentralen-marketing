@@ -1,4 +1,4 @@
-# Teoricentralen marketing
+# Teoricentralen marketing page
 
 ## Getting started
 
