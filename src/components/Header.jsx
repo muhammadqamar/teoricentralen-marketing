@@ -175,7 +175,7 @@ export function Header() {
           {/* <NavItem href="/fragor-och-svar">Frågor och svar</NavItem> */}
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Button href="/demo" variant="primary">
+          <Button href="/demo" variant="success">
             Boka demo
           </Button>
         </div>
@@ -250,7 +250,7 @@ export function Header() {
                 <Button
                   onClick={() => setMobileMenuOpen(false)}
                   href="/demo"
-                  variant="primary"
+                  variant="success"
                 >
                   Boka demo
                 </Button>

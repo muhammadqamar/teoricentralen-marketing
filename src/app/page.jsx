@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 
+import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import image1 from '@/images/photos/image-1.jpg'
@@ -67,6 +68,17 @@ export default async function Home() {
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             Utvecklat tillsammans med trafikskolor i Sverige.
           </p>
+        </div>
+      </Container>
+
+      <Container className="mt-16">
+        <div className="flex max-w-sm flex-col gap-2">
+          <Button href="https://app.teoricentralen.se" variant="primary">
+            Logga in som elev
+          </Button>
+          <Button href="https://admin.teoricentralen.se" variant="success">
+            Logga in som trafikskola
+          </Button>
         </div>
       </Container>
 

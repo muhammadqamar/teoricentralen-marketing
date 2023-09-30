@@ -2,9 +2,9 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 const variantStyles = {
-  primary:
+  success:
     'bg-success font-semibold text-white hover:bg-success-dark active:bg-success-dark',
-  secondary:
+  primary:
     'bg-primary font-semibold text-white hover:bg-primary-dark active:bg-primary-dark',
 }
 
