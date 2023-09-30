@@ -19,15 +19,29 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.teoricentralen.se'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
   alternates: {
     canonical: '/',
     languages: {
       'sv-SE': '/sv-SE',
     },
   },
+  openGraph: {},
   openGraph: {
-    images: '/og-image.png',
+    title: 'Teoricentralen',
+    description: 'Teoricentralen - en utbildningsplattform för körkortsteori',
+    url: process.env.NEXT_PUBLIC_SITE_URL,
+    siteName: 'Next.js',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Teoricentralen',
+      },
+    ],
+    locale: 'sv_SE',
+    type: 'website',
   },
 }
 
