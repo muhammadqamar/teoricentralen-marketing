@@ -8,7 +8,9 @@ export const metadata = {
   description: 'Framtidens trafikutbildning är här',
 }
 
-export default function Page() {
+export default async function Page({ params: { lang } }) {
+  console.log('The language is ' + lang)
+
   return (
     <Container className="mt-16">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">

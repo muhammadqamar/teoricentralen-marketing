@@ -44,9 +44,17 @@ export const metadata = {
   },
 }
 
-export default function RootLayout({ children }) {
+export async function generateStaticParams() {
+  return [{ lang: 'sv' }, { lang: 'en' }]
+}
+
+export default function RootLayout({ children, params }) {
   return (
-    <html lang="sv-SE" className="h-full antialiased" suppressHydrationWarning>
+    <html
+      lang={params.lang}
+      className="h-full antialiased"
+      suppressHydrationWarning
+    >
       <body className="flex h-full flex-col bg-zinc-50">
         <Providers>
           <div className="flex min-h-full flex-col">
