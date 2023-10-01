@@ -6,12 +6,12 @@ const navigation = {
   educations: [
     { name: 'Alla utbildningar', href: '/utbildningar' },
     { name: 'Faktabanken', href: '/faktabanken' },
-    { name: 'Ordlista', href: '/ordlista' },
+    // { name: 'Ordlista', href: '/ordlista' },
   ],
   company: [
     { name: 'Om oss', href: '/om-oss' },
-    // { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
     { name: 'Jobba med oss', href: '/jobba-med-oss' },
+    // { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
   ],
   support: [{ name: 'Kontakta oss', href: '/kontakt' }],
   legal: [
