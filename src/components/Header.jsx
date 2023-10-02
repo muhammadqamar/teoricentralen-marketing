@@ -4,6 +4,7 @@ import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/Button'
+import logoTeoricentralen from '@/images/logos/mark.svg'
 import Link from 'next/link'
 import clsx from 'clsx'
 
@@ -22,6 +23,7 @@ import {
   RectangleGroupIcon,
   CalendarDaysIcon,
 } from '@heroicons/react/20/solid'
+import Image from 'next/image'
 
 const educations = [
   {
@@ -87,10 +89,11 @@ export function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Teoricentralen</span>
-            <img
-              className="h-8 w-auto"
-              src="https://cdn.teoricentralen.se/teoricentralen/mark.svg"
+            <Image
+              src={logoTeoricentralen}
               alt="Teoricentralen"
+              className="h-8 w-auto"
+              unoptimized
             />
           </Link>
         </div>
