@@ -17,7 +17,7 @@ export default function Testimonials() {
           {testimonials.map((columnGroup, columnGroupIdx) => (
             <div
               key={columnGroupIdx}
-              className={`animate-marquee flex  flex-col gap-0 space-y-8 ${
+              className={`flex animate-marquee flex-col gap-0 space-y-8 ${
                 columnGroupIdx === 0 || columnGroupIdx === 2
                   ? '[animation-duration:25.32s]'
                   : columnGroupIdx === 1 && '[animation-duration:35.8s]'
