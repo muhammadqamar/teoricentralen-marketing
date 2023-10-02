@@ -1,3 +1,7 @@
 {
-  "test": "Plattformen som hjälper trafikskolor att växa. Utvecklat tillsammans med Trafikskolor i Sverige."
+  "testominials" : {
+  "heading": "Våra samarbetspartners",
+  "subheading": "Betrodd av trafikskolor"
+  }
+
 }
