@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import { Container } from '@/components/Container'
 import portraitImage from '@/images/portrait.jpg'
-import Testimonials from '@/components/Testimonials'
+import Testimonials from '@/components/Testimonials/Testimonials'
 
 export const metadata = {
   title: 'Recensioner',
