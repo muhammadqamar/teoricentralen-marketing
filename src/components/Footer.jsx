@@ -4,10 +4,12 @@ import { Fragment, useState } from 'react'
 
 import Link from 'next/link'
 import { Listbox, Transition } from '@headlessui/react'
+import logoTeoricentralen from '@/images/logos/mark.svg'
 
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useRouter } from 'next/navigation'
 
+import Image from 'next/image'
 
 const navigation = {
   educations: [
@@ -41,10 +43,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-6">
-            <img
-              className="h-7"
-              src="https://cdn.teoricentralen.se/teoricentralen/mark.svg"
+            <Image
+              src={logoTeoricentralen}
               alt="Teoricentralen"
+              className="h-7"
+              unoptimized
             />
             <p className="text-sm leading-6 text-gray-600">
               Plattformen som hjälper trafikskolor att växa. Utvecklat
