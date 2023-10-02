@@ -1,12 +1,14 @@
-// import { ContainerInner, ContainerOuter } from '@/components/Container'
 'use client'
+
 import { Fragment, useState } from 'react'
 
 import Link from 'next/link'
 import { Listbox, Transition } from '@headlessui/react'
 import logoTeoricentralen from '@/images/logos/mark.svg'
+import SwedishLogo from '@/images/logos/sv-flag.svg'
+import EnglishLogo from '@/images/logos/en-flag.svg'
 
-import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 
 const navigation = {
@@ -27,7 +29,10 @@ const navigation = {
   ],
 }
 
-const language = [{ name: 'Sv' }, { name: 'En' }]
+const language = [
+  { name: 'sv', flag: SwedishLogo },
+  { name: 'en', flag: EnglishLogo },
+]
 export function Footer() {
   //
   const [selected, setSelected] = useState(language[0])
@@ -50,7 +55,15 @@ export function Footer() {
               <Listbox value={selected} onChange={setSelected}>
                 <div className="relative mt-1">
                   <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-                    <span className="block truncate">{selected.name}</span>
+                    <div className="flex items-center gap-2">
+                      <Image
+                        src={selected.flag}
+                        alt="Teoricentralen"
+                        className="h-5 w-5"
+                        unoptimized
+                      />
+                      <span className="block truncate">{selected.name}</span>
+                    </div>
                     <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                       <ChevronDownIcon
                         className="h-5 w-5 text-gray-400"
@@ -69,7 +82,7 @@ export function Footer() {
                         <Listbox.Option
                           key={languageIdx}
                           className={({ active }) =>
-                            `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                            `relative cursor-default select-none py-2 pl-3 pr-4 ${
                               active
                                 ? 'bg-amber-100 text-amber-900'
                                 : 'text-gray-900'
@@ -79,21 +92,31 @@ export function Footer() {
                         >
                           {({ selected }) => (
                             <>
-                              <span
-                                className={`block truncate ${
-                                  selected ? 'font-medium' : 'font-normal'
-                                }`}
-                              >
-                                {language.name}
-                              </span>
-                              {selected ? (
+                              <div className="flex items-center gap-2">
+                                <Image
+                                  src={language.flag}
+                                  alt="Teoricentralen"
+                                  className="h-5 w-5"
+                                  unoptimized
+                                />
+                                <span
+                                  className={`block truncate ${
+                                    selected ? 'font-medium' : 'font-normal'
+                                  }`}
+                                >
+                                  {language.name}
+                                </span>
+                              </div>
+                              {/* {selected ? (
                                 <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
-                                  <CheckIcon
+                                  <Image
+                                    src={SwedishLogo}
+                                    alt="Teoricentralen"
                                     className="h-5 w-5"
-                                    aria-hidden="true"
+                                    unoptimized
                                   />
                                 </span>
-                              ) : null}
+                              ) : null} */}
                             </>
                           )}
                         </Listbox.Option>
