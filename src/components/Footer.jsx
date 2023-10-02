@@ -37,10 +37,6 @@ export function Footer() {
   //
   const [selected, setSelected] = useState(language[0])
 
-  const router = useRouter()
-
-  console.log(router)
-
   return (
     <footer className="mt-32 flex-none bg-gray-100">
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8">
