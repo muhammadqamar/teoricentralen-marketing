@@ -3,6 +3,8 @@
 import { createContext, useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 
+import { appWithTranslation } from 'next-i18next'
+
 function usePrevious(value) {
   let ref = useRef()
 
@@ -13,9 +15,9 @@ function usePrevious(value) {
   return ref.current
 }
 
-export const AppContext = createContext({})
+const AppContext = createContext({})
 
-export function Providers({ children }) {
+function Providers({ children }) {
   let pathname = usePathname()
   let previousPathname = usePrevious(pathname)
 
@@ -25,3 +27,4 @@ export function Providers({ children }) {
     </AppContext.Provider>
   )
 }
+export default appWithTranslation(Providers)

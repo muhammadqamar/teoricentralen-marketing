@@ -1,8 +1,5 @@
-import Image from 'next/image'
-
-import { Container } from '@/components/Container'
-import portraitImage from '@/images/portrait.jpg'
 import Testimonials from '@/components/Testimonials/Testimonials'
+// import { useTranslation } from 'next-i18next'
 
 export const metadata = {
   title: 'Recensioner',
@@ -10,5 +7,10 @@ export const metadata = {
 }
 
 export default function Reviews() {
-  return <Testimonials />
+  // const { t } = useTranslation('common')
+  return (
+    <>
+      <Testimonials />
+    </>
+  )
 }
