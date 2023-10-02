@@ -162,7 +162,7 @@ const posts = [
 function Example() {
   return (
     <div className="mx-auto max-w-7xl">
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
         {posts.map((post, i) => (
           // <article
           //   key={post.id}
@@ -205,7 +205,7 @@ function Example() {
           //   </h3>
           // </article>
           <div
-            className={`col-span-1 rounded-md bg-white first-of-type:md:col-span-2 first-of-type:lg:col-span-1 shadow-md`}
+            className={`col-span-1 rounded-md bg-white shadow-md transition duration-200 ease-in-out hover:scale-[1.025] first-of-type:md:col-span-2 first-of-type:lg:col-span-1`}
             // style={{
             //   gridColumnStart: 'span 3',
             // }}
@@ -255,7 +255,7 @@ export default function Page() {
   return (
     <Container className="mt-16">
       <div>
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl mb-5">
+        <h1 className="mb-5 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
           Våra utbildningar
         </h1>
         {/* <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
