@@ -1,3 +1,6 @@
+import christian from '@/images/testimonials/christian.jpg'
+import per from '@/images/testimonials/per.jpg'
+
 export const testimonials = [
   [
     {
@@ -5,8 +8,7 @@ export const testimonials = [
       author: {
         name: 'Christian Kaumi',
         business: 'CK Trafikskola',
-        imageUrl:
-          'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -14,8 +16,7 @@ export const testimonials = [
       author: {
         name: 'Hevy Kamal',
         business: 'Hevs Trafikskola',
-        imageUrl:
-          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -23,8 +24,7 @@ export const testimonials = [
       author: {
         name: 'Anders Persson',
         business: 'Ottossons Trafikskola',
-        imageUrl:
-          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -32,8 +32,7 @@ export const testimonials = [
       author: {
         name: 'Johan Krekola',
         business: 'Krekolas Trafikskola',
-        imageUrl:
-          'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -41,8 +40,7 @@ export const testimonials = [
       author: {
         name: 'Lindsay Walton',
         business: 'lindsaywalton',
-        imageUrl:
-          'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -50,8 +48,7 @@ export const testimonials = [
       author: {
         name: 'Leslie Alexander',
         business: 'lesliealexander',
-        imageUrl:
-          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -59,8 +56,7 @@ export const testimonials = [
       author: {
         name: 'Lindsay Walton',
         business: 'lindsaywalton',
-        imageUrl:
-          'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -68,8 +64,7 @@ export const testimonials = [
       author: {
         name: 'Leslie Alexander',
         business: 'lesliealexander',
-        imageUrl:
-          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -77,8 +72,7 @@ export const testimonials = [
       author: {
         name: 'Lindsay Walton',
         business: 'lindsaywalton',
-        imageUrl:
-          'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
   ],
@@ -88,8 +82,7 @@ export const testimonials = [
       author: {
         name: 'Leonard Krasner',
         business: 'leonardkrasner',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -97,8 +90,7 @@ export const testimonials = [
       author: {
         name: 'Tom Cook',
         business: 'tomcook',
-        imageUrl:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -106,8 +98,7 @@ export const testimonials = [
       author: {
         name: 'Maria Selling',
         business: 'Stenstans Trafikskola',
-        imageUrl:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -115,8 +106,7 @@ export const testimonials = [
       author: {
         name: 'Per Hallengren',
         business: 'Alvesta Trafikskola',
-        imageUrl:
-          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: per,
       },
     },
     {
@@ -124,8 +114,7 @@ export const testimonials = [
       author: {
         name: 'Leonard Krasner',
         business: 'leonardkrasner',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -133,8 +122,7 @@ export const testimonials = [
       author: {
         name: 'Tom Cook',
         business: 'tomcook',
-        imageUrl:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -142,8 +130,7 @@ export const testimonials = [
       author: {
         name: 'Leonard Krasner',
         business: 'leonardkrasner',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -151,8 +138,7 @@ export const testimonials = [
       author: {
         name: 'Tom Cook',
         business: 'tomcook',
-        imageUrl:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -160,8 +146,7 @@ export const testimonials = [
       author: {
         name: 'Leonard Krasner',
         business: 'leonardkrasner',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
   ],
@@ -171,8 +156,7 @@ export const testimonials = [
       author: {
         name: 'Tom Cook',
         business: 'tomcook',
-        imageUrl:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -180,8 +164,7 @@ export const testimonials = [
       author: {
         name: 'Leonard Krasner',
         business: 'leonardkrasner',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -189,8 +172,7 @@ export const testimonials = [
       author: {
         name: 'Tom Cook',
         business: 'tomcook',
-        imageUrl:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -198,8 +180,7 @@ export const testimonials = [
       author: {
         name: 'Leonard Krasner',
         business: 'leonardkrasner',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -207,8 +188,7 @@ export const testimonials = [
       author: {
         name: 'Tom Cook',
         business: 'tomcook',
-        imageUrl:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -216,8 +196,7 @@ export const testimonials = [
       author: {
         name: 'Leonard Krasner',
         business: 'leonardkrasner',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -225,8 +204,7 @@ export const testimonials = [
       author: {
         name: 'Tom Cook',
         business: 'tomcook',
-        imageUrl:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
     {
@@ -234,8 +212,7 @@ export const testimonials = [
       author: {
         name: 'Leonard Krasner',
         business: 'leonardkrasner',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        imageUrl: christian,
       },
     },
   ],
