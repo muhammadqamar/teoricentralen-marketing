@@ -10,11 +10,11 @@ const Review = ({ testimonial }) => {
         <img
           className="h-10 w-10 rounded-full bg-gray-50"
           src={testimonial.author.imageUrl}
-          alt=""
+          alt={testimonial.author.name}
         />
         <div>
           <div className="font-semibold">{testimonial.author.name}</div>
-          <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
+          <div className="text-gray-600">{`${testimonial.author.business}`}</div>
         </div>
       </figcaption>
     </figure>
