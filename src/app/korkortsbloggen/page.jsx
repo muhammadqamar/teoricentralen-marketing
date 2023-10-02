@@ -37,19 +37,14 @@ export const metadata = {
     title: 'Körkortsbloggen',
     description:
       'All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order.',
-    url: 'https://beta.teoricentralen.se',
+    url: 'https://www.teoricentralen.se',
     siteName: 'Teoricentralen',
     images: [
       {
-        url: 'https://nextjs.org/og.png',
-        width: 800,
-        height: 600,
-      },
-      {
-        url: 'https://nextjs.org/og-alt.png',
-        width: 1800,
-        height: 1600,
-        alt: 'My custom alt',
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Teoricentralen',
       },
     ],
     locale: 'sv_SE',
