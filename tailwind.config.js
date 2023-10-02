@@ -27,6 +27,16 @@ module.exports = {
         },
         star: '#F1C40F',
       },
+      animation: {
+        marquee: 'marquee 15000ms linear infinite',
+      },
+    },
+    keyframes: {
+      marquee: {
+        '100%': {
+          transform: 'translateY(-50%)',
+        },
+      },
     },
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],
