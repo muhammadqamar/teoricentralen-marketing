@@ -1,5 +1,5 @@
 const moped = () => {
-  return <div>Enter</div>
+  return <div>Moped</div>
 }
 
 export default moped

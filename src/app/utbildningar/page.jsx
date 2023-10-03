@@ -63,7 +63,7 @@ const posts = [
   {
     id: 1,
     title: 'Car with trailer',
-    href: '#',
+    href: '/utbildningar/car-with-trailer',
     description:
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     imageUrl:
@@ -79,7 +79,7 @@ const posts = [
   {
     id: 2,
     title: 'Truck',
-    href: '#',
+    href: '/utbildningar/truck',
     description:
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     imageUrl:
@@ -95,7 +95,7 @@ const posts = [
   {
     id: 3,
     title: 'Truck with trailer',
-    href: '#',
+    href: '/utbildningar/truck-with-trailer',
     description:
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     imageUrl:
@@ -111,7 +111,7 @@ const posts = [
   {
     id: 1,
     title: 'Car with trailer',
-    href: '#',
+    href: '/utbildningar/car-with-trailer',
     description:
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     imageUrl:
@@ -127,7 +127,7 @@ const posts = [
   {
     id: 2,
     title: 'Bus',
-    href: '#',
+    href: '/utbildningar/bus',
     description:
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     imageUrl:
@@ -143,7 +143,7 @@ const posts = [
   {
     id: 3,
     title: 'Bus with trailer',
-    href: '#',
+    href: '/utbildningar/bus-with-trailer',
     description:
       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
     imageUrl:
@@ -164,32 +164,36 @@ function Example() {
     <div className="mx-auto max-w-7xl">
       <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
         {posts.map((post) => (
-          <div
-            className={` col-span-1	rounded-md bg-white shadow-md transition duration-200 ease-in-out hover:scale-[1.025] hover:cursor-pointer first-of-type:md:col-span-2 first-of-type:lg:col-span-1`}
-          >
-            <Link className="text-green-700" href={post.href}>
-              <div className="relative h-44 overflow-hidden rounded-tl-md rounded-tr-md">
-                <picture>
-                  <source srcSet={post.imageUrl} />
-                  <img
-                    className="absolute bottom-0 left-0 top-0 h-full w-full overflow-clip object-cover"
-                    src={post.imageUrl}
-                  />
-                </picture>
-              </div>
-              <div className="mx-auto px-6 pb-8 pt-6 text-center">
-                <h2 className="mb-4 text-3xl font-bold text-black md:text-lg">
-                  {post.title}
-                </h2>
-                <p className="mb-4 text-zinc-500">{post.description}</p>
-                <p className="text-sm font-semibold">
-                  Ta körkort – i din egen takt
-                </p>
-              </div>
-            </Link>
-          </div>
+          <Card {...post} actionText="Ta körkort – i din egen takt" />
         ))}
       </div>
+    </div>
+  )
+}
+
+const Card = ({ title, imageUrl, description, href, actionText }) => {
+  return (
+    <div
+      className={` col-span-1	rounded-md bg-white shadow-md transition duration-200 ease-in-out hover:scale-[1.025] hover:cursor-pointer first-of-type:md:col-span-2 first-of-type:lg:col-span-1`}
+    >
+      <Link className="text-green-700" href={href}>
+        <div className="relative h-44 overflow-hidden rounded-tl-md rounded-tr-md">
+          <picture>
+            <source srcSet={imageUrl} />
+            <img
+              className="absolute bottom-0 left-0 top-0 h-full w-full overflow-clip object-cover"
+              src={imageUrl}
+            />
+          </picture>
+        </div>
+        <div className="mx-auto px-6 pb-8 pt-6 text-center">
+          <h2 className="mb-4 lg:text-3xl font-bold text-black text-lg">
+            {title}
+          </h2>
+          <p className="mb-4 text-zinc-500">{description}</p>
+          <p className="text-sm font-semibold">{actionText}</p>
+        </div>
+      </Link>
     </div>
   )
 }
