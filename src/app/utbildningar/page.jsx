@@ -174,7 +174,10 @@ function Example() {
 const Card = ({ title, imageUrl, description, href, actionText }) => {
   return (
     <div
-      className={` col-span-1	rounded-md bg-white shadow-md transition duration-200 ease-in-out hover:scale-[1.025] hover:cursor-pointer first-of-type:md:col-span-2 first-of-type:lg:col-span-1`}
+      className={` col-span-1	rounded-md bg-white transition duration-200 ease-in-out hover:scale-[1.025] hover:cursor-pointer first-of-type:md:col-span-2 first-of-type:lg:col-span-1`}
+      style={{
+        boxShadow: '0px 0px 30px rgba(0,0,0,0.1), 0px 1px 3px rgba(0,0,0,0.1)',
+      }}
     >
       <Link className="text-green-700" href={href}>
         <div className="relative h-44 overflow-hidden rounded-tl-md rounded-tr-md">
@@ -187,7 +190,7 @@ const Card = ({ title, imageUrl, description, href, actionText }) => {
           </picture>
         </div>
         <div className="mx-auto px-6 pb-8 pt-6 text-center">
-          <h2 className="mb-4 lg:text-3xl font-bold text-black text-lg">
+          <h2 className="mb-4 text-lg font-bold text-black lg:text-3xl">
             {title}
           </h2>
           <p className="mb-4 text-zinc-500">{description}</p>
