@@ -5,5 +5,5 @@ const localsData = {
 }
 
 export const getLocales = async (lang) => {
-  return localsData[lang]()
+  return localsData?.[lang]?.()
 }

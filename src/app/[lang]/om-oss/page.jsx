@@ -4,13 +4,11 @@ import { Container } from '@/components/Container'
 import portraitImage from '@/images/portrait.jpg'
 
 export const metadata = {
-  title: 'Körkortsfrågor',
+  title: 'Om oss',
   description: 'Framtidens trafikutbildning är här',
 }
 
-export default async function Page({ params: { lang } }) {
-  console.log('The language is ' + lang)
-
+export default async function Page({ params }) {
   return (
     <Container className="mt-16">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -26,7 +24,7 @@ export default async function Page({ params: { lang } }) {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Körkortsfrågor 2023
+            Framtidens trafikutbildning är här.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>

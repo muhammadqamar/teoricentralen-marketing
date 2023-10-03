@@ -1,8 +1,8 @@
-import Providers from '@/app/providers'
+
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Analytics } from '@vercel/analytics/react'
-
+import {NextIntlClientProvider} from 'next-intl';
 import '@/styles/tailwind.css'
 
 export const metadata = {
@@ -44,26 +44,26 @@ export const metadata = {
   },
 }
 
-export async function generateStaticParams() {
-  return [{ lang: 'sv' }, { lang: 'en' }]
-}
+
 
 export default function RootLayout({ children, params }) {
+
   return (
     <html
       lang={params.lang}
       className="h-full antialiased"
       suppressHydrationWarning
     >
-      <body className="flex h-full flex-col bg-zinc-50">
-        <Providers>
-          <div className="flex min-h-full flex-col">
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </div>
-        </Providers>
+      <body className="flex flex-col h-full bg-zinc-50">
+      <NextIntlClientProvider  lang={params.lang} locale={'en'}>
+        <div className="flex flex-col min-h-full">
+          <Header />
+          <main>{children}</main>
+          <Footer  />
+        </div>
+
         <Analytics />
+        </NextIntlClientProvider>
       </body>
     </html>
   )

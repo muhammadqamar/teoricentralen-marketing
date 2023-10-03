@@ -4,8 +4,8 @@ import { NextResponse } from 'next/server'
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 
-let locales = ['sv', 'en']
-let defaultLocale = 'sv'
+let locales = [ 'en']
+let defaultLocale = 'en'
 
 
 function getLocale(request){
@@ -14,7 +14,7 @@ function getLocale(request){
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value))
 
   // @ts-ignore locales are readonly
-  const locales= locales
+
 
   // Use negotiator and intl-localematcher to get best locale
   let languages = new Negotiator({ headers: negotiatorHeaders }).languages(
@@ -39,14 +39,14 @@ export function middleware(request) {
   //   ].includes(pathname)
   // )
   //   return
-
+  const defaulturls= ['/korkortsbloggen','/ordlista','/recensioner','/kontakt','/faktabanken','/utbildningar','/om-oss','/integritetspolicy','/utbildningar','/anvandarvillkor','/demo']
   // Check if there is any supported locale in the pathname
   const pathnameIsMissingLocale = locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   )
 
   // Redirect if there is no locale
-  if (pathnameIsMissingLocale) {
+  if (pathnameIsMissingLocale && !!!defaulturls.filter(data=>pathname.includes(data)).length && pathname !=="/"  ) {
     const locale = getLocale(request)
 
     // e.g. incoming request is /products

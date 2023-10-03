@@ -9,9 +9,7 @@ export const metadata = {
 export default async function Reviews({ params }) {
   const lang = await getLocales(params.lang)
   return (
-    
-    
-      <Testimonials data={lang.testominials} />
-   
+    <Testimonials data={lang?.testominials} />
+
   )
 }

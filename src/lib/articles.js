@@ -1,7 +1,7 @@
 import glob from 'fast-glob'
 
 async function importArticle(articleFilename) {
-  let { article } = await import(`../app/korkortsbloggen/${articleFilename}`)
+  let { article } = await import(`../mdx/${articleFilename}`)
 
   return {
     slug: articleFilename.replace(/(\/page)?\.mdx$/, ''),
@@ -11,7 +11,7 @@ async function importArticle(articleFilename) {
 
 export async function getAllArticles() {
   let articleFilenames = await glob('*/page.mdx', {
-    cwd: './src/app/korkortsbloggen',
+    cwd: './src/mdx',
   })
 
   let articles = await Promise.all(articleFilenames.map(importArticle))
