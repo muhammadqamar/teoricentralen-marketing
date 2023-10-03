@@ -162,11 +162,19 @@ const posts = [
 function Example() {
   return (
     <div className="mx-auto max-w-7xl">
-      <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+      <CardsWrapper>
         {posts.map((post) => (
           <Card {...post} actionText="Ta körkort – i din egen takt" />
         ))}
-      </div>
+      </CardsWrapper>
+    </div>
+  )
+}
+
+const CardsWrapper = ({ children }) => {
+  return (
+    <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+      {children}
     </div>
   )
 }
