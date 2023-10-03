@@ -14,6 +14,7 @@ Next, create a `.env.local` file in the root of your project and set the `NEXT_P
 NEXT_PUBLIC_SITE_URL=https://beta.teoricentralen.se
 ```
 
+
 Next, run the development server:
 
 ```bash
