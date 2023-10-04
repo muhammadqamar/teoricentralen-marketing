@@ -23,7 +23,8 @@ export const metadata = {
   alternates: {
     canonical: '/',
     languages: {
-      'sv-SE': '/sv-SE',
+      sv: '/',
+      en: '/en',
     },
   },
   openGraph: {
