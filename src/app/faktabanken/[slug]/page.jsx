@@ -18,7 +18,10 @@ export async function generateStaticParams() {
 
   console.log('Generating', allFacts)
 
+  console.log(allFacts)
+
   return allFacts.map((fact) => ({
+    title: fact.title,
     slug: fact.slug,
     excerpt: fact.excerpt,
     // date: fact.items.date_DESC,
@@ -26,19 +29,17 @@ export async function generateStaticParams() {
 }
 
 export default function Page({ params }) {
-  const { sulg } = params
-
   return (
     <div className="">
       <SimpleLayout
         bgImage
-        title="Faktabanken. Innehåll för körkortsteori."
+        title={params.title}
         intro="Här hittar du allt om körkortsteori."
       >
         <div className="container mx-auto px-5 md:border-l md:border-zinc-100 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
-            <div className="mb-12 font-medium capitalize">{params.slug}</div>
-            <div className="!m-0">
+            <div className="mb-12 font-medium capitalize">{params.title}</div>
+            <div>
               Test Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Sapiente beatae delectus nemo quas cumque, harum accusamus, veniam
               praesentium officiis voluptate sunt voluptas maiores optio
