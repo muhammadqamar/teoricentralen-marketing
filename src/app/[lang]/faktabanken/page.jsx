@@ -1,23 +1,10 @@
-import { SimpleLayout } from '@/components/SimpleLayout'
 import { getAllFacts } from '@/lib/facts'
 import { draftMode } from 'next/headers'
+import Faktabanken from '@/components/Faktabanken'
 
-export default async function Page() {
+export default async function Page({ data }) {
   const { isEnabled } = draftMode()
-  const allFacts = await getAllFacts(isEnabled)
+  const allFacts = await getAllFacts(isEnabled, 'en')
 
-  return (
-    <SimpleLayout
-      title="Faktabanken. Innehåll för körkortsteori."
-      intro="Här hittar du allt om körkortsteori."
-    >
-      <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
-        <div className="flex max-w-3xl flex-col space-y-16">
-          {allFacts.map((fact) => (
-            <div key={fact.slug}>{fact.title}</div>
-          ))}
-        </div>
-      </div>
-    </SimpleLayout>
-  )
+  return <Faktabanken data={allFacts} />
 }

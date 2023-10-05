@@ -2,3 +2,10 @@
 @import 'tailwindcss/components';
 @import './prism.css';
 @import 'tailwindcss/utilities';
+
+.document-text p {
+  @apply !mb-4;
+}
+.document-text h2 {
+  @apply !mb-4 text-lg font-semibold leading-6 text-dark;
+}
