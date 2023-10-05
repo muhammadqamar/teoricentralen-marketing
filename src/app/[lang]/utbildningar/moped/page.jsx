@@ -1,5 +1,7 @@
-const moped = () => {
-  return <div>Moped</div>
+export default async function Page({ params: { lang } }) {
+  return (
+    <>
+      <div>Moped</div>
+    </>
+  )
 }
-
-export default moped

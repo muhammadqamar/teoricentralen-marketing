@@ -57,11 +57,11 @@ export async function getPreviewPostBySlug(slug) {
 export async function getAllFacts(isDraftMode, locale) {
   const entries = await fetchGraphQL(
     `query {
-        faktabankenCollection(locale: "${locale}" , where: { slug_exists: true }, order: date_DESC, preview: ${
-          isDraftMode ? 'true' : 'false'
-        }) {
+      faktabankenCollection(locale: "${locale}" , where: { slug_exists: true }, order: date_DESC, preview: ${
+        isDraftMode ? 'true' : 'false'
+      }) {
         items {
-            ${POST_GRAPHQL_FIELDS}
+          ${POST_GRAPHQL_FIELDS}
         }
       }
     }`,
@@ -74,14 +74,14 @@ export async function getAllFacts(isDraftMode, locale) {
 export async function getFact(slug, preview, locale) {
   const entry = await fetchGraphQL(
     `query {
-    faktabankenCollection(locale: "${locale}", where: { slug: "${slug}" }, preview: ${
-      preview ? 'true' : 'false'
-    }, limit: 1) {
-      items {
-        ${POST_GRAPHQL_FIELDS}
+      faktabankenCollection(locale: "${locale}", where: { slug: "${slug}" }, preview: ${
+        preview ? 'true' : 'false'
+      }, limit: 1) {
+        items {
+          ${POST_GRAPHQL_FIELDS}
+        }
       }
-    }
-  }`,
+    }`,
     preview,
   )
 

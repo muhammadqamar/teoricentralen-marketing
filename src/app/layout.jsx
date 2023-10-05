@@ -57,15 +57,19 @@ const mulish = Mulish({
   variable: '--font-mulish',
 })
 
-export default function RootLayout({ children, params }) {
+export function generateStaticParams() {
+  return [{ locale: 'sv' }, { locale: 'en' }]
+}
+
+export default function RootLayout({ children, params: { lang } }) {
   return (
     <html
-      lang={params.lang}
+      lang={lang}
       className={`h-full antialiased ${mulish.variable}`}
       suppressHydrationWarning
     >
       <body className="flex h-full flex-col bg-zinc-50">
-        <NextIntlClientProvider lang={params.lang} locale={'en'}>
+        <NextIntlClientProvider lang={lang} locale={'en'}>
           <div className="flex min-h-full flex-col">
             <Header />
             <main>{children}</main>

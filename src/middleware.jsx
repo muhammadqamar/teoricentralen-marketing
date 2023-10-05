@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server'
+import { match } from '@formatjs/intl-localematcher'
+import Negotiator from 'negotiator'
 
 const locales = ['sv', 'en']
 const defaultLocale = 'sv'
