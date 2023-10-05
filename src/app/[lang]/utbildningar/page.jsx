@@ -3,7 +3,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import portraitImage from '@/images/portrait.jpg'
+import portraitImage from '@/images/logo.png'
 
 export const metadata = {
   title: 'Utbildningar',
