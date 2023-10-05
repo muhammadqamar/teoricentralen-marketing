@@ -63,7 +63,7 @@ function NavItem({ href, children }) {
     <Link
       href={path.includes('/en') ? '/en' + href : href}
       className={clsx(
-        'relative block text-sm font-semibold leading-6 transition hover:text-primary',
+        'relative block text-sm font-bold leading-6 transition hover:text-primary',
         isActive ? 'text-primary' : 'text-dark',
       )}
     >

@@ -3,7 +3,5 @@ import { getLocales } from '../../../getLocales'
 
 export default async function Reviews() {
   const lang = await getLocales('sv')
-  return (
-    <Testimonials data={lang?.testominials || ''} />
- )
+  return <Testimonials data={lang?.testimonials || ''} />
 }

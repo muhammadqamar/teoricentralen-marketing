@@ -29,7 +29,7 @@ export async function generateMetadata() {
       languages: {
         sv: header_url.href?.replace('/en', ''),
         en: header_url.origin + '/en' + header_url.pathname,
-      }
+      },
     },
     openGraph: {
       title: 'Teoricentralen',
@@ -63,9 +63,9 @@ export default function RootLayout({ children, params }) {
       className={`h-full antialiased ${mulish.variable}`}
       suppressHydrationWarning
     >
-      <body className="flex flex-col h-full bg-zinc-50">
+      <body className="flex h-full flex-col bg-zinc-50">
         <NextIntlClientProvider lang={params.lang} locale={'en'}>
-          <div className="flex flex-col min-h-full">
+          <div className="flex min-h-full flex-col">
             <Header />
             <main>{children}</main>
             <Footer />
