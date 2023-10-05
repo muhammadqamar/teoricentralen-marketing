@@ -205,5 +205,8 @@
   },
   "home": {
     "heading": "The platform that helps driving schools grow."
+  },
+  "footer": {
+    "copyright": "Copyright © 2023 Teoricentralen Sverige AB. All rights reserved."
   }
 }

@@ -205,5 +205,8 @@
   },
   "home": {
     "heading": "Plattformen som hjälper trafikskolor att växa."
+  },
+  "footer": {
+    "copyright": "Copyright © 2023 Teoricentralen Sverige AB. Alla rättigheter reserveras."
   }
 }

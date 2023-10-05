@@ -30,16 +30,17 @@ const navigation = {
 }
 
 const language = [
-  { name: 'sv', flag: SwedishLogo },
-  { name: 'en', flag: EnglishLogo },
+  { name: 'sv', code: 'sv', flag: SwedishLogo },
+  { name: 'en', code: 'en', flag: EnglishLogo },
 ]
-export function Footer({ activeLang }) {
-  //
+
+export function Footer() {
   const [selected, setSelected] = useState()
   const path = usePathname()
   useEffect(() => {
     setSelected(path.includes('/en') ? language[1] : language[0])
   }, [path])
+
   return (
     <footer className="mt-32 flex-none bg-gray-100">
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8">
