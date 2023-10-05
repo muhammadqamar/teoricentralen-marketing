@@ -196,7 +196,7 @@ export function Footer() {
                 <h3 className="text-sm font-bold leading-6 text-dark">
                   Utbildningar
                 </h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <ul role="list" className="mt-6 space-y-2">
                   {navigation.educations.map((item) => (
                     <li key={item.name}>
                       <Link
@@ -215,7 +215,7 @@ export function Footer() {
                 <h3 className="text-sm font-bold leading-6 text-dark">
                   Teoricentralen
                 </h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <ul role="list" className="mt-6 space-y-2">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
                       <Link
@@ -236,7 +236,7 @@ export function Footer() {
                 <h3 className="text-sm font-bold leading-6 text-dark">
                   Kundservice
                 </h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <ul role="list" className="mt-6 space-y-2">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
                       <Link
@@ -255,7 +255,7 @@ export function Footer() {
                 <h3 className="text-sm font-bold leading-6 text-dark">
                   Juridik
                 </h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <ul role="list" className="mt-6 space-y-2">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
                       <Link
