@@ -80,7 +80,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const path = usePathname()
   return (
-    <header className="relative isolate z-10 shadow-2xl">
+    <header className="relative isolate z-10">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between py-5 lg:px-8"
         aria-label="Global"
