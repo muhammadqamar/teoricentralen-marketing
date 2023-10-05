@@ -1,5 +1,6 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { Mulish } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { NextIntlClientProvider } from 'next-intl'
 import '@/styles/tailwind.css'
@@ -25,13 +26,10 @@ export async function generateMetadata() {
     metadataBase: new URL(header_url.href || process.env.NEXT_PUBLIC_SITE_URL),
     alternates: {
       canonical: header_url.href?.replace('/en', ''),
-      languages: header_url.href?.includes('/en')
-        ? {
-            sv: header_url.href?.replace('/en', ''),
-          }
-        : {
-            en: header_url.origin + '/en' + header_url.pathname,
-          },
+      languages: {
+        sv: header_url.href?.replace('/en', ''),
+        en: header_url.origin + '/en' + header_url.pathname,
+      }
     },
     openGraph: {
       title: 'Teoricentralen',
@@ -52,16 +50,22 @@ export async function generateMetadata() {
   }
 }
 
+const mulish = Mulish({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-mulish',
+})
+
 export default function RootLayout({ children, params }) {
   return (
     <html
       lang={params.lang}
-      className="h-full antialiased"
+      className={`h-full antialiased ${mulish.variable}`}
       suppressHydrationWarning
     >
-      <body className="flex h-full flex-col bg-zinc-50">
+      <body className="flex flex-col h-full bg-zinc-50">
         <NextIntlClientProvider lang={params.lang} locale={'en'}>
-          <div className="flex min-h-full flex-col">
+          <div className="flex flex-col min-h-full">
             <Header />
             <main>{children}</main>
             <Footer />
