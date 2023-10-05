@@ -8,7 +8,7 @@ export default function Testimonials({ data }) {
           <h2 className="text-lg font-extrabold uppercase leading-6 tracking-tight text-primary">
             {data?.heading}
           </h2>
-          <p className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <p className="text-2xl font-extrabold tracking-tight text-dark sm:text-4xl">
             {data?.subheading}
           </p>
         </div>
@@ -16,11 +16,11 @@ export default function Testimonials({ data }) {
           {data?.content.map((columnGroup, columnGroupIdx) => (
             <div
               key={columnGroupIdx}
-              className={`flex animate-marquee  flex-col gap-0 space-y-8 ${
+              className={`flex animate-marquee flex-col gap-0 space-y-8 ${
                 columnGroupIdx === 0 || columnGroupIdx === 2
                   ? '[animation-duration:25.32s]'
                   : columnGroupIdx === 1 && '[animation-duration:35.8s]'
-              }  xl:gap-[32px] xl:space-y-0`}
+              } xl:gap-[32px] xl:space-y-0`}
             >
               {columnGroup.map((testimonial, counter) => (
                 <Review key={counter} testimonial={testimonial} />

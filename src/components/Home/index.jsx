@@ -31,23 +31,23 @@ export default async function Home({ data }) {
     <>
       {/* <div className="relative left-0 top-0 h-[650px] w-full overflow-hidden "> */}
       {/* <div className="h-full before:absolute before:top-0 before:h-full before:w-full before:bg-[#88b6fc] before:opacity-[0.3]">
-          <Image
-            src={portraitImage}
-            alt="banner"
-            layout="fill"
-            sizes="(min-width: 1024px) 32rem, 20rem"
-            className="aspect-square h-full w-full bg-zinc-100 object-cover dark:bg-zinc-800"
-          />
-        </div> */}
+        <Image
+          src={portraitImage}
+          alt="banner"
+          layout="fill"
+          sizes="(min-width: 1024px) 32rem, 20rem"
+          className="aspect-square h-full w-full bg-zinc-100 object-cover"
+        />
+      </div> */}
       <Container className="mt-16">
         <div className="max-w-2xl">
           <FadeIn className="flex items-center gap-x-8">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            <h1 className="text-4xl font-extrabold tracking-tight text-dark sm:text-5xl">
               {data.heading}
             </h1>
           </FadeIn>
           <FadeIn delay={2.2} className="flex items-center gap-x-8">
-            <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            <p className="mt-6 text-lg text-gray-600 dark:text-zinc-400">
               Utvecklat tillsammans med trafikskolor i Sverige.
             </p>
           </FadeIn>
