@@ -4,7 +4,7 @@ import Faktabanken from '@/components/Faktabanken'
 
 export default async function Page() {
   const { isEnabled } = draftMode()
-  const allFacts = await getAllFacts(isEnabled, 'en')
+  const allFacts = await getAllFacts(isEnabled, 'sv')
 
   return <Faktabanken data={allFacts} />
 }
