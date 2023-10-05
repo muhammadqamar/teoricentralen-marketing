@@ -1,30 +1,9 @@
 import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { Partners } from '@/components/Partners'
-import { getAllArticles } from '@/lib/articles'
-import { formatDate } from '@/lib/formatDate'
-import Image from 'next/image'
-
-function Article({ article }) {
-  return (
-    <Card as="article">
-      <Card.Title href={`/korkortsbloggen/${article.slug}`}>
-        {article.title}
-      </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
-      </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
-    </Card>
-  )
-}
 
 export default async function Home({ data }) {
-  let articles = (await getAllArticles()).slice(0, 4)
-
   return (
     <>
       <Container className="mt-16">
@@ -54,22 +33,6 @@ export default async function Home({ data }) {
       </Container>
 
       <Partners />
-
-      <Container className="mt-24">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-8 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex flex-col gap-16">
-            {articles.map((article) => (
-              <Article key={article.slug} article={article} />
-            ))}
-          </div>
-
-          <div className="flex flex-col gap-16">
-            {articles.map((article) => (
-              <Article key={article.slug} article={article} />
-            ))}
-          </div>
-        </div>
-      </Container>
     </>
   )
 }
