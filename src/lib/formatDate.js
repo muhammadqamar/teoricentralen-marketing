@@ -6,3 +6,9 @@ export function formatDate(dateString) {
     timeZone: 'UTC',
   })
 }
+
+export const ContentDateFormat = (inputDate) => {
+  const options = { year: 'numeric', month: 'long', day: 'numeric' }
+  const date = new Date(inputDate)
+  return date.toLocaleDateString('id-ID', options) // 'id-ID' represents the Indonesian locale for month names
+}
