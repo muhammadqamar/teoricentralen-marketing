@@ -1,4 +1,7 @@
 import { SimpleLayout } from '@/components/SimpleLayout'
+
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+
 import Link from 'next/link'
 import { draftMode } from 'next/headers'
 
@@ -13,24 +16,36 @@ import { getAllFacts } from '@/lib/facts'
 export async function generateStaticParams() {
   const allFacts = await getAllFacts(false)
 
+  console.log('Generating', allFacts)
+
   return allFacts.map((fact) => ({
     slug: fact.slug,
+    excerpt: fact.excerpt,
+    // date: fact.items.date_DESC,
   }))
 }
 
 export default function Page({ params }) {
-  const { slug } = params
+  const { sulg } = params
 
   return (
-    <div className="container px-5 mx-auto">
+    <div className="">
       <SimpleLayout
+        bgImage
         title="Faktabanken. Innehåll för körkortsteori."
         intro="Här hittar du allt om körkortsteori."
       >
-        <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
-          <div className="flex flex-col max-w-3xl space-y-16">
-
-            <div>Fact: {params.slug}</div>
+        <div className="container mx-auto px-5 md:border-l md:border-zinc-100 md:dark:border-zinc-700/40">
+          <div className="flex max-w-3xl flex-col space-y-16">
+            <div className="mb-12 font-medium capitalize">{params.slug}</div>
+            <div className="!m-0">
+              Test Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Sapiente beatae delectus nemo quas cumque, harum accusamus, veniam
+              praesentium officiis voluptate sunt voluptas maiores optio
+              obcaecati, hic quasi consequatur amet. Mollitia.
+              {documentToReactComponents(params.excerpt)}
+            </div>
+            {/* <div className="m-0">{params.date_DESC}</div> */}
           </div>
         </div>
       </SimpleLayout>

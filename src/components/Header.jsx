@@ -62,7 +62,6 @@ function NavItem({ href, children }) {
   return (
     <Link
       href={path.includes('/en') ? '/en' + href : href}
-
       className={clsx(
         'relative block text-sm font-semibold leading-6 transition hover:text-primary',
         isActive ? 'text-primary' : 'text-dark',
@@ -81,19 +80,21 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const path = usePathname()
   return (
-    <header className="relative z-10 isolate">
+    <header className="relative isolate z-10 shadow-2xl">
       <nav
-        className="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between py-5 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <Link href={path.includes('/en') ? '/en' : "/"}
-            className="-m-1.5 p-1.5">
+          <Link
+            href={path.includes('/en') ? '/en' : '/'}
+            className="-m-1.5 p-1.5"
+          >
             <span className="sr-only">Teoricentralen</span>
             <Image
               src={logoTeoricentralen}
               alt="Teoricentralen"
-              className="w-auto h-8"
+              className="h-8 w-auto"
               unoptimized
             />
           </Link>
@@ -105,7 +106,7 @@ export function Header() {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="w-6 h-6" aria-hidden="true" />
+            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-6">
@@ -194,12 +195,15 @@ export function Header() {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full px-6 py-6 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href={path.includes('/en') ? '/en' : "/"} className="-m-1.5 p-1.5">
+            <Link
+              href={path.includes('/en') ? '/en' : '/'}
+              className="-m-1.5 p-1.5"
+            >
               <span className="sr-only">Teoricentralen</span>
               <img
-                className="w-auto h-8"
+                className="h-8 w-auto"
                 src="https://cdn.teoricentralen.se/teoricentralen/mark.svg"
                 alt="Teoricentralen"
               />
@@ -210,12 +214,12 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon className="w-6 h-6" aria-hidden="true" />
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="flow-root mt-6">
+          <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="py-6 space-y-2">
+              <div className="space-y-2 py-6">
                 {/* <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
@@ -246,8 +250,8 @@ export function Header() {
                 </Disclosure> */}
                 <Link
                   onClick={() => setMobileMenuOpen(false)}
-                  href={path.includes('/en') ? '/en/om-oss' : "/om-oss"}
-                  className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
+                  href={path.includes('/en') ? '/en/om-oss' : '/om-oss'}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Om oss
                 </Link>
