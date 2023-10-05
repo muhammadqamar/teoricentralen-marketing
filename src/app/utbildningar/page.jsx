@@ -182,7 +182,7 @@ const CardsWrapper = ({ children }) => {
 const Card = ({ title, imageUrl, description, href, actionText }) => {
   return (
     <div
-      className={` col-span-1	rounded-md bg-white transition duration-200 ease-in-out hover:scale-[1.025] hover:cursor-pointer first-of-type:md:col-span-2 first-of-type:lg:col-span-1`}
+      className="	col-span-1 rounded-md bg-white transition duration-200 ease-in-out hover:scale-[1.025] hover:cursor-pointer first-of-type:md:col-span-2 first-of-type:lg:col-span-1"
       style={{
         boxShadow: '0px 0px 30px rgba(0,0,0,0.1), 0px 1px 3px rgba(0,0,0,0.1)',
       }}
