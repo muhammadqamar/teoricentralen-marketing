@@ -7,8 +7,6 @@ import { ContentDateFormat } from '@/lib/formatDate'
 import portraitImage from '@/images/blog-image.jpg'
 
 const Index = ({ data }) => {
-  const headersList = headers()
-  const path = new URL(headersList.get('x-url') || '')
   return (
     <SimpleLayout
       bgImage={portraitImage}
@@ -20,22 +18,24 @@ const Index = ({ data }) => {
           {data?.map((fact, index) => (
             <Link
               className="!m-0"
-              href={ path?.pathname?.includes('/en') ? '/en' + `/faktabanken/${fact.slug}` : `/faktabanken/${fact.slug}`}
+              href={`/faktabanken/${fact.slug}`}
               key={fact.slug}
             >
               <div className=" w-full rounded-lg bg-white px-[25px] py-5 shadow-md">
                 <p className="mb-2">{fact.title}</p>
 
-               {fact?.date &&  <Card as="article">
-                  <Card.Eyebrow
-                    className="!m-0 "
-                    as="date"
-                    dateTime={fact?.date}
-                    decorate
-                  >
-                    {ContentDateFormat(fact?.date || '')}
-                  </Card.Eyebrow>
-                </Card>}
+                {fact?.date && (
+                  <Card as="article">
+                    <Card.Eyebrow
+                      className="!m-0 "
+                      as="date"
+                      dateTime={fact?.date}
+                      decorate
+                    >
+                      {ContentDateFormat(fact?.date || '')}
+                    </Card.Eyebrow>
+                  </Card>
+                )}
               </div>
             </Link>
           ))}

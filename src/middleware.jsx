@@ -5,6 +5,7 @@ import Negotiator from 'negotiator'
 const locales = ['sv', 'en']
 const defaultLocale = 'sv'
 
+// Get the preferred locale, similar to the above or using a library
 function getLocale(request) {
   // Negotiator expects plain object so we need to transform headers
   const negotiatorHeaders = {}
@@ -19,18 +20,23 @@ function getLocale(request) {
 }
 
 export function middleware(request) {
-  const requestHeaders = new Headers(request.headers)
-  requestHeaders.set('x-url', request.url)
+  // Check if there is any supported locale in the pathname
+  const { pathname } = request.nextUrl
+  const pathnameHasLocale = locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
+  )
 
-  return NextResponse.next({
-    request: {
-      // Apply new request headers
-      headers: requestHeaders,
-    },
-  })
+  if (pathnameHasLocale) return NextResponse.next()
+
+  // Redirect if there is no locale
+  const locale = getLocale(request)
+  request.nextUrl.pathname = `/${locale}${pathname}`
+
+  // e.g. incoming request is /products - the new URL is now /en-US/products
+  return Response.redirect(request.nextUrl)
 }
 
 export const config = {
   // Matcher ignoring `/_next/` and `/api/`
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  matcher: ['/((?!api|_next/static|_next/image|sitemap.xml|favicon.ico).*)'],
 }

@@ -7,8 +7,9 @@ import '@/styles/tailwind.css'
 import { headers } from 'next/headers'
 
 export async function generateMetadata() {
-  const headersList = headers()
-  const header_url = new URL(headersList.get('x-url') || '')
+  // const headersList = headers()
+  // const header_url = new URL(headersList.get('x-url') || '')
+
   return {
     title: {
       template: '%s - Teoricentralen',
@@ -23,14 +24,14 @@ export async function generateMetadata() {
       address: false,
       telephone: false,
     },
-    metadataBase: new URL(header_url.href || process.env.NEXT_PUBLIC_SITE_URL),
-    alternates: {
-      canonical: header_url.href?.replace('/en', ''),
-      languages: {
-        sv: header_url.href?.replace('/en', ''),
-        en: header_url.origin + '/en' + header_url.pathname,
-      },
-    },
+    metadataBase: process.env.NEXT_PUBLIC_SITE_URL,
+    // alternates: {
+    //   canonical: header_url.href?.replace('/en', ''),
+    //   languages: {
+    //     sv: header_url.href?.replace('/en', ''),
+    //     en: header_url.origin + '/en' + header_url.pathname,
+    //   },
+    // },
     openGraph: {
       title: 'Teoricentralen',
       description: 'Teoricentralen - en utbildningsplattform för körkortsteori',
@@ -44,7 +45,7 @@ export async function generateMetadata() {
           alt: 'Teoricentralen',
         },
       ],
-      locale: header_url.href?.includes('/en') ? 'en' : 'sv',
+      // locale: header_url.href?.includes('/en') ? 'en' : 'sv',
       type: 'website',
     },
   }
@@ -57,16 +58,15 @@ const mulish = Mulish({
 })
 
 export default function RootLayout({ children, params }) {
-
   return (
     <html
       lang={params.lang}
       className={`h-full antialiased ${mulish.variable}`}
       suppressHydrationWarning
     >
-      <body className="flex flex-col h-full bg-zinc-50">
+      <body className="flex h-full flex-col bg-zinc-50">
         <NextIntlClientProvider lang={params.lang} locale={'en'}>
-          <div className="flex flex-col min-h-full">
+          <div className="flex min-h-full flex-col">
             <Header />
             <main>{children}</main>
             <Footer />

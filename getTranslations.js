@@ -5,4 +5,6 @@ const translations = {
   sv: () => import('./translations/sv.json').then((module) => module.default),
 }
 
-export const getTranslations = async (locale) => translations[locale]()
+export const getTranslations = async (locale) => {
+  return translations?.[locale]?.()
+}
