@@ -177,7 +177,7 @@ export function Header() {
 
           {/* <NavItem href="/om-oss">Om oss</NavItem> */}
           <NavItem href="/utbildningar">Utbildningar</NavItem>
-          <NavItem href="/korkortsbloggen">Körkortsfrågor</NavItem>
+          <NavItem href="/korkortsfragor">Körkortsfrågor</NavItem>
           <NavItem href="/recensioner">Recensioner</NavItem>
           {/* <NavItem href="/fragor-och-svar">Frågor och svar</NavItem> */}
         </Popover.Group>
