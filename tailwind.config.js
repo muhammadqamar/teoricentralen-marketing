@@ -30,6 +30,10 @@ module.exports = {
       animation: {
         marquee: 'marquee 15000ms linear infinite',
       },
+      fontFamily: {
+        sans: ['var(--font-mulish)'],
+
+      },
     },
     keyframes: {
       marquee: {

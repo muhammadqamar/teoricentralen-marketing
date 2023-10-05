@@ -4,7 +4,7 @@ import { Container } from '@/components/Container'
 import portraitImage from '@/images/portrait.jpg'
 
 export const metadata = {
-  title: 'Om oss',
+  title: 'Körkortsfrågor',
   description: 'Framtidens trafikutbildning är här',
 }
 

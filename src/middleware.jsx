@@ -27,8 +27,9 @@ function getLocale(request){
 }
 
 export function middleware(request) {
-  const pathname = request.nextUrl.pathname
 
+  const pathname = request.nextUrl.pathname
+  // console.log(pathname)
   // // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
   // // If you have one
   // if (
@@ -39,25 +40,34 @@ export function middleware(request) {
   //   ].includes(pathname)
   // )
   //   return
-  const defaulturls= ['/korkortsbloggen','/ordlista','/recensioner','/kontakt','/faktabanken','/utbildningar','/om-oss','/integritetspolicy','/utbildningar','/anvandarvillkor','/demo']
-  // Check if there is any supported locale in the pathname
-  const pathnameIsMissingLocale = locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
-  )
+  // const defaulturls= ['/korkortsbloggen','/ordlista','/recensioner','/kontakt','/faktabanken','/utbildningar','/om-oss','/integritetspolicy','/utbildningar','/anvandarvillkor','/demo']
+  // // Check if there is any supported locale in the pathname
+  // const pathnameIsMissingLocale = locales.every(
+  //   (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  // )
 
   // Redirect if there is no locale
-  if (pathnameIsMissingLocale && !!!defaulturls.filter(data=>pathname.includes(data)).length && pathname !=="/"  ) {
-    const locale = getLocale(request)
+  // if (pathnameIsMissingLocale) {
+  //   const locale = getLocale(request)
 
-    // e.g. incoming request is /products
-    // The new URL is now /en-US/products
-    return NextResponse.redirect(
-      new URL(
-        `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
-        request.url
-      )
-    )
-  }
+  //   // e.g. incoming request is /products
+  //   // The new URL is now /en-US/products
+  //   return NextResponse.redirect(
+  //     new URL(
+  //       `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
+  //       request.url
+  //     )
+  //   )
+  // }
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-url', request.url);
+
+  return NextResponse.next({
+    request: {
+      // Apply new request headers
+      headers: requestHeaders,
+    }
+  });
 }
 
 export const config = {

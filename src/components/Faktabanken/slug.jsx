@@ -4,7 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { SimpleLayout } from '../SimpleLayout'
 import { Card } from '../Card'
 import { ContentDateFormat } from '@/lib/formatDate'
-import portraitImage from '@/images/Blog-image.svg'
+import portraitImage from '@/images/blog-image.jpg'
 
 const Slug = ({ data }) => {
   console.log('inside', data)

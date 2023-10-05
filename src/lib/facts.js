@@ -58,12 +58,13 @@ export async function getPreviewPostBySlug(slug) {
 export async function getAllFacts(isDraftMode, locale) {
   const entries = await fetchGraphQL(
     `query {
-        faktabankenCollection(locale: "${locale}", where: { slug_exists: true }, order: date_DESC, preview: ${
+        faktabankenCollection(locale: "en", where: { slug_exists: true }, order: date_DESC, preview: ${
           isDraftMode ? 'true' : 'false'
         }) {
         items {
             ${POST_GRAPHQL_FIELDS}
         }
+
         }
     }`,
     isDraftMode,

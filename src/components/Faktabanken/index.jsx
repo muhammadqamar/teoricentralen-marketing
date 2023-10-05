@@ -3,7 +3,7 @@ import { SimpleLayout } from '../SimpleLayout'
 import Link from 'next/link'
 import { Card } from '../Card'
 import { ContentDateFormat } from '@/lib/formatDate'
-import portraitImage from '@/images/Blog-image.svg'
+import portraitImage from '@/images/blog-image.jpg'
 
 const Index = ({ data }) => {
   console.log('data', data)

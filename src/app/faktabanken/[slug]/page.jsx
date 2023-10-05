@@ -5,6 +5,7 @@ import { draftMode } from 'next/headers'
 export async function generateStaticParams() {
   const allFacts = await getAllFacts(false, 'sv')
   return allFacts.map((fact) => ({
+    title: fact.title,
     slug: fact.slug,
   }))
 }
