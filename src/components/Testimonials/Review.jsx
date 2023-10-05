@@ -3,15 +3,15 @@ import React from 'react'
 import christian from '@/images/testimonials/christian.jpg'
 const Review = ({ testimonial }) => {
   return (
-    <figure className="p-6 bg-white shadow-lg rounded-2xl ring-1 ring-gray-900/5">
+    <figure className="rounded-lg bg-white p-6 shadow ring-1 ring-dark/5">
       <blockquote className="text-gray-900">
         <p>{`“${testimonial.title}”`}</p>
       </blockquote>
-      <figcaption className="flex items-center mt-6 gap-x-4">
+      <figcaption className="mt-6 flex items-center gap-x-4">
         <Image
           src={christian}
           alt={testimonial.user?.name}
-          className="w-10 h-10 rounded-full bg-gray-50"
+          className="h-10 w-10 rounded-full bg-gray-50"
         />
         <div>
           <div className="font-semibold">{testimonial.user?.name}</div>
