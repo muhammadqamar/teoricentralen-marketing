@@ -1,7 +1,7 @@
 import { Container } from '@/components/Container'
 
 import Image from 'next/image'
-import portraitImage from '@/images/Blog-image.svg'
+import portraitImage from '@/images/blog-image.jpg'
 
 export function SimpleLayout({ bgImage, title, intro, children }) {
   return (
