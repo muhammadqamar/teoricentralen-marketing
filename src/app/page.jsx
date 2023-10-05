@@ -1,8 +1,9 @@
 import Home from '@/components/Home'
-import { getDictionary } from '../../getDictionaries'
+import { getTranslations } from '../../getTranslations'
 
-export default async function Reviews({ Params }) {
-  const lang = await getDictionary('sv')
+export default async function Page({ params: { lang } }) {
+  const dict = await getTranslations(lang)
+  console.log(dict)
 
-  return <Home data={lang?.home || ''} />
+  return <Home data={dict?.home || ''} />
 }

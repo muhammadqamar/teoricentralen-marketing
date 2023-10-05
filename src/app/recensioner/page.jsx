@@ -1,8 +1,8 @@
 import Testimonials from '@/components/Testimonials/Testimonials'
-import { getDictionary } from '../../../getDictionaries'
+import { getTranslations } from '../../../getTranslations'
 
 export default async function Page() {
-  const lang = await getDictionary('sv')
+  const lang = await getTranslations('sv')
 
   return <Testimonials data={lang?.testimonials || ''} />
 }

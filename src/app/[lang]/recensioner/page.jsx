@@ -1,5 +1,5 @@
 import Testimonials from '@/components/Testimonials/Testimonials'
-import { getDictionary } from '../../../../getDictionaries'
+import { getTranslations } from '../../../../getTranslations'
 
 export const metadata = {
   title: 'Recensioner',
@@ -7,7 +7,7 @@ export const metadata = {
 }
 
 export default async function Page({ params: { lang } }) {
-  const dictionary = await getDictionary(lang)
+  const translations = await getTranslations(lang)
 
-  return <Testimonials data={dictionary?.testimonials} />
+  return <Testimonials data={translations?.testimonials} />
 }
