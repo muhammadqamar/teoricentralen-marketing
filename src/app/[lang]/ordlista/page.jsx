@@ -1,5 +1,4 @@
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { getAllArticles } from '@/lib/articles'
 
 export default function Wordlist() {
   return (

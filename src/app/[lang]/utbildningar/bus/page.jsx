@@ -1,9 +1,7 @@
-const page = () => {
-    return (
-        <div>
-            Bus
-        </div>
-    );
+export default async function Page({ params: { lang } }) {
+  return (
+    <>
+      <div>Bus</div>
+    </>
+  )
 }
-
-export default page;

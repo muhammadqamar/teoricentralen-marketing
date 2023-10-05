@@ -37,6 +37,7 @@ const language = [
 export function Footer() {
   const [selected, setSelected] = useState()
   const path = usePathname()
+
   useEffect(() => {
     setSelected(path.includes('/en') ? language[1] : language[0])
   }, [path])
@@ -104,7 +105,7 @@ export function Footer() {
                             <Image
                               src={language.flag}
                               alt="Teoricentralen"
-                              className="h-5 w-5"
+                              className="h-5"
                               unoptimized
                             />
                             <span

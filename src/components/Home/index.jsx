@@ -13,7 +13,7 @@ export default async function Home({ data }) {
               {data.heading}
             </h1>
           </FadeIn>
-          <FadeIn delay={2.2} className="flex items-center gap-x-8">
+          <FadeIn className="flex items-center gap-x-8">
             <p className="mt-6 text-lg text-gray-600 dark:text-zinc-400">
               Utvecklad tillsammans med trafikskolor i Sverige.
             </p>

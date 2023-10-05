@@ -59,6 +59,7 @@ const callsToAction = [
 function NavItem({ href, children }) {
   let isActive = usePathname() === href
   const path = usePathname()
+
   return (
     <Link
       href={path.includes('/en') ? '/en' + href : href}
@@ -70,10 +71,6 @@ function NavItem({ href, children }) {
       {children}
     </Link>
   )
-}
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
 }
 
 export function Header() {

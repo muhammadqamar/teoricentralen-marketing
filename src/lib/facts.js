@@ -10,7 +10,6 @@ const POST_GRAPHQL_FIELDS = `
     json
 
   }
-
 `
 
 async function fetchGraphQL(query, preview = false) {
@@ -33,11 +32,11 @@ async function fetchGraphQL(query, preview = false) {
   ).then((response) => response.json())
 }
 
-function extractPost(fetchResponse) {
+function extractFact(fetchResponse) {
   return fetchResponse?.data?.faktabankenCollection?.items?.[0]
 }
 
-function extractPostEntries(fetchResponse) {
+function extractFactEntries(fetchResponse) {
   return fetchResponse?.data?.faktabankenCollection?.items
 }
 
@@ -64,16 +63,15 @@ export async function getAllFacts(isDraftMode, locale) {
         items {
             ${POST_GRAPHQL_FIELDS}
         }
-
-        }
+      }
     }`,
     isDraftMode,
   )
 
-  return extractPostEntries(entries)
+  return extractFactEntries(entries)
 }
 
-export async function getPostAndMorePosts(slug, preview, locale) {
+export async function getFact(slug, preview, locale) {
   const entry = await fetchGraphQL(
     `query {
     faktabankenCollection(locale: "${locale}", where: { slug: "${slug}" }, preview: ${
@@ -86,20 +84,8 @@ export async function getPostAndMorePosts(slug, preview, locale) {
   }`,
     preview,
   )
-  const entries = await fetchGraphQL(
-    `query {
-        faktabankenCollection(where: { slug_not_in: "${slug}" }, order: date_DESC, preview: ${
-          preview ? 'true' : 'false'
-        }, limit: 2) {
-        items {
-            ${POST_GRAPHQL_FIELDS}
-        }
-        }
-    }`,
-    preview,
-  )
+
   return {
-    post: extractPost(entry),
-    morePosts: extractPostEntries(entries),
+    fact: extractFact(entry),
   }
 }
