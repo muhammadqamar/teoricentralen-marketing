@@ -7,7 +7,7 @@ import { getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 import Image from 'next/image'
 
-import portraitImage from '@/images/banner.svg'
+import portraitImage from '@/images/Banner.svg'
 
 function Article({ article }) {
   return (
@@ -33,7 +33,8 @@ export default async function Home({ data }) {
         <div className="h-full before:absolute before:top-0 before:h-full before:w-full before:bg-[#88b6fc] before:opacity-[0.3]">
           <Image
             src={portraitImage}
-            alt=""
+            alt="banner"
+            layout="fill"
             sizes="(min-width: 1024px) 32rem, 20rem"
             className="aspect-square h-full w-full bg-zinc-100 object-cover dark:bg-zinc-800"
           />

@@ -37,10 +37,10 @@ export default async function Page({ data }) {
       intro="Här hittar du allt om körkortsteori."
     >
       <div className="md:border-l md:border-zinc-100 md:dark:border-zinc-700/40">
-        <div className="flex max-w-[1120px] flex-col space-y-16">
+        <div className="flex max-w-[1120px] flex-col gap-6 space-y-16">
           {allFacts.map((fact) => (
             <Link
-              className="w-full rounded-lg bg-white px-[25px] py-5 shadow-md"
+              className="!m-0 w-full rounded-lg bg-white px-[25px] py-5 shadow-md"
               href={`/faktabanken/${fact.slug}`}
               key={fact.slug}
             >
