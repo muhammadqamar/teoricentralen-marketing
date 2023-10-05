@@ -18,10 +18,7 @@ const navigation = {
     { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
     // { name: 'Ordlista', href: '/ordlista' },
   ],
-  company: [
-    { name: 'Om oss', href: '/om-oss' },
-    { name: 'Jobba med oss', href: '/jobba-med-oss' },
-  ],
+  company: [{ name: 'Om oss', href: '/om-oss' }],
   support: [{ name: 'Kontakta oss', href: '/kontakt' }],
   legal: [
     { name: 'Användarvillkor', href: '/anvandarvillkor' },
