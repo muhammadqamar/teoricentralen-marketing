@@ -1,9 +1,10 @@
 import 'server-only'
-const localsData = {
-  en: () => import('./locales/en.json').then((r) => r.default),
-  sv: () => import('./locales/sv.json').then((r) => r.default),
+
+const dictionaries = {
+  en: () => import('./locales/en.json').then((module) => module.default),
+  sv: () => import('./locales/sv.json').then((module) => module.default),
 }
 
 export const getLocales = async (lang) => {
-  return localsData?.[lang]?.()
+  return dictionaries?.[lang]?.()
 }

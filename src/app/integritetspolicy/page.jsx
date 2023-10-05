@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import { Container } from '@/components/Container'
-import portraitImage from '@/images/portrait.jpg'
+import portraitImage from '@/images/logo.png'
 
 export const metadata = {
   title: 'Integritetspolicy',

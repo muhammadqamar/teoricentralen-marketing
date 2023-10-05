@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import christian from '@/images/testimonials/christian.jpg'
+
 const Review = ({ testimonial }) => {
   return (
     <figure className="rounded-lg bg-white p-6 shadow ring-1 ring-dark/5">
@@ -15,7 +16,7 @@ const Review = ({ testimonial }) => {
         />
         <div>
           <div className="font-semibold">{testimonial.user?.name}</div>
-          <div className="text-gray-600">{`${testimonial.user?.discription}`}</div>
+          <div className="text-gray-600">{testimonial.user?.discription}</div>
         </div>
       </figcaption>
     </figure>
