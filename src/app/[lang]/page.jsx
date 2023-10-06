@@ -1,8 +1,8 @@
 import Home from '@/components/Home'
 import { getTranslations } from '../../../getTranslations'
 
-export default async function Page({ params: { lang } }) {
-  const dict = await getTranslations(lang)
+export default async function Reviews({ params }) {
+  const lang = await getTranslations(params.lang)
 
-  return <Home data={dict?.home || ''} />
+  return <Home data={lang?.home || ''} />
 }

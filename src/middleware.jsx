@@ -1,14 +1,43 @@
-import createMiddleware from 'next-intl/middleware'
+import { NextResponse } from 'next/server'
 
-export default createMiddleware({
-  // A list of all locales that are supported
-  locales: ['sv', 'en'],
+let locales = ['sv', 'en']
 
-  // If this locale is matched, pathnames work without a prefix (e.g. `/about`)
-  defaultLocale: 'sv',
-})
+export function middleware(request) {
+
+  const pathname = request.nextUrl.pathname
+  if (
+    [
+      '/manifest.json',
+      '/favicon.ico',
+    ].includes(pathname)
+  )
+    return
+  const pathnameIsMissingLocale = locales.every(
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  )
+
+  if (pathnameIsMissingLocale) {
+
+
+    return NextResponse.redirect(
+      new URL(
+        `/${'sv'}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
+        request.url
+      )
+    )
+  }
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-url', request.url);
+
+  return NextResponse.next({
+    request: {
+
+      headers: requestHeaders,
+    }
+  });
+}
 
 export const config = {
-  // Skip all paths that should not be internationalized
+
   matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
 }

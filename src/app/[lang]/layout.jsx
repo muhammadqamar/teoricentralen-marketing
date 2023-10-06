@@ -7,8 +7,8 @@ import '@/styles/tailwind.css'
 import { headers } from 'next/headers'
 
 export async function generateMetadata() {
-  // const headersList = headers()
-  // const header_url = new URL(headersList.get('x-url') || '')
+  const headersList = headers()
+  const header_url = new URL(headersList.get('x-url') || '')
 
   return {
     title: {
@@ -25,13 +25,13 @@ export async function generateMetadata() {
       telephone: false,
     },
     metadataBase: process.env.NEXT_PUBLIC_SITE_URL,
-    // alternates: {
-    //   canonical: header_url.href?.replace('/en', ''),
-    //   languages: {
-    //     sv: header_url.href?.replace('/en', ''),
-    //     en: header_url.origin + '/en' + header_url.pathname,
-    //   },
-    // },
+    alternates: {
+      canonical: header_url.href?.replace('/en', '/sv'),
+      languages: {
+        sv: header_url.href?.replace('/en', '/sv'),
+        en: header_url.href?.replace('/sv', '/en')
+      },
+    },
     openGraph: {
       title: 'Teoricentralen',
       description: 'Teoricentralen - en utbildningsplattform för körkortsteori',
@@ -45,7 +45,7 @@ export async function generateMetadata() {
           alt: 'Teoricentralen',
         },
       ],
-      // locale: header_url.href?.includes('/en') ? 'en' : 'sv',
+      locale: header_url.href?.includes('/en') ? 'en' : 'sv',
       type: 'website',
     },
   }
@@ -68,12 +68,12 @@ export default function RootLayout({ children, params: { lang } }) {
       className={`h-full antialiased ${mulish.variable}`}
       suppressHydrationWarning
     >
-      <body className="flex h-full flex-col bg-zinc-50">
+      <body className="flex flex-col h-full bg-zinc-50">
         <NextIntlClientProvider lang={lang} locale={'en'}>
-          <div className="flex min-h-full flex-col">
+          <div className="flex flex-col min-h-full">
             <Header />
             <main>{children}</main>
-            <Footer />
+            <Footer lang={lang} />
           </div>
 
           <Analytics />
