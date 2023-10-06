@@ -1,4 +1,5 @@
 import { Header } from '@/components/Header'
+import { Header2 } from '@/components/Header2'
 import { Footer } from '@/components/Footer'
 import { Mulish } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
@@ -86,7 +87,8 @@ export default function RootLayout({ children, params }) {
       <body className="flex h-full flex-col bg-zinc-50">
         <NextIntlClientProvider locale={params.lang}>
           <div className="flex min-h-full flex-col">
-            <Header lang={params.lang} />
+            {/* <Header lang={params.lang} /> */}
+            <Header2 lang={params.lang} />
             <main>{children}</main>
             <Footer lang={params.lang} />
           </div>
