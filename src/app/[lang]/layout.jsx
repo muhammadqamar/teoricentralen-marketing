@@ -35,10 +35,10 @@ export async function generateMetadata() {
     },
     metadataBase: process.env.NEXT_PUBLIC_SITE_URL,
     alternates: {
-      canonical: linkObjects?.filter(data=>data.hreflang==='x-default')[0]?.url ,
+      canonical: linkObjects?.filter(data => data.hreflang === 'x-default')[0]?.url,
       languages: {
-        sv: linkObjects?.filter(data=>data.hreflang==='sv')[0]?.url,
-        en: linkObjects?.filter(data=>data.hreflang==='en')[0]?.url,
+        sv: linkObjects?.filter(data => data.hreflang === 'sv')[0]?.url,
+        en: linkObjects?.filter(data => data.hreflang === 'en')[0]?.url,
       },
     },
     openGraph: {
@@ -67,22 +67,22 @@ const mulish = Mulish({
 })
 
 export function generateStaticParams() {
-  return [{ locale: 'sv' }, { locale: 'en' }]
+  return [{lang: 'en'}, {lang: 'sv'}];
 }
 
-export default function RootLayout({ children, params: { lang } }) {
+export default function RootLayout({children, params}) {
   return (
     <html
-      lang={lang}
+      lang={params.lang}
       className={`h-full antialiased ${mulish.variable}`}
       suppressHydrationWarning
     >
       <body className="flex flex-col h-full bg-zinc-50">
-        <NextIntlClientProvider lang={lang} locale={'en'}>
+        <NextIntlClientProvider  locale={params.lang}>
           <div className="flex flex-col min-h-full">
             <Header />
             <main>{children}</main>
-            <Footer lang={lang} />
+            <Footer lang={params.lang}  />
           </div>
 
           <Analytics />

@@ -31,8 +31,7 @@ module.exports = {
         marquee: 'marquee 15000ms linear infinite',
       },
       fontFamily: {
-        sans: ['var(--font-mulish)'],
-
+        sans: ['var(--font-mulish)']
       },
     },
     keyframes: {
