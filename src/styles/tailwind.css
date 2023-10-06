@@ -3,6 +3,10 @@
 @import './prism.css';
 @import 'tailwindcss/utilities';
 
+
+/* html {
+  @apply font-sans
+} */
 .contentful-render {
   margin:  0
 }
@@ -17,3 +21,5 @@
 .contentful-render  ul li {
   @apply list-disc
 }
+
+

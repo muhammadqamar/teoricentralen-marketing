@@ -3,7 +3,7 @@ import { getAllFacts, getFact } from '@/lib/facts'
 import { draftMode } from 'next/headers'
 
 export async function generateStaticParams({ params }) {
-  const allFacts = await getAllFacts(false, params.locale)
+  const allFacts = await getAllFacts(false, params.lang)
   return allFacts?.map((fact) => ({
     slug: fact.slug,
   }))

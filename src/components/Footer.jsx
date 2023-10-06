@@ -1,14 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { usePathname } from 'next/navigation'
-import Link from 'next/link'
-import { Menu } from '@headlessui/react'
+import { usePathname } from 'next-intl/client'
+import Link from 'next-intl/link'
 import logoTeoricentralen from '@/images/logos/mark.svg'
-import SwedishLogo from '@/images/logos/sv-flag.svg'
-import EnglishLogo from '@/images/logos/en-flag.svg'
-
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import ChangeTranslation from '@/utils/changeTranslation'
 import Image from 'next/image'
 
 const navigation = {
@@ -26,19 +21,8 @@ const navigation = {
   ],
 }
 
-const language = [
-  { name: 'sv', code: 'sv', flag: SwedishLogo },
-  { name: 'en', code: 'en', flag: EnglishLogo },
-]
-
 export function Footer({ lang }) {
-  const [selected, setSelected] = useState()
   const path = usePathname()
-
-  useEffect(() => {
-    setSelected(path.includes('/en') ? language[1] : language[0])
-  }, [path])
-
   return (
     <footer className="mt-32 flex-none bg-gray-100">
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8">
@@ -56,70 +40,7 @@ export function Footer({ lang }) {
               Plattformen som hjälper trafikskolor att växa. Utvecklat
               tillsammans med Trafikskolor i Sverige.
             </p>
-            <Menu>
-              <div className="top-16 w-56 text-left">
-                <Menu.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-                  <div className="flex items-center gap-2">
-                    <Image
-                      src={selected?.flag}
-                      alt="Teoricentralen"
-                      width={20}
-                      height={20}
-                      unoptimized
-                    />
-                    <span className="block truncate">{selected?.name}</span>
-                  </div>
-                  <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-                    <ChevronDownIcon
-                      className="h-5 w-5 text-gray-400"
-                      aria-hidden="true"
-                    />
-                  </span>
-                </Menu.Button>
-                <Menu.Items className="relative mt-[10px] w-full cursor-default rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-                  {language.map((language, languageIdx) => (
-                    <Menu.Item
-                      key={languageIdx}
-                      className={({ active }) =>
-                        `relative cursor-default select-none py-2 pl-3 pr-4 ${
-                          active
-                            ? 'bg-amber-100 text-amber-900'
-                            : 'text-gray-900'
-                        }`
-                      }
-                    >
-                      {({ active }) => (
-                        <Link
-                          className="block cursor-pointer"
-                          href={
-                            language.name == 'sv'
-                              ? path.replace('/en', '/sv')
-                              : path.replace('/sv', '/en')
-                          }
-                        >
-                          <div className="flex items-center gap-2">
-                            <Image
-                              src={language.flag}
-                              alt="Teoricentralen"
-                              width={20}
-                              height={20}
-                              unoptimized
-                            />
-                            <span
-                              className={`block truncate ${
-                                active ? 'font-medium' : 'font-normal'
-                              }`}
-                            >
-                              {language?.name}
-                            </span>
-                          </div>
-                        </Link>
-                      )}
-                    </Menu.Item>
-                  ))}
-                </Menu.Items>
-              </div>
-            </Menu>
+            <ChangeTranslation lang={lang} />
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
@@ -131,9 +52,8 @@ export function Footer({ lang }) {
                   {navigation.educations.map((item) => (
                     <li key={item.name}>
                       <Link
-                        href={
-                          path.includes('/en') ? '/en' + item.href : item.href
-                        }
+                        href={item.href}
+                        locale={lang}
                         className="text-sm leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
@@ -150,9 +70,8 @@ export function Footer({ lang }) {
                   {navigation.company.map((item) => (
                     <li key={item.name}>
                       <Link
-                        href={
-                          path.includes('/en') ? '/en' + item.href : item.href
-                        }
+                        href={item.href}
+                        locale={lang}
                         className="text-sm leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
@@ -171,9 +90,8 @@ export function Footer({ lang }) {
                   {navigation.support.map((item) => (
                     <li key={item.name}>
                       <Link
-                        href={
-                          path.includes('/en') ? '/en' + item.href : item.href
-                        }
+                        href={item.href}
+                        locale={lang}
                         className="text-sm leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
@@ -190,9 +108,8 @@ export function Footer({ lang }) {
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
                       <Link
-                        href={
-                          path.includes('/en') ? '/en' + item.href : item.href
-                        }
+                        href={item.href}
+                        locale={lang}
                         className="text-sm leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}

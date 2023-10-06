@@ -1,8 +1,7 @@
 import React from 'react'
 import { SimpleLayout } from '../SimpleLayout'
-import Link from 'next/link'
+import Link from 'next-intl/link'
 import { Card } from '../Card'
-import { headers } from 'next/headers'
 import { ContentDateFormat } from '@/lib/formatDate'
 import portraitImage from '@/images/blog-image.jpg'
 import Image from 'next/image'
@@ -36,7 +35,7 @@ const Index = ({ data }) => {
                     }
                   />
                 </div>
-                <div className=" bg-white px-5 py-4 ">
+                <div className="bg-white px-5 py-4 ">
                   <p className="mb-2">{fact?.title}</p>
                   {fact?.date && (
                     <Card as="article">
