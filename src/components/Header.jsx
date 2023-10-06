@@ -1,37 +1,59 @@
 'use client'
 
-import { useState } from 'react'
+import { usePathname } from 'next-intl/client'
 import { Navigation } from '@/components/Navigation'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import logoTeoricentralen from '@/images/logos/mark.svg'
 import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
-import bgHome from '@/images/backgrounds/alg.jpg'
-import Link from 'next/link'
+import bgHome from '@/images/backgrounds/elk.jpg'
 import Image from 'next/image'
 import { FadeIn } from './FadeIn'
 
 export function Header({ lang }) {
+  const path = usePathname()
+
   return (
     <div className="bg-dark">
       <Navigation locale={lang} />
 
-      <div className="relative isolate overflow-hidden pt-24">
-        <Hero />
-      </div>
+      {path === '/' && <Hero />}
+      {path !== '/' && <HeroImage />}
     </div>
+  )
+}
+
+function HeroImage() {
+  return (
+    <>
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src={bgHome}
+            alt="Teoricentralen"
+            className="h-full w-full object-cover object-center"
+          />
+        </div>
+        <div className="relative bg-black bg-opacity-50 px-6 py-32 sm:px-12 sm:py-40 lg:px-16">
+          <div className="relative mx-auto flex max-w-2xl flex-col items-center text-center">
+            <FadeIn className="flex items-center justify-center gap-x-8">
+              <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+                Framtidens trafikutbildning är här.
+              </h1>
+            </FadeIn>
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
 
 function Hero() {
   return (
-    <>
+    <div className="relative isolate overflow-hidden pt-24">
       <Image
         src={bgHome}
         alt="Teoricentralen"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
+
       <div
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden bg-black opacity-50 blur-3xl"
         aria-hidden="true"
@@ -45,7 +67,7 @@ function Hero() {
         />
       </div>
 
-      <div className="mx-auto max-w-xl py-32">
+      <div className="mx-auto max-w-xl pb-40 pt-32">
         <div className="text-center">
           <FadeIn className="flex items-center justify-center gap-x-8">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
@@ -84,6 +106,6 @@ function Hero() {
           }}
         />
       </div>
-    </>
+    </div>
   )
 }

@@ -46,6 +46,7 @@ export function SimpleLayout({ bgImage, title, intro, children }) {
           </header>
         </Container>
       </div>
+
       <Container>
         {children && <div className="mt-16 sm:mt-20">{children}</div>}
       </Container>
