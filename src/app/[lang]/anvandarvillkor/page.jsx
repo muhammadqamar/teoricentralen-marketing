@@ -5,15 +5,13 @@ export const metadata = {
   description: 'Framtidens trafikutbildning är här',
 }
 
-export default async function TermsOfUse({ params: { lang } }) {
-  console.log(lang)
-
+export default async function Page({ params: { lang } }) {
   return (
-    <Container className="mt-16">
+    <Container className="my-16">
       <h1 className="text-4xl font-bold tracking-tight text-dark sm:text-5xl">
         Användarvillkor
       </h1>
-      <div className="mt-6 text-base space-y-7 text-zinc-600">
+      <div className="mt-6 space-y-7 text-base text-zinc-600">
         <p>
           Din verksamhet, dina villkor. Vi hjälper dig att ta din trafikskola
           till nästa nivå. Se till att du har de verktyg som krävs för att

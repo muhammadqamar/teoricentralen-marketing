@@ -18,13 +18,13 @@ export function Header({ lang }) {
       <Navigation locale={lang} />
 
       <div className="relative isolate overflow-hidden pt-24">
-        <HomeHero />
+        <Hero />
       </div>
     </div>
   )
 }
 
-function HomeHero() {
+function Hero() {
   return (
     <>
       <Image
@@ -54,7 +54,7 @@ function HomeHero() {
           </FadeIn>
 
           <FadeIn className="flex items-center justify-center gap-x-8">
-            <p className="mt-4 text-lg font-medium leading-8 text-white">
+            <p className="mt-4 text-xl font-medium leading-8 text-white">
               Utvecklad tillsammans med trafikskolor i Sverige.
             </p>
           </FadeIn>

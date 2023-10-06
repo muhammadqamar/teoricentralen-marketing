@@ -212,7 +212,7 @@ function Example() {
 
 export default function Page() {
   return (
-    <Container className="mt-16">
+    <Container className="my-16">
       <div>
         <h1 className="text-4xl font-extrabold tracking-tight text-dark sm:text-5xl">
           Våra utbildningar

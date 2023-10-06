@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function PrivacyPolicy() {
   return (
-    <Container className="mt-16">
+    <Container className="my-16">
       <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
         Integritetspolicy
       </h1>

@@ -1,10 +1,10 @@
+import Image from 'next/image'
 import logoStenstans from '@/images/logos/stenstans.svg'
 import logoKrekolas from '@/images/logos/krekolas.svg'
-import Image from 'next/image'
 
-export function Partners() {
+export function Partners({ lang }) {
   return (
-    <div className="py-24">
+    <div className="py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="text-center font-extrabold uppercase leading-6 text-dark">
           Betrodd av trafikutbildare i Sverige
