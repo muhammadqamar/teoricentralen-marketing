@@ -69,7 +69,7 @@ export default function RootLayout({ children, params }) {
           <div className="flex flex-col min-h-full">
             <Header />
             <main>{children}</main>
-            <Footer />
+            <Footer lang={params.lang} />
           </div>
 
           <Analytics />

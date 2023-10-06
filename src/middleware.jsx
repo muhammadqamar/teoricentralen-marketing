@@ -4,11 +4,11 @@ import { NextResponse } from 'next/server'
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 
-let locales = [ 'en']
-let defaultLocale = 'en'
+let locales = ['sv', 'en']
+let defaultLocale = 'sv'
 
 
-function getLocale(request){
+function getLocale(request) {
   // Negotiator expects plain object so we need to transform headers
   const negotiatorHeaders = {}
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value))
@@ -29,36 +29,36 @@ function getLocale(request){
 export function middleware(request) {
 
   const pathname = request.nextUrl.pathname
-  // console.log(pathname)
-  // // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
-  // // If you have one
-  // if (
-  //   [
-  //     '/manifest.json',
-  //     '/favicon.ico',
-  //     // Your other files in `public`
-  //   ].includes(pathname)
-  // )
-  //   return
-  // const defaulturls= ['/korkortsbloggen','/ordlista','/recensioner','/kontakt','/faktabanken','/utbildningar','/om-oss','/integritetspolicy','/utbildningar','/anvandarvillkor','/demo']
-  // // Check if there is any supported locale in the pathname
-  // const pathnameIsMissingLocale = locales.every(
-  //   (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
-  // )
+
+  // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
+  // If you have one
+  if (
+    [
+      '/manifest.json',
+      '/favicon.ico',
+      // Your other files in `public`
+    ].includes(pathname)
+  )
+    return
+  const defaulturls = ['/korkortsbloggen', '/ordlista', '/recensioner', '/kontakt', '/faktabanken', '/utbildningar', '/om-oss', '/integritetspolicy', '/utbildningar', '/anvandarvillkor', '/demo']
+  // Check if there is any supported locale in the pathname
+  const pathnameIsMissingLocale = locales.every(
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  )
 
   // Redirect if there is no locale
-  // if (pathnameIsMissingLocale) {
-  //   const locale = getLocale(request)
+  if (pathnameIsMissingLocale) {
+    const locale = getLocale(request)
 
-  //   // e.g. incoming request is /products
-  //   // The new URL is now /en-US/products
-  //   return NextResponse.redirect(
-  //     new URL(
-  //       `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
-  //       request.url
-  //     )
-  //   )
-  // }
+    // e.g. incoming request is /products
+    // The new URL is now /en-US/products
+    return NextResponse.redirect(
+      new URL(
+        `/${'sv'}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
+        request.url
+      )
+    )
+  }
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-url', request.url);
 

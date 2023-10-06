@@ -1,5 +1,5 @@
 import Testimonials from '@/components/Testimonials/Testimonials'
-import { getLocales } from '../../../../getLocales'
+import { getLocales } from '@/helpers/getLocales'
 
 export const metadata = {
   title: 'Recensioner',
@@ -13,7 +13,7 @@ export const metadata = {
   },
 }
 
-export default async function Reviews() {
-  const lang = await getLocales('en')
+export default async function Reviews({params}) {
+  const lang = await getLocales(params.lang)
   return <Testimonials data={lang?.testimonials} />
 }
