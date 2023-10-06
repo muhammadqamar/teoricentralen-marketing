@@ -5,6 +5,8 @@ import { Navigation } from '@/components/Navigation'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logoTeoricentralen from '@/images/logos/mark.svg'
+import { Button } from '@/components/Button'
+import { Container } from '@/components/Container'
 import bgHome from '@/images/backgrounds/alg.jpg'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -58,18 +60,14 @@ function HomeHero() {
           </FadeIn>
 
           <FadeIn className="mt-10 flex items-center justify-center gap-x-6">
-            <Link
-              href="#"
-              className="rounded-full bg-primary px-3.5 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-            >
-              Kom igång
-            </Link>
-            <Link
-              href="#"
-              className="text-sm font-semibold leading-6 text-white"
-            >
-              Läs mer <span aria-hidden="true">→</span>
-            </Link>
+            <div className="flex max-w-md flex-col gap-2">
+              <Button href="https://app.teoricentralen.se" variant="primary">
+                Logga in som elev
+              </Button>
+              <Button href="https://admin.teoricentralen.se" variant="success">
+                Logga in som trafikskola
+              </Button>
+            </div>
           </FadeIn>
         </div>
       </div>
