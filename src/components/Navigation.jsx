@@ -100,7 +100,7 @@ export function Navigation({ lang }) {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -109,10 +109,10 @@ export function Navigation({ lang }) {
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover>
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white">
-              Product
+            <Popover.Button className="flex items-center gap-x-1 text-sm font-bold leading-6 text-white">
+              Utbildningar
               <ChevronDownIcon
-                className="h-5 w-5 flex-none text-gray-400"
+                className="h-5 w-5 flex-none text-white"
                 aria-hidden="true"
               />
             </Popover.Button>
@@ -176,9 +176,11 @@ export function Navigation({ lang }) {
           <NavItem href="/utbildningar" locale={lang}>
             Utbildningar
           </NavItem>
+
           <NavItem href="/korkortsfragor" locale={lang}>
             Körkortsfrågor
           </NavItem>
+
           <NavItem href="/recensioner" locale={lang}>
             Recensioner
           </NavItem>
