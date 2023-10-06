@@ -47,7 +47,7 @@ export const metadata = {
         alt: 'Teoricentralen',
       },
     ],
-    locale: 'sv_SE',
+    locale: 'sv',
     type: 'website',
   },
 }
