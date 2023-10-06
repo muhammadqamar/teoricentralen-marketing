@@ -18,11 +18,11 @@ const Index = ({ data }) => {
           {data?.map((fact, index) => (
             <Link
               className="!m-0"
-              href={`/faktabanken/${fact.slug}`}
+              href={`/faktabanken/${fact?.slug}`}
               key={fact.slug}
             >
               <div className=" w-full rounded-lg bg-white px-[25px] py-5 shadow-md">
-                <p className="mb-2">{fact.title}</p>
+                <p className="mb-2">{fact?.title}</p>
 
                 {fact?.date && (
                   <Card as="article">

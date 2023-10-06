@@ -48,6 +48,8 @@ export function Footer() {
               src={logoTeoricentralen}
               alt="Teoricentralen"
               className="h-7"
+              width={20}
+              height={20}
               unoptimized
             />
             <p className="text-sm leading-6 text-gray-600">
@@ -103,6 +105,8 @@ export function Footer() {
                               src={language.flag}
                               alt="Teoricentralen"
                               className="h-5"
+                              width={20}
+                              height={20}
                               unoptimized
                             />
                             <span

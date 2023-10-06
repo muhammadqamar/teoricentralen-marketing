@@ -14,12 +14,12 @@ export function SimpleLayout({ bgImage, title, intro, children }) {
           <div className="before:content inset-0 h-full before:absolute before:top-0 before:z-[1] before:h-full before:w-full before:bg-black before:opacity-[0.6] ">
             <Image
               src={bgImage}
-              // placeholder="blur"
+              placeholder="blur"
               priority={true}
               alt=""
               fill
               sizes="(min-width: 1024px) 32rem, 20rem"
-              className="inset-0 aspect-square h-full w-full bg-zinc-100 object-cover dark:bg-zinc-800"
+              className="inset-0 aspect-square h-full w-full animate-pulse bg-zinc-100 object-cover dark:bg-zinc-800"
             />
           </div>
         )}
