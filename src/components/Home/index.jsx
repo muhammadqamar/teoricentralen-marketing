@@ -31,6 +31,8 @@ export default async function Home({ data }) {
     <>
       <Partners />
 
+      <Example />
+
       <FeatureRight />
 
       <FeatureLeft />
@@ -39,6 +41,71 @@ export default async function Home({ data }) {
 
       <FeatureLeft />
     </>
+  )
+}
+
+function Example() {
+  return (
+    <div className="bg-black py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2">
+          <div className="mx-auto w-full max-w-xl lg:mx-0">
+            <h2 className="text-3xl font-bold tracking-tight text-white">
+              Betrodd av trafikutbildare i Sverige
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-gray-300">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
+              egestas tempus tellus etiam sed. Quam a scelerisque amet
+              ullamcorper eu enim et fermentum, augue.
+            </p>
+          </div>
+          <div className="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-12 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:pl-8">
+            <img
+              className="max-h-12 w-full object-contain object-left"
+              src="https://tailwindui.com/img/logos/tuple-logo-white.svg"
+              alt="Tuple"
+              width={105}
+              height={48}
+            />
+            <img
+              className="max-h-12 w-full object-contain object-left"
+              src="https://tailwindui.com/img/logos/reform-logo-white.svg"
+              alt="Reform"
+              width={104}
+              height={48}
+            />
+            <img
+              className="max-h-12 w-full object-contain object-left"
+              src="https://tailwindui.com/img/logos/savvycal-logo-white.svg"
+              alt="SavvyCal"
+              width={140}
+              height={48}
+            />
+            <img
+              className="max-h-12 w-full object-contain object-left"
+              src="https://tailwindui.com/img/logos/laravel-logo-white.svg"
+              alt="Laravel"
+              width={136}
+              height={48}
+            />
+            <img
+              className="max-h-12 w-full object-contain object-left"
+              src="https://tailwindui.com/img/logos/transistor-logo-white.svg"
+              alt="Transistor"
+              width={158}
+              height={48}
+            />
+            <img
+              className="max-h-12 w-full object-contain object-left"
+              src="https://tailwindui.com/img/logos/statamic-logo-white.svg"
+              alt="Statamic"
+              width={147}
+              height={48}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
