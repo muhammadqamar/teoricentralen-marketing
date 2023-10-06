@@ -31,6 +31,9 @@ const Index = ({ data }) => {
                     alt=""
                     fill
                     className="inset-0 aspect-square h-full w-full animate-pulse  "
+                    placeholder={
+                      'data:image/jpeg;base64,/9j/4gxYSUNDX1BST0ZJTEUAAQEAAAxITGlub...'
+                    }
                   />
                 </div>
                 <div className=" bg-white px-5 py-4 ">

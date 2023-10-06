@@ -48,8 +48,8 @@ export function Footer({ lang }) {
               src={logoTeoricentralen}
               alt="Teoricentralen"
               className="h-7"
-              width={20}
-              height={20}
+              width={28}
+              height={28}
               unoptimized
             />
             <p className="text-sm leading-6 text-gray-600">
@@ -63,7 +63,8 @@ export function Footer({ lang }) {
                     <Image
                       src={selected?.flag}
                       alt="Teoricentralen"
-                      className="h-5 w-5"
+                      width={20}
+                      height={20}
                       unoptimized
                     />
                     <span className="block truncate">{selected?.name}</span>
@@ -100,7 +101,6 @@ export function Footer({ lang }) {
                             <Image
                               src={language.flag}
                               alt="Teoricentralen"
-                              className="h-5"
                               width={20}
                               height={20}
                               unoptimized
@@ -110,7 +110,7 @@ export function Footer({ lang }) {
                                 active ? 'font-medium' : 'font-normal'
                               }`}
                             >
-                              {language.name}
+                              {language?.name}
                             </span>
                           </div>
                         </Link>
