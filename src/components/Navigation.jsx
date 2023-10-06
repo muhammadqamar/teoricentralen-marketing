@@ -8,15 +8,19 @@ import {
   SquaresPlusIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
+
 import {
   ChevronDownIcon,
   PhoneIcon,
   PlayCircleIcon,
   RectangleGroupIcon,
 } from '@heroicons/react/20/solid'
-import Image from 'next/image'
+
 import { Button } from '@/components/Button'
+import { usePathname } from 'next/navigation'
 import logoTeoricentralen from '@/images/logos/mark.svg'
+import clsx from 'clsx'
+import Image from 'next/image'
 import Link from 'next/link'
 
 const products = [
@@ -45,11 +49,29 @@ const products = [
     icon: SquaresPlusIcon,
   },
 ]
+
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
   { name: 'Contact sales', href: '#', icon: PhoneIcon },
   { name: 'View all products', href: '#', icon: RectangleGroupIcon },
 ]
+
+function NavItem({ href, lang, children }) {
+  let isActive = usePathname() === href
+
+  return (
+    <Link
+      href={href}
+      className={clsx(
+        'relative block text-sm font-bold leading-6 transition hover:text-primary',
+        isActive ? 'text-primary' : 'text-white',
+      )}
+      locale={lang}
+    >
+      {children}
+    </Link>
+  )
+}
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -151,15 +173,15 @@ export function Navigation({ lang }) {
             </Transition>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-white">
-            Features
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-white">
-            Marketplace
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-white">
-            Company
-          </a>
+          <NavItem href="/utbildningar" locale={lang}>
+            Utbildningar
+          </NavItem>
+          <NavItem href="/korkortsfragor" locale={lang}>
+            Körkortsfrågor
+          </NavItem>
+          <NavItem href="/recensioner" locale={lang}>
+            Recensioner
+          </NavItem>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Button href="/demo" variant="success">
@@ -176,14 +198,16 @@ export function Navigation({ lang }) {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
+            <Link href={'/'} className="-m-1.5 p-1.5" locale={lang}>
+              <span className="sr-only">Teoricentralen</span>
+              <Image
+                src={logoTeoricentralen}
+                alt="Teoricentralen"
                 className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
+                unoptimized
               />
-            </a>
+            </Link>
+
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"

@@ -6,7 +6,7 @@ export function SimpleLayout({ bgImage, title, intro, children }) {
   return (
     <>
       <div
-        className={`relative  left-0 top-0 h-[650px] w-full overflow-hidden  ${
+        className={`relative left-0 top-0 h-96 w-full overflow-hidden ${
           bgImage && ''
         }`}
       >

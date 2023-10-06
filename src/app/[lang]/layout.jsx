@@ -1,5 +1,4 @@
 import { Header } from '@/components/Header'
-import { Header2 } from '@/components/Header2'
 import { Footer } from '@/components/Footer'
 import { Mulish } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
@@ -77,22 +76,22 @@ export function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'sv' }]
 }
 
-export default function RootLayout({ children, params }) {
+export default function RootLayout({ children, params: { lang } }) {
   return (
     <html
-      lang={params.lang}
+      lang={lang}
       className={`h-full antialiased ${mulish.variable}`}
       suppressHydrationWarning
     >
       <body className="flex h-full flex-col bg-zinc-50">
-        <NextIntlClientProvider locale={params.lang}>
+        <NextIntlClientProvider locale={lang}>
           <div className="flex min-h-full flex-col">
-            {/* <Header lang={params.lang} /> */}
-            <Header2 lang={params.lang} />
+            <Header lang={lang} />
             <main>{children}</main>
-            <Footer lang={params.lang} />
+            <Footer lang={lang} />
           </div>
 
+          {/* Vercel Analytics */}
           <Analytics />
         </NextIntlClientProvider>
       </body>
