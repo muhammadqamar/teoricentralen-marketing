@@ -15,7 +15,7 @@ export function Header({ lang }) {
     <div className="bg-dark">
       <Navigation locale={lang} />
 
-      <div className="relative isolate overflow-hidden pt-14">
+      <div className="relative isolate overflow-hidden pt-24">
         <HomeHero />
       </div>
     </div>
@@ -43,21 +43,21 @@ function HomeHero() {
         />
       </div>
 
-      <div className="mx-auto max-w-2xl py-32 sm:py-44">
+      <div className="mx-auto max-w-xl py-32">
         <div className="text-center">
           <FadeIn className="flex items-center justify-center gap-x-8">
-            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
+            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
               Framtidens trafikutbildning är här.
             </h1>
           </FadeIn>
 
           <FadeIn className="flex items-center justify-center gap-x-8">
-            <p className="mt-4 text-lg leading-8 text-white">
+            <p className="mt-4 text-lg font-medium leading-8 text-white">
               Utvecklad tillsammans med trafikskolor i Sverige.
             </p>
           </FadeIn>
 
-          <div className="mt-10 flex items-center justify-center gap-x-6">
+          <FadeIn className="mt-10 flex items-center justify-center gap-x-6">
             <Link
               href="#"
               className="rounded-full bg-primary px-3.5 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
@@ -70,7 +70,7 @@ function HomeHero() {
             >
               Läs mer <span aria-hidden="true">→</span>
             </Link>
-          </div>
+          </FadeIn>
         </div>
       </div>
 

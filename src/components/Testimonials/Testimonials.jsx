@@ -2,7 +2,7 @@ import Review from './Review'
 
 export default function Testimonials({ data }) {
   return (
-    <div className="relative isolate pb-32 pt-24 sm:pt-32">
+    <div className="relative isolate pb-32 pt-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
           <h2 className="text-lg font-extrabold uppercase leading-6 tracking-tight text-primary">

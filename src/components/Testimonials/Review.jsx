@@ -4,7 +4,7 @@ import christian from '@/images/testimonials/christian.jpg'
 
 const Review = ({ testimonial }) => {
   return (
-    <figure className="rounded-lg bg-white p-6 shadow ring-1 ring-dark/5">
+    <figure className="rounded-md bg-white p-6 shadow-sm ring-1 ring-dark/5">
       <blockquote className="text-gray-900">
         <p>{`“${testimonial.title}”`}</p>
       </blockquote>

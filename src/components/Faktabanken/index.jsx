@@ -22,8 +22,8 @@ const Index = ({ data }) => {
               href={`/faktabanken/${fact?.slug}`}
               key={fact.slug}
             >
-              <div className=" h-full min-h-[200px] w-full overflow-hidden rounded-lg bg-white  shadow-md">
-                <div className=" relative  h-[100px] w-full ">
+              <div className="h-full min-h-[200px] w-full overflow-hidden rounded-md bg-white shadow-md">
+                <div className="relative h-[100px] w-full">
                   <Image
                     src={fact?.image?.url || PlaceholderImg}
                     loading="lazy"

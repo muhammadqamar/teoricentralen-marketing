@@ -107,6 +107,7 @@ export function Navigation({ lang }) {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
+
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover>
             <Popover.Button className="flex items-center gap-x-1 text-sm font-bold leading-6 text-white">

@@ -7,22 +7,6 @@ export default async function Home({ data }) {
   return (
     <>
       <Container className="mt-16">
-        <div className="max-w-2xl">
-          <FadeIn className="flex items-center gap-x-8">
-            <h1 className="text-4xl font-extrabold tracking-tight text-dark sm:text-5xl">
-              {data.heading}
-            </h1>
-          </FadeIn>
-
-          <FadeIn className="flex items-center gap-x-8">
-            <p className="mt-6 text-lg font-semibold text-gray-600">
-              Utvecklad tillsammans med trafikskolor i Sverige.
-            </p>
-          </FadeIn>
-        </div>
-      </Container>
-
-      <Container className="mt-16">
         <div className="flex max-w-sm flex-col gap-2">
           <Button href="https://app.teoricentralen.se" variant="primary">
             Logga in som elev

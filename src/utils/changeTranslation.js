@@ -24,7 +24,7 @@ const ChangeTranslation = ({ lang }) => {
   return (
     <Menu>
       <div className="top-16 w-56 text-left">
-        <Menu.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+        <Menu.Button className="relative w-full cursor-default rounded-md bg-white py-2 pl-3 pr-10 text-left shadow focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
           <div className="flex items-center gap-2">
             <Image
               src={selected?.flag}
@@ -41,7 +41,7 @@ const ChangeTranslation = ({ lang }) => {
             />
           </span>
         </Menu.Button>
-        <Menu.Items className="relative mt-2 w-full cursor-default rounded-lg bg-white text-left shadow-md focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+        <Menu.Items className="relative mt-2 w-full cursor-default rounded-md bg-white text-left shadow-md focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
           {language.map((language, languageIdx) => (
             <Menu.Item
               key={languageIdx}
