@@ -80,7 +80,7 @@ export default function RootLayout({children, params}) {
       <body className="flex flex-col h-full bg-zinc-50">
         <NextIntlClientProvider  locale={params.lang}>
           <div className="flex flex-col min-h-full">
-            <Header />
+            <Header lang={params.lang} />
             <main>{children}</main>
             <Footer lang={params.lang}  />
           </div>

@@ -1,9 +1,9 @@
 'use client'
 
 import { usePathname } from 'next-intl/client';
-import Link from 'next/link';
+import Link from 'next-intl/link';
 import logoTeoricentralen from '@/images/logos/mark.svg'
-import  ChangeTranslation  from '@/utils/changeTranslation'
+import ChangeTranslation from '@/utils/changeTranslation'
 import Image from 'next/image'
 
 const navigation = {
@@ -23,7 +23,7 @@ const navigation = {
 
 
 
-export function Footer(props) {
+export function Footer({ lang }) {
   const path = usePathname()
   return (
     <footer className="flex-none mt-32 bg-gray-100">
@@ -42,7 +42,7 @@ export function Footer(props) {
               Plattformen som hjälper trafikskolor att växa. Utvecklat
               tillsammans med Trafikskolor i Sverige.
             </p>
-            <ChangeTranslation  {...props} />
+            <ChangeTranslation lang={lang} />
           </div>
           <div className="grid grid-cols-2 gap-8 mt-16 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
@@ -55,8 +55,9 @@ export function Footer(props) {
                     <li key={item.name}>
                       <Link
                         href={
-                          path.includes('/en') ? '/en' + item.href : item.href
+                          item.href
                         }
+                        locale={lang}
                         className="text-sm leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
@@ -74,8 +75,9 @@ export function Footer(props) {
                     <li key={item.name}>
                       <Link
                         href={
-                          path.includes('/en') ? '/en' + item.href : item.href
+                          item.href
                         }
+                        locale={lang}
                         className="text-sm leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
@@ -95,8 +97,9 @@ export function Footer(props) {
                     <li key={item.name}>
                       <Link
                         href={
-                          path.includes('/en') ? '/en' + item.href : item.href
+                          item.href
                         }
+                        locale={lang}
                         className="text-sm leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
@@ -114,8 +117,9 @@ export function Footer(props) {
                     <li key={item.name}>
                       <Link
                         href={
-                          path.includes('/en') ? '/en' + item.href : item.href
+                          item.href
                         }
+                        locale={lang}
                         className="text-sm leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}

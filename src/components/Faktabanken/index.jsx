@@ -1,8 +1,7 @@
 import React from 'react'
 import { SimpleLayout } from '../SimpleLayout'
-import Link from 'next/link'
+import Link from 'next-intl/link';
 import { Card } from '../Card'
-import { headers } from 'next/headers'
 import { ContentDateFormat } from '@/lib/formatDate'
 import portraitImage from '@/images/blog-image.jpg'
 import Image from 'next/image'
@@ -30,10 +29,10 @@ const Index = ({ data }) => {
                     loading="lazy"
                     alt=""
                     fill
-                    className="inset-0 aspect-square h-full w-full animate-pulse  "
+                    className="inset-0 w-full h-full aspect-square animate-pulse "
                   />
                 </div>
-                <div className=" bg-white px-5 py-4 ">
+                <div className="px-5 py-4 bg-white ">
                   <p className="mb-2">{fact?.title}</p>
                   {fact?.date && (
                     <Card as="article">
