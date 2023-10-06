@@ -63,6 +63,7 @@ function NavItem({ href, lang, children }) {
 export function Header({ lang }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const path = usePathname()
+
   return (
     <header className="relative isolate z-10">
       <nav

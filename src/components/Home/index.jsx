@@ -13,6 +13,7 @@ export default async function Home({ data }) {
               {data.heading}
             </h1>
           </FadeIn>
+
           <FadeIn className="flex items-center gap-x-8">
             <p className="mt-6 text-lg font-semibold text-gray-600">
               Utvecklad tillsammans med trafikskolor i Sverige.

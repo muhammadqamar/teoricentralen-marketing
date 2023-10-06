@@ -15,6 +15,7 @@ import {
   RectangleGroupIcon,
 } from '@heroicons/react/20/solid'
 import Image from 'next/image'
+import { Button } from '@/components/Button'
 import logoTeoricentralen from '@/images/logos/mark.svg'
 import Link from 'next/link'
 
@@ -64,14 +65,15 @@ export function Navigation({ lang }) {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link href={'/'} className="-m-1.5 p-1.5" locale={lang}>
             <span className="sr-only">Teoricentralen</span>
-            <img
+            <Image
+              src={logoTeoricentralen}
+              alt="Teoricentralen"
               className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
+              unoptimized
             />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -160,9 +162,9 @@ export function Navigation({ lang }) {
           </a>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-white">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          <Button href="/demo" variant="success">
+            Boka demo
+          </Button>
         </div>
       </nav>
       <Dialog

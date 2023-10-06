@@ -7,6 +7,7 @@ import logoTeoricentralen from '@/images/logos/mark.svg'
 import { Navigation } from '@/components/Navigation'
 import Link from 'next/link'
 import Image from 'next/image'
+import { FadeIn } from './FadeIn'
 
 export function Header2({ lang }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -33,29 +34,33 @@ export function Header2({ lang }) {
             }}
           />
         </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div className="mx-auto max-w-2xl py-32 sm:py-44">
           <div className="text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
-              Framtidens trafikutbildning är här.
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-300">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-              fugiat aliqua.
-            </p>
+            <FadeIn className="flex items-center justify-center gap-x-8">
+              <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+                Plattformen som hjälper trafikskolor att växa.
+              </h1>
+            </FadeIn>
+
+            <FadeIn className="flex items-center justify-center gap-x-8">
+              <p className="mt-4 text-lg leading-8 text-gray-300">
+                Utvecklad tillsammans med trafikskolor i Sverige.
+              </p>
+            </FadeIn>
+
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
+              <Link
                 href="#"
-                className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                className="rounded-full bg-primary px-3.5 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
               >
-                Get started
-              </a>
-              <a
+                Kom igång
+              </Link>
+              <Link
                 href="#"
                 className="text-sm font-semibold leading-6 text-white"
               >
-                Learn more <span aria-hidden="true">→</span>
-              </a>
+                Läs mer <span aria-hidden="true">→</span>
+              </Link>
             </div>
           </div>
         </div>
