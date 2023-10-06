@@ -1,20 +1,19 @@
-import Image from 'next/image'
-
 import { Container } from '@/components/Container'
-import portraitImage from '@/images/logo.png'
 
 export const metadata = {
   title: 'Användarvillkor',
   description: 'Framtidens trafikutbildning är här',
 }
 
-export default function TermsOfUse() {
+export default async function TermsOfUse({ params: { lang } }) {
+  console.log(lang)
+
   return (
     <Container className="mt-16">
-      <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+      <h1 className="text-4xl font-bold tracking-tight text-dark sm:text-5xl">
         Användarvillkor
       </h1>
-      <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+      <div className="mt-6 text-base space-y-7 text-zinc-600">
         <p>
           Din verksamhet, dina villkor. Vi hjälper dig att ta din trafikskola
           till nästa nivå. Se till att du har de verktyg som krävs för att

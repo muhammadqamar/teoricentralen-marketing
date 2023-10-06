@@ -9,6 +9,7 @@ import { headers } from 'next/headers'
 export async function generateMetadata() {
   const headersList = headers()
   const header_url = new URL(headersList.get('x-url') || '')
+
   return {
     title: {
       template: '%s - Teoricentralen',
@@ -23,12 +24,12 @@ export async function generateMetadata() {
       address: false,
       telephone: false,
     },
-    metadataBase: new URL(header_url.href || process.env.NEXT_PUBLIC_SITE_URL),
+    metadataBase: process.env.NEXT_PUBLIC_SITE_URL,
     alternates: {
-      canonical: header_url.href?.replace('/en', ''),
+      canonical: header_url.href?.replace('/en', '/sv'),
       languages: {
-        sv: header_url.href?.replace('/en', ''),
-        en: header_url.origin + '/en' + header_url.pathname,
+        sv: header_url.href?.replace('/en', '/sv'),
+        en: header_url.href?.replace('/sv', '/en')
       },
     },
     openGraph: {
@@ -56,20 +57,23 @@ const mulish = Mulish({
   variable: '--font-mulish',
 })
 
-export default function RootLayout({ children, params }) {
+export function generateStaticParams() {
+  return [{ locale: 'sv' }, { locale: 'en' }]
+}
 
+export default function RootLayout({ children, params: { lang } }) {
   return (
     <html
-      lang={params.lang}
+      lang={lang}
       className={`h-full antialiased ${mulish.variable}`}
       suppressHydrationWarning
     >
       <body className="flex flex-col h-full bg-zinc-50">
-        <NextIntlClientProvider lang={params.lang} locale={'en'}>
+        <NextIntlClientProvider lang={lang} locale={'en'}>
           <div className="flex flex-col min-h-full">
             <Header />
             <main>{children}</main>
-            <Footer lang={params.lang} />
+            <Footer lang={lang} />
           </div>
 
           <Analytics />

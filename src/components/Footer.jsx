@@ -18,10 +18,7 @@ const navigation = {
     { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
     // { name: 'Ordlista', href: '/ordlista' },
   ],
-  company: [
-    { name: 'Om oss', href: '/om-oss' },
-    { name: 'Jobba med oss', href: '/jobba-med-oss' },
-  ],
+  company: [{ name: 'Om oss', href: '/om-oss' }],
   support: [{ name: 'Kontakta oss', href: '/kontakt' }],
   legal: [
     { name: 'Användarvillkor', href: '/anvandarvillkor' },
@@ -79,13 +76,14 @@ export function Footer({ lang }) {
                 <Menu.Items className="relative mt-[10px] w-full cursor-default rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                   {language.map((language, languageIdx) => (
                     <Menu.Item
+                      key={languageIdx}
                       className={({ active }) =>
                         `relative cursor-default select-none py-2 pl-3 pr-4 ${active
                           ? 'bg-amber-100 text-amber-900'
                           : 'text-gray-900'
                         }`
                       }
-                      key={languageIdx}
+
                     >
                       {({ active }) => (
                         <Link

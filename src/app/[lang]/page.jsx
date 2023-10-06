@@ -1,8 +1,8 @@
 import Home from '@/components/Home'
-import { getLocales } from '@/helpers/getLocales'
+import { getTranslations } from '../../../getTranslations'
 
 export default async function Reviews({ params }) {
-  const lang = await getLocales(params.lang)
+  const lang = await getTranslations(params.lang)
 
   return <Home data={lang?.home || ''} />
 }

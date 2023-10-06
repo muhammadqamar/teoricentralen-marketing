@@ -10,7 +10,6 @@ const POST_GRAPHQL_FIELDS = `
     json
 
   }
-
 `
 
 async function fetchGraphQL(query, preview = false) {
@@ -33,11 +32,11 @@ async function fetchGraphQL(query, preview = false) {
   ).then((response) => response.json())
 }
 
-function extractPost(fetchResponse) {
+function extractFact(fetchResponse) {
   return fetchResponse?.data?.faktabankenCollection?.items?.[0]
 }
 
-function extractPostEntries(fetchResponse) {
+function extractFactEntries(fetchResponse) {
   return fetchResponse?.data?.faktabankenCollection?.items
 }
 
@@ -58,48 +57,35 @@ export async function getPreviewPostBySlug(slug) {
 export async function getAllFacts(isDraftMode, locale) {
   const entries = await fetchGraphQL(
     `query {
-        faktabankenCollection(locale: "${locale}" , where: { slug_exists: true }, order: date_DESC, preview: ${
-          isDraftMode ? 'true' : 'false'
-        }) {
+      faktabankenCollection(locale: "${locale}" , where: { slug_exists: true }, order: date_DESC, preview: ${
+        isDraftMode ? 'true' : 'false'
+      }) {
         items {
-            ${POST_GRAPHQL_FIELDS}
+          ${POST_GRAPHQL_FIELDS}
         }
-
-        }
+      }
     }`,
     isDraftMode,
   )
 
-  return extractPostEntries(entries)
+  return extractFactEntries(entries)
 }
 
-export async function getPostAndMorePosts(slug, preview, locale) {
+export async function getFact(slug, preview, locale) {
   const entry = await fetchGraphQL(
     `query {
-    faktabankenCollection(locale: "${locale}", where: { slug: "${slug}" }, preview: ${
-      preview ? 'true' : 'false'
-    }, limit: 1) {
-      items {
-        ${POST_GRAPHQL_FIELDS}
-      }
-    }
-  }`,
-    preview,
-  )
-  const entries = await fetchGraphQL(
-    `query {
-        faktabankenCollection(where: { slug_not_in: "${slug}" }, order: date_DESC, preview: ${
-          preview ? 'true' : 'false'
-        }, limit: 2) {
+      faktabankenCollection(locale: "${locale}", where: { slug: "${slug}" }, preview: ${
+        preview ? 'true' : 'false'
+      }, limit: 1) {
         items {
-            ${POST_GRAPHQL_FIELDS}
+          ${POST_GRAPHQL_FIELDS}
         }
-        }
+      }
     }`,
     preview,
   )
+
   return {
-    post: extractPost(entry),
-    morePosts: extractPostEntries(entries),
+    fact: extractFact(entry),
   }
 }
