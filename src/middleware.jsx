@@ -1,42 +1,23 @@
-import { NextResponse } from 'next/server'
+import createIntlMiddleware from 'next-intl/middleware';
 
-let locales = ['sv', 'en']
 
 export function middleware(request) {
-
-  const pathname = request.nextUrl.pathname
-  if (
-    [
-      '/manifest.json',
-      '/favicon.ico',
-    ].includes(pathname)
-  )
-    return
-  const pathnameIsMissingLocale = locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
-  )
-
-  if (pathnameIsMissingLocale) {
-
-
-    return NextResponse.redirect(
-      new URL(
-        `/${'sv'}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
-        request.url
-      )
-    )
-  }
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set('x-url', request.url);
-
-  return NextResponse.next({
-    request: {
-
-      headers: requestHeaders,
-    }
+  const defaultLocale = request.headers.get('x-default-locale') || 'sv';
+  const handleI18nRouting = createIntlMiddleware({
+    locales: ['en', 'sv'],
+    defaultLocale
   });
-}
 
+  const response = handleI18nRouting(request);
+  // console.log('qamar', response.headers.get('link'))
+
+  response.headers.set('x-default-locale', defaultLocale);
+  // const requestHeaders = new Headers(request.headers);
+  response.headers.set('x-url', request.url);
+
+
+  return response;
+}
 export const config = {
 
   matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
