@@ -3,9 +3,17 @@
 @import './prism.css';
 @import 'tailwindcss/utilities';
 
-.document-text p {
-  @apply !mb-4;
+.contentful-render {
+  margin:  0
 }
-.document-text h2 {
+.contentful-render  p {
+  @apply py-[5px]
+}
+
+.contentful-render  h2 {
   @apply !mb-4 text-lg font-semibold leading-6 text-dark;
+}
+
+.contentful-render  ul li {
+  @apply list-disc
 }

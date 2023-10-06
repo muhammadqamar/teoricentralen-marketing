@@ -1,27 +1,22 @@
 import FaktabankenSlug from '@/components/Faktabanken/slug'
-import { getAllFacts, getPostAndMorePosts } from '@/lib/facts'
+import { getAllFacts, getFact } from '@/lib/facts'
 import { draftMode } from 'next/headers'
 
-export async function generateStaticParams({ params }) {
-  const paramsData = params.slug
-  console.log('paramsData', paramsData)
-  const allFacts = await getAllFacts(false, 'en')
+export async function generateStaticParams({params}) {
+
+  const allFacts = await getAllFacts(false, params.locale)
   return allFacts?.map((fact) => ({
     slug: fact.slug,
   }))
 }
 
 export default async function Page({ params }) {
-  const { sulg } = params
-
   const { isEnabled } = draftMode()
-  const { post, morePosts } = await getPostAndMorePosts(
+  const { fact } = await getFact(
     params.slug,
     isEnabled,
-    'en',
+    params.lang
   )
 
-  console.log('params.slug', post)
-
-  return <FaktabankenSlug data={post} />
+  return <FaktabankenSlug data={fact} />
 }

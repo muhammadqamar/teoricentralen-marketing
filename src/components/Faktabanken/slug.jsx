@@ -1,6 +1,6 @@
 import React from 'react'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
+import { ContentfulRender } from '@/utils/contentful'
 import { SimpleLayout } from '../SimpleLayout'
 import { Card } from '../Card'
 import { ContentDateFormat } from '@/lib/formatDate'
@@ -10,10 +10,10 @@ const Slug = ({ data }) => {
   return (
     <SimpleLayout
       bgImage={data?.image === null ? portraitImage : data?.image?.url}
-      title={data.title}
+      title={data?.title}
     >
-      <div className="container mx-auto px-5 md:border-l md:border-zinc-100 md:dark:border-zinc-700/40">
-        <div className="flex max-w-3xl flex-col space-y-16">
+      <div className="container px-5 mx-auto">
+        <div className="flex flex-col max-w-3xl space-y-16">
           {data?.date && (
             <Card as="article">
               <Card.Eyebrow
@@ -28,10 +28,7 @@ const Slug = ({ data }) => {
               </Card.Eyebrow>
             </Card>
           )}
-
-          <div className="document-text !m-0 ">
-            {documentToReactComponents(data?.content?.json)}
-          </div>
+          {ContentfulRender(data?.content?.json)}
         </div>
       </div>
     </SimpleLayout>
