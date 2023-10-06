@@ -12,8 +12,8 @@ const Slug = ({ data }) => {
       bgImage={data?.image === null ? portraitImage : data?.image?.url}
       title={data?.title}
     >
-      <div className="container px-5 mx-auto">
-        <div className="flex flex-col max-w-3xl space-y-16">
+      <div className="container mx-auto px-5">
+        <div className="flex max-w-3xl flex-col space-y-16">
           {data?.date && (
             <Card as="article">
               <Card.Eyebrow

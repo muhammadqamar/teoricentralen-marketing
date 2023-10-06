@@ -7,8 +7,10 @@ const POST_GRAPHQL_FIELDS = `
   }
   content {
     json
-
-  }
+ }
+ sys {
+  publishedAt
+}
 `
 
 async function fetchGraphQL(query, preview = false) {
@@ -56,7 +58,7 @@ export async function getPreviewPostBySlug(slug) {
 export async function getAllFacts(isDraftMode, locale) {
   const entries = await fetchGraphQL(
     `query {
-      faktabankenCollection(locale: "${locale}" , where: { slug_exists: true }, order: date_DESC, preview: ${
+      faktabankenCollection(locale: "${locale}" , where: { slug_exists: true }, preview: ${
         isDraftMode ? 'true' : 'false'
       }) {
         items {

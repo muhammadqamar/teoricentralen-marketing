@@ -8,15 +8,20 @@ import { headers } from 'next/headers'
 
 export async function generateMetadata() {
   const headersList = headers()
-  const links = headersList.get('link').split(', ');
-  const header_url = new URL(headersList.get('x-url') || '')
-  const linkObjects = [];
-  for (const link of links) {
-    const match = /<([^>]+)>;\s*rel="([^"]+)";\s*hreflang="([^"]+)"/.exec(link);
-    if (match) {
-      const [, url, rel, hreflang] = match;
-      const linkObject = { url, rel, hreflang };
-      linkObjects.push(linkObject);
+  const links = headersList.get('link')?.split(', ')
+  const linkObjects = []
+  let header_url
+  if (links) {
+    const header_url = new URL(headersList.get('x-url') || '')
+    for (const link of links) {
+      const match = /<([^>]+)>;\s*rel="([^"]+)";\s*hreflang="([^"]+)"/.exec(
+        link,
+      )
+      if (match) {
+        const [, url, rel, hreflang] = match
+        const linkObject = { url, rel, hreflang }
+        linkObjects.push(linkObject)
+      }
     }
   }
   return {
@@ -35,10 +40,11 @@ export async function generateMetadata() {
     },
     metadataBase: process.env.NEXT_PUBLIC_SITE_URL,
     alternates: {
-      canonical: linkObjects?.filter(data => data.hreflang === 'x-default')[0]?.url,
+      canonical: linkObjects?.filter((data) => data.hreflang === 'x-default')[0]
+        ?.url,
       languages: {
-        sv: linkObjects?.filter(data => data.hreflang === 'sv')[0]?.url,
-        en: linkObjects?.filter(data => data.hreflang === 'en')[0]?.url,
+        sv: linkObjects?.filter((data) => data.hreflang === 'sv')[0]?.url,
+        en: linkObjects?.filter((data) => data.hreflang === 'en')[0]?.url,
       },
     },
     openGraph: {
@@ -54,7 +60,7 @@ export async function generateMetadata() {
           alt: 'Teoricentralen',
         },
       ],
-      locale: header_url.href?.includes('/en') ? 'en' : 'sv',
+      locale: header_url?.href?.includes('/en') ? 'en' : 'sv',
       type: 'website',
     },
   }
@@ -67,22 +73,22 @@ const mulish = Mulish({
 })
 
 export function generateStaticParams() {
-  return [{lang: 'en'}, {lang: 'sv'}];
+  return [{ lang: 'en' }, { lang: 'sv' }]
 }
 
-export default function RootLayout({children, params}) {
+export default function RootLayout({ children, params }) {
   return (
     <html
       lang={params.lang}
       className={`h-full antialiased ${mulish.variable}`}
       suppressHydrationWarning
     >
-      <body className="flex flex-col h-full bg-zinc-50">
-        <NextIntlClientProvider  locale={params.lang}>
-          <div className="flex flex-col min-h-full">
+      <body className="flex h-full flex-col bg-zinc-50">
+        <NextIntlClientProvider locale={params.lang}>
+          <div className="flex min-h-full flex-col">
             <Header lang={params.lang} />
             <main>{children}</main>
-            <Footer lang={params.lang}  />
+            <Footer lang={params.lang} />
           </div>
 
           <Analytics />

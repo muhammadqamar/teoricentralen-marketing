@@ -37,7 +37,7 @@ const Index = ({ data }) => {
                 </div>
                 <div className="bg-white px-5 py-4 ">
                   <p className="mb-2">{fact?.title}</p>
-                  {fact?.date && (
+                  {fact?.sys?.publishedAt && (
                     <Card as="article">
                       <Card.Eyebrow
                         className="!m-0 !text-zinc-600"
@@ -45,7 +45,7 @@ const Index = ({ data }) => {
                         dateTime={fact?.date}
                         decorate
                       >
-                        {ContentDateFormat(fact?.date || '')}
+                        {ContentDateFormat(fact?.sys?.publishedAt || '')}
                       </Card.Eyebrow>
                     </Card>
                   )}
