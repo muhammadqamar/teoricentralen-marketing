@@ -29,7 +29,7 @@ const Index = ({ data }) => {
                     src={fact?.image?.url || PlaceholderImg}
                     loading="lazy"
                     alt=""
-                    layout="fill"
+                    fill
                     className="inset-0 aspect-square h-full w-full animate-pulse  "
                   />
                 </div>

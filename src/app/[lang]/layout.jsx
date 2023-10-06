@@ -26,10 +26,10 @@ export async function generateMetadata() {
     },
     metadataBase: process.env.NEXT_PUBLIC_SITE_URL,
     alternates: {
-      canonical: header_url.href?.replace('/en', '/sv'),
+      canonical: header_url?.href?.replace('/en', '/sv') || '',
       languages: {
         sv: header_url.href?.replace('/en', '/sv'),
-        en: header_url.href?.replace('/sv', '/en')
+        en: header_url.href?.replace('/sv', '/en'),
       },
     },
     openGraph: {
@@ -68,9 +68,9 @@ export default function RootLayout({ children, params: { lang } }) {
       className={`h-full antialiased ${mulish.variable}`}
       suppressHydrationWarning
     >
-      <body className="flex flex-col h-full bg-zinc-50">
+      <body className="flex h-full flex-col bg-zinc-50">
         <NextIntlClientProvider lang={lang} locale={'en'}>
-          <div className="flex flex-col min-h-full">
+          <div className="flex min-h-full flex-col">
             <Header />
             <main>{children}</main>
             <Footer lang={lang} />
