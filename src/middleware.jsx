@@ -1,20 +1,17 @@
-import createIntlMiddleware from 'next-intl/middleware';
-
+import createIntlMiddleware from 'next-intl/middleware'
 
 export function middleware(request) {
   const handleI18nRouting = createIntlMiddleware({
     locales: ['en', 'sv'],
-    defaultLocale:'sv',
+    defaultLocale: 'sv',
     // localeDetection: false
-  });
+  })
 
-  const response = handleI18nRouting(request);
-  response.headers.set('x-url', request.url);
+  const response = handleI18nRouting(request)
+  response.headers.set('x-url', request.url)
 
-
-  return response;
+  return response
 }
 export const config = {
-
   matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
 }
