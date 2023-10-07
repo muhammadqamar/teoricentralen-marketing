@@ -1,6 +1,4 @@
-import { getAllFacts, getFact } from '@/lib/facts'
-// import type { MetadataRoute } from "next";
-// import { MetadataRoute } from 'next'
+import { getAllFacts } from '@/lib/facts';
 
 async function sitemap() {
   const routes = []
@@ -31,7 +29,7 @@ async function sitemap() {
     })),
   )
 
-  // /sv
+  // /
   routes.push(
     ...singleStatic.map((route) => ({
       url: `${process.env.NEXT_PUBLIC_SITE_URL}/${route}`,
@@ -44,34 +42,19 @@ async function sitemap() {
       url: `${process.env.NEXT_PUBLIC_SITE_URL}/en/faktabanken/${fact.slug}`,
     })),
   )
-  // /sv/faktabanken
+  // /faktabanken
   routes.push(
     ...(await getAllFacts(false, 'sv'))?.map((fact) => ({
       url: `${process.env.NEXT_PUBLIC_SITE_URL}/faktabanken/${fact.slug}`,
     })),
   )
-  // console.log()
-  const sitemap = routes.map((route) => ({
+
+  return routes.map((route) => ({
     url: route.url,
     lastModified: route.lastModified || new Date(),
     changefreq: route.changefreq || 'daily',
     priority: route.priority || 0.7,
   }))
-  console.log(sitemap)
-  return sitemap
 }
 
 export default sitemap
-
-// export async function generateStaticParams({ params }) {
-//   const allFacts = await getAllFacts(false, params.lang)
-//   console.log(
-//     '✅✅✅✅',
-//     allFacts?.map((fact) => ({
-//       slug: fact.slug,
-//     })),
-//   )
-//   return allFacts?.map((fact) => ({
-//     slug: fact.slug,
-//   }))
-// }
