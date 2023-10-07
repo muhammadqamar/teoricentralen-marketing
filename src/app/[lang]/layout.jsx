@@ -30,15 +30,15 @@ export async function generateMetadata() {
       template: '%s - Teoricentralen',
       default: 'Teoricentralen',
     },
-    description: 'Teoricentralen',
+    description: 'Teoricentralen en utbildningsplattform för körkortsteori',
     applicationName: 'Teoricentralen',
     referrer: 'origin-when-cross-origin',
-    keywords: ['Teoricentralen', 'Körkort', 'Trafikskola'],
-    formatDetection: {
-      email: false,
-      address: false,
-      telephone: false,
-    },
+    keywords: [
+      'Teoricentralen',
+      'Körkort',
+      'Trafikskola',
+      'Utbildningsplattform',
+    ],
     metadataBase: process.env.NEXT_PUBLIC_SITE_URL,
     alternates: {
       canonical: linkObjects?.filter((data) => data.hreflang === 'x-default')[0]
