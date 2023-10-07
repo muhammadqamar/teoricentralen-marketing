@@ -61,7 +61,7 @@ const posts = [
     },
   },
   {
-    id: 1,
+    id: 4,
     title: 'Car with trailer',
     href: '#',
     description:
@@ -77,7 +77,7 @@ const posts = [
     },
   },
   {
-    id: 2,
+    id: 5,
     title: 'Truck',
     href: '#',
     description:
@@ -93,7 +93,7 @@ const posts = [
     },
   },
   {
-    id: 3,
+    id: 6,
     title: 'Truck with trailer',
     href: '#',
     description:
@@ -109,7 +109,7 @@ const posts = [
     },
   },
   {
-    id: 1,
+    id: 7,
     title: 'Car with trailer',
     href: '#',
     description:
@@ -125,7 +125,7 @@ const posts = [
     },
   },
   {
-    id: 2,
+    id: 8,
     title: 'Bus',
     href: '#',
     description:
@@ -141,7 +141,7 @@ const posts = [
     },
   },
   {
-    id: 3,
+    id: 9,
     title: 'Bus with trailer',
     href: '#',
     description:

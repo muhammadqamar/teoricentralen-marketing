@@ -30,14 +30,14 @@ export function SimpleLayout({ bgImage, title, intro, children }) {
         >
           <header className="relative z-[2] max-w-2xl">
             <h1
-              className={`text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl ${
+              className={`text-4xl font-extrabold tracking-tight text-dark sm:text-5xl ${
                 bgImage && 'mb-3 !text-white'
               }`}
             >
               {title}
             </h1>
             <p
-              className={`"mt-6 text-base text-zinc-600 dark:text-zinc-400 ${
+              className={`mt-6 text-base text-gray-600 ${
                 bgImage && '!text-white'
               }`}
             >

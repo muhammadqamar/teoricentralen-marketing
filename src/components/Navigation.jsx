@@ -23,7 +23,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const products = [
+const educations = [
   {
     name: 'Analytics',
     description: 'Get a better understanding where your traffic is coming from',
@@ -129,7 +129,7 @@ export function Navigation({ lang }) {
             >
               <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5">
                 <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
-                  {products.map((item) => (
+                  {educations.map((item) => (
                     <div
                       key={item.name}
                       className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50"
@@ -142,12 +142,14 @@ export function Navigation({ lang }) {
                       </div>
                       <Link
                         href={item.href}
-                        className="mt-6 block font-semibold text-dark"
+                        className="mt-6 block font-bold text-dark"
                       >
                         {item.name}
                         <span className="absolute inset-0" />
                       </Link>
-                      <p className="mt-1 text-gray-600">{item.description}</p>
+                      <p className="mt-1 font-semibold text-gray-600">
+                        {item.description}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -161,7 +163,7 @@ export function Navigation({ lang }) {
                           className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-dark hover:bg-gray-100"
                         >
                           <item.icon
-                            className="h-5 w-5 flex-none text-gray-400"
+                            className="h-5 w-5 flex-none text-gray-500"
                             aria-hidden="true"
                           />
                           {item.name}
