@@ -25,7 +25,7 @@ const navigation = {
   ],
 }
 
-export function Footer({ lang }) {
+export function Footer({ locale }) {
   const path = usePathname()
 
   return (
@@ -45,7 +45,7 @@ export function Footer({ lang }) {
               Plattformen som hjälper trafikskolor att växa. Utvecklat
               tillsammans med Trafikskolor i Sverige.
             </p>
-            <ChangeTranslation lang={lang} />
+            <ChangeTranslation locale={locale} />
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
@@ -58,7 +58,7 @@ export function Footer({ lang }) {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        locale={lang}
+                        locale={locale}
                         className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
@@ -76,7 +76,7 @@ export function Footer({ lang }) {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        locale={lang}
+                        locale={locale}
                         className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
@@ -96,7 +96,7 @@ export function Footer({ lang }) {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        locale={lang}
+                        locale={locale}
                         className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
@@ -114,7 +114,7 @@ export function Footer({ lang }) {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        locale={lang}
+                        locale={locale}
                         className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}

@@ -6,8 +6,8 @@ export const metadata = {
   description: 'Framtidens trafikutbildning är här',
 }
 
-export default async function Page({ params }) {
-  const lang = await getTranslations(params.lang)
+export default async function Page({ params: { locale } }) {
+  const lang = await getTranslations(locale)
 
   return <Testimonials data={lang?.testimonials} />
 }

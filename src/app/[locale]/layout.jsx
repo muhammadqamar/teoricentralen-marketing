@@ -78,18 +78,18 @@ export function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'sv' }]
 }
 
-export default function RootLayout({ children, params: { lang } }) {
+export default function RootLayout({ children, params: { locale } }) {
   return (
     <html
-      lang={lang}
+      lang={locale}
       className={`h-full antialiased ${mulish.variable}`}
       suppressHydrationWarning
     >
       <body className="gray-50">
-        <NextIntlClientProvider locale={lang}>
-          <Header lang={lang} />
+        <NextIntlClientProvider locale={locale}>
+          <Header locale={locale} />
           <main>{children}</main>
-          <Footer locale={lang} />
+          <Footer locale={locale} />
 
           {/* Vercel Analytics */}
           <Analytics />
