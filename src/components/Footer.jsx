@@ -13,7 +13,11 @@ const navigation = {
     { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
     // { name: 'Ordlista', href: '/ordlista' },
   ],
-  company: [{ name: 'Om oss', href: '/om-oss' }],
+  company: [
+    { name: 'Om oss', href: '/om-oss' },
+    { name: 'Frågor och svar', href: '/fragor-och-svar' },
+    { name: 'Jobba med oss', href: '/jobba-med-oss' },
+  ],
   support: [{ name: 'Kontakta oss', href: '/kontakt' }],
   legal: [
     { name: 'Användarvillkor', href: '/anvandarvillkor' },
