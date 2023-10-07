@@ -1,6 +1,5 @@
 'use client'
 
-import { usePathname } from 'next-intl/client'
 import Link from 'next-intl/link'
 import logoTeoricentralen from '@/images/logos/mark.svg'
 import ChangeTranslation from '@/utils/changeTranslation'
@@ -26,8 +25,6 @@ const navigation = {
 }
 
 export function Footer({ locale }) {
-  const path = usePathname()
-
   return (
     <footer className="flex-none bg-gray-100">
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8">
@@ -36,15 +33,14 @@ export function Footer({ locale }) {
             <Image
               src={logoTeoricentralen}
               alt="Teoricentralen"
-              className="h-7"
-              width={28}
-              height={28}
-              unoptimized
+              className="h-8"
             />
+
             <p className="text-sm font-semibold leading-6 text-gray-600">
-              Plattformen som hjälper trafikskolor att växa. Utvecklat
-              tillsammans med Trafikskolor i Sverige.
+              Plattformen som hjälper trafikskolor att växa. Utvecklad i
+              samarbeta med trafikskolor runt om i landet.
             </p>
+
             <ChangeTranslation locale={locale} />
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">

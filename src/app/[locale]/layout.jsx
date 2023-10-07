@@ -18,8 +18,9 @@ export async function generateMetadata() {
       const match = /<([^>]+)>;\s*rel="([^"]+)";\s*hreflang="([^"]+)"/.exec(
         link,
       )
+
       if (match) {
-        const [, url, rel, hreflang] = match
+        const [url, rel, hreflang] = match
         const linkObject = { url, rel, hreflang }
         linkObjects.push(linkObject)
       }
@@ -91,7 +92,6 @@ export default function RootLayout({ children, params: { locale } }) {
           <main>{children}</main>
           <Footer locale={locale} />
 
-          {/* Vercel Analytics */}
           <Analytics />
         </NextIntlClientProvider>
       </body>
