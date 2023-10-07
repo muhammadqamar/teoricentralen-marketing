@@ -48,6 +48,18 @@ const educations = [
     href: '/utbildningar/personbil-med-tungt-slap',
     icon: SquaresPlusIcon,
   },
+  {
+    name: 'Lastbil',
+    description: 'Your customers’ data will be safe and secure',
+    href: '/utbildningar/lastbil',
+    icon: SquaresPlusIcon,
+  },
+  {
+    name: 'Buss',
+    description: 'Your customers’ data will be safe and secure',
+    href: '/utbildningar/buss',
+    icon: SquaresPlusIcon,
+  },
 ]
 
 const callsToAction = [

@@ -8,10 +8,8 @@ export const metadata = {
 
 export default async function Page({ params: { locale } }) {
   return (
-    <>
-      <Container className="my-16">
-        <Faq />
-      </Container>
-    </>
+    <Container className="my-16">
+      <Faq />
+    </Container>
   )
 }

@@ -13,13 +13,12 @@ async function sitemap() {
     'om-oss',
     'ordlista',
     'recensioner',
-    'utbildningar/bus',
-    'utbildningar/bus-with-trailer',
-    'utbildningar/car',
-    'utbildningar/car-with-trailer',
-    'utbildningar/motorcycle',
     'utbildningar/moped',
-    'utbildningar/truck',
+    'utbildningar/personbil',
+    'utbildningar/motorcykel',
+    'utbildningar/personbil-med-tungt-slap',
+    'utbildningar/lastbil',
+    'utbildningar/buss',
   ]
 
   // /
