@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState, useRef } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
   Bars3Icon,
@@ -8,7 +8,6 @@ import {
   SquaresPlusIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-
 
 import {
   ChevronDownIcon,
@@ -81,8 +80,35 @@ function classNames(...classes) {
 export function Navigation({ lang }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   let [open, setOpen] = useState(false)
+  const ref = useRef(null)
 
-  // console.log(styles, attributes)
+  useEffect(() => {
+    const observer = new MutationObserver((mutationsList) => {
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'attributes') {
+          const attributeName = mutation.attributeName
+          const newValue = mutation.target.getAttribute(attributeName)
+          if (attributeName == 'aria-expanded') {
+            setOpen(newValue === 'true')
+          }
+          // console.log(`Attribute "${attributeName}" changed to "${newValue}"`)
+        }
+      }
+    })
+
+    const observerConfig = { attributes: true }
+
+    if (ref.current) {
+      observer.observe(ref.current, observerConfig)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.disconnect()
+      }
+    }
+  }, [])
+  
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <nav
@@ -114,8 +140,7 @@ export function Navigation({ lang }) {
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover>
             <Popover.Button
-              onClick={() => setOpen(!open)}
-              // ref={setReferenceElement}
+              ref={ref}
               className={`flex items-center gap-x-1 text-sm font-bold leading-6 ${
                 open ? 'text-dark' : 'text-white'
               }`}
