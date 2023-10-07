@@ -12,7 +12,7 @@ export function Header({ lang }) {
 
   return (
     <div className="bg-dark">
-      <Navigation locale={lang} />
+      <Navigation lang={lang} />
 
       {path === '/' && <Hero />}
       {path !== '/' && <HeroImage />}

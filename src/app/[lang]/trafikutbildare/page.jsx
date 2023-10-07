@@ -25,14 +25,12 @@ export default async function Page({ params }) {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-extrabold tracking-tight text-dark sm:text-5xl">
-              Framtidens trafikutbildning är här.
+              Vill du ta din trafikutbildning till en ny nivå?
             </h1>
             <div className="mt-6 space-y-7 font-medium text-gray-600">
               <p>
-                Din verksamhet, dina villkor. Vi hjälper dig att ta din
-                trafikskola till nästa nivå. Se till att du har de verktyg som
-                krävs för att erbjuda dina elever kvalité och samtidigt öka din
-                lönsamhet.
+                Välj en digital partner som bryr sig om att få din verksamhet
+                att växa.
               </p>
               <p>
                 Smidig inskrivning av elever. Låt dina kunder själv skriva in

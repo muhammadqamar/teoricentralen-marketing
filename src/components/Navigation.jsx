@@ -179,13 +179,13 @@ export function Navigation({ lang }) {
             </Transition>
           </Popover>
 
-          <NavItem href="/korkortsfragor" locale={lang}>
+          <NavItem href="/korkortsfragor" lang={lang}>
             Körkortsfrågor
           </NavItem>
-          <NavItem href="/recensioner" locale={lang}>
+          <NavItem href="/recensioner" lang={lang}>
             Recensioner
           </NavItem>
-          <NavItem href="/trafikutbildare" locale={lang}>
+          <NavItem href="/trafikutbildare" lang={lang}>
             För trafikutbildare
           </NavItem>
         </Popover.Group>

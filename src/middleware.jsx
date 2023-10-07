@@ -4,7 +4,7 @@ export function middleware(request) {
   const handleI18nRouting = createIntlMiddleware({
     locales: ['en', 'sv'],
     defaultLocale: 'sv',
-    // localeDetection: false
+    localeDetection: false,
   })
 
   const response = handleI18nRouting(request)
