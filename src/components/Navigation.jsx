@@ -25,27 +25,27 @@ import Link from 'next/link'
 
 const educations = [
   {
-    name: 'Analytics',
+    name: 'Moped',
     description: 'Get a better understanding where your traffic is coming from',
-    href: '#',
+    href: '/utbildningar/moped',
     icon: ChartPieIcon,
   },
   {
-    name: 'Engagement',
+    name: 'Personbil',
     description: 'Speak directly to your customers with our engagement tool',
-    href: '#',
+    href: '/utbildningar/personbil',
     icon: CursorArrowRaysIcon,
   },
   {
-    name: 'Security',
+    name: 'Motorcykel',
     description: 'Your customers’ data will be safe and secure',
-    href: '#',
+    href: '/utbildningar/motorcykel',
     icon: FingerPrintIcon,
   },
   {
-    name: 'Integrations',
+    name: 'Personbil med tungt släp',
     description: 'Your customers’ data will be safe and secure',
-    href: '#',
+    href: '/utbildningar/personbil-med-tungt-slap',
     icon: SquaresPlusIcon,
   },
 ]
@@ -140,6 +140,7 @@ export function Navigation({ lang }) {
                           aria-hidden="true"
                         />
                       </div>
+
                       <Link
                         href={item.href}
                         className="mt-6 block font-bold text-dark"
@@ -147,12 +148,14 @@ export function Navigation({ lang }) {
                         {item.name}
                         <span className="absolute inset-0" />
                       </Link>
+
                       <p className="mt-1 font-semibold text-gray-600">
                         {item.description}
                       </p>
                     </div>
                   ))}
                 </div>
+
                 <div className="bg-gray-50">
                   <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="grid grid-cols-3 divide-x divide-gray-900/5 border-x border-gray-900/5">
@@ -179,11 +182,9 @@ export function Navigation({ lang }) {
           <NavItem href="/korkortsfragor" locale={lang}>
             Körkortsfrågor
           </NavItem>
-
           <NavItem href="/recensioner" locale={lang}>
             Recensioner
           </NavItem>
-
           <NavItem href="/trafikutbildare" locale={lang}>
             För trafikutbildare
           </NavItem>
@@ -194,6 +195,7 @@ export function Navigation({ lang }) {
           </Button>
         </div>
       </nav>
+
       <Dialog
         as="div"
         className="lg:hidden"
@@ -203,7 +205,7 @@ export function Navigation({ lang }) {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href={'/'} className="-m-1.5 p-1.5" locale={lang}>
+            <Link href="/" className="-m-1.5 p-1.5" locale={lang}>
               <span className="sr-only">Teoricentralen</span>
               <Image
                 src={logoTeoricentralen}
@@ -228,7 +230,7 @@ export function Navigation({ lang }) {
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-dark hover:bg-gray-50">
                         Product
                         <ChevronDownIcon
                           className={classNames(
@@ -244,7 +246,7 @@ export function Navigation({ lang }) {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-dark hover:bg-gray-50"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -253,32 +255,33 @@ export function Navigation({ lang }) {
                     </>
                   )}
                 </Disclosure>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+
+                <Link
+                  href="/"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-dark hover:bg-gray-50"
                 >
-                  Features
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  Körkortsfrågor
+                </Link>
+                <Link
+                  href="/"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-dark hover:bg-gray-50"
                 >
-                  Marketplace
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  Recensioner
+                </Link>
+                <Link
+                  href="/"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-dark hover:bg-gray-50"
                 >
                   Company
-                </a>
+                </Link>
               </div>
               <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                <Link
+                  href="/"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-dark hover:bg-gray-50"
                 >
-                  Log in
-                </a>
+                  Logga in
+                </Link>
               </div>
             </div>
           </div>

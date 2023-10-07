@@ -41,7 +41,7 @@ export function Footer({ lang }) {
               height={28}
               unoptimized
             />
-            <p className="text-sm font-medium leading-6 text-gray-600">
+            <p className="text-sm font-semibold leading-6 text-gray-600">
               Plattformen som hjälper trafikskolor att växa. Utvecklat
               tillsammans med Trafikskolor i Sverige.
             </p>
@@ -59,7 +59,7 @@ export function Footer({ lang }) {
                       <Link
                         href={item.href}
                         locale={lang}
-                        className="text-sm font-medium leading-6 text-gray-600 hover:text-dark"
+                        className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
                       </Link>
@@ -77,7 +77,7 @@ export function Footer({ lang }) {
                       <Link
                         href={item.href}
                         locale={lang}
-                        className="text-sm font-medium leading-6 text-gray-600 hover:text-dark"
+                        className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
                       </Link>
@@ -97,7 +97,7 @@ export function Footer({ lang }) {
                       <Link
                         href={item.href}
                         locale={lang}
-                        className="text-sm font-medium leading-6 text-gray-600 hover:text-dark"
+                        className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
                       </Link>
@@ -115,7 +115,7 @@ export function Footer({ lang }) {
                       <Link
                         href={item.href}
                         locale={lang}
-                        className="text-sm font-medium leading-6 text-gray-600 hover:text-dark"
+                        className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
                       </Link>
