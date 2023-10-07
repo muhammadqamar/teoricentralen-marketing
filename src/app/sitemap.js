@@ -47,7 +47,7 @@ async function sitemap() {
   // /sv/faktabanken
   routes.push(
     ...(await getAllFacts(false, 'sv'))?.map((fact) => ({
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/sv/faktabanken/${fact.slug}`,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/faktabanken/${fact.slug}`,
     })),
   )
   // console.log()
