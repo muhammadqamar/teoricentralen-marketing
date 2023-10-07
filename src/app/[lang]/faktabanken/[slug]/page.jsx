@@ -1,10 +1,10 @@
 import FaktabankenSlug from '@/components/Faktabanken/slug'
 import { getAllFacts, getFact } from '@/lib/facts'
 import { draftMode } from 'next/headers'
-// import { getServerSideSitemapIndex } from 'next-sitemap'
 
-export async function generateStaticParams({ params }) {
-  const allFacts = await getAllFacts(false, params.lang)
+export async function generateStaticParams({ params: { lang } }) {
+  const allFacts = await getAllFacts(false, lang)
+
   return allFacts?.map((fact) => ({
     slug: fact.slug,
   }))

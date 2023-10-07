@@ -1,4 +1,4 @@
-import { getAllFacts } from '@/lib/facts';
+import { getAllFacts } from '@/lib/facts'
 
 async function sitemap() {
   const routes = []
@@ -22,13 +22,6 @@ async function sitemap() {
     'utbildningar/truck',
   ]
 
-  // /en
-  routes.push(
-    ...singleStatic.map((route) => ({
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/en/${route}`,
-    })),
-  )
-
   // /
   routes.push(
     ...singleStatic.map((route) => ({
@@ -36,16 +29,24 @@ async function sitemap() {
     })),
   )
 
-  // /en/faktabanken
-  routes.push(
-    ...(await getAllFacts(false, 'en'))?.map((fact) => ({
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/en/faktabanken/${fact.slug}`,
-    })),
-  )
   // /faktabanken
   routes.push(
     ...(await getAllFacts(false, 'sv'))?.map((fact) => ({
       url: `${process.env.NEXT_PUBLIC_SITE_URL}/faktabanken/${fact.slug}`,
+    })),
+  )
+
+  // /en
+  routes.push(
+    ...singleStatic.map((route) => ({
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/en/${route}`,
+    })),
+  )
+
+  // /en/faktabanken
+  routes.push(
+    ...(await getAllFacts(false, 'en'))?.map((fact) => ({
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/en/faktabanken/${fact.slug}`,
     })),
   )
 

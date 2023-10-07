@@ -12,6 +12,7 @@ export default function Testimonials({ data }) {
             {data?.subheading}
           </p>
         </div>
+
         <div className="relative -mx-4 mt-16 grid h-[49rem] max-h-[150vh] grid-cols-1 items-start gap-8 overflow-hidden px-4 sm:mt-20 md:grid-cols-2 lg:grid-cols-3">
           {data?.content.map((columnGroup, columnGroupIdx) => (
             <div
@@ -28,8 +29,8 @@ export default function Testimonials({ data }) {
             </div>
           ))}
 
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-50"></div>
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-50"></div>
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white"></div>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white"></div>
         </div>
       </div>
     </div>

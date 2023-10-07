@@ -10,6 +10,7 @@ export async function generateMetadata() {
   const headersList = headers()
   const links = headersList.get('link')?.split(', ')
   const linkObjects = []
+
   let header_url
   if (links) {
     const header_url = new URL(headersList.get('x-url') || '')
@@ -55,7 +56,7 @@ export async function generateMetadata() {
       siteName: 'Teoricentralen',
       images: [
         {
-          url: '/og-image.png',
+          url: process.env.NEXT_PUBLIC_SITE_URL + '/og-image.png',
           width: 1200,
           height: 630,
           alt: 'Teoricentralen',
@@ -84,13 +85,11 @@ export default function RootLayout({ children, params: { lang } }) {
       className={`h-full antialiased ${mulish.variable}`}
       suppressHydrationWarning
     >
-      <body className="flex h-full flex-col bg-zinc-50">
+      <body className="gray-50">
         <NextIntlClientProvider locale={lang}>
-          <div className="flex min-h-full flex-col">
-            <Header lang={lang} />
-            <main>{children}</main>
-            <Footer lang={lang} />
-          </div>
+          <Header lang={lang} />
+          <main>{children}</main>
+          <Footer locale={lang} />
 
           {/* Vercel Analytics */}
           <Analytics />
