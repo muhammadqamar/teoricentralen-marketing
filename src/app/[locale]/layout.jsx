@@ -76,14 +76,14 @@ const mulish = Mulish({
 })
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'sv' }]
+  return [{ locale: 'sv' }, { locale: 'en' }]
 }
 
 export default function RootLayout({ children, params: { locale } }) {
   return (
     <html
       lang={locale}
-      className={`h-full antialiased ${mulish.variable}`}
+      className={`${mulish.variable} antialiased`}
       suppressHydrationWarning
     >
       <body className="gray-50">

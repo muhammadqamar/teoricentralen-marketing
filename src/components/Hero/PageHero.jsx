@@ -14,14 +14,15 @@ export function PageHero({ title, description }) {
       <div className="absolute inset-0 top-0 -z-10 h-full bg-black bg-opacity-70"></div>
 
       <Container className="pb-24 pt-48">
-        <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-          Framtidens trafikutbildning är här
-        </h2>
+        {title && (
+          <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+            {title}
+          </h2>
+        )}
 
-        <p className="mt-6 text-lg leading-8 text-gray-200">
-          Ditt körkort, dina villkor. Vi hjälper dig att hitta en trafikskola
-          som passar just dig.
-        </p>
+        {description && (
+          <p className="mt-6 text-lg leading-8 text-gray-200">{description}</p>
+        )}
       </Container>
     </div>
   )
