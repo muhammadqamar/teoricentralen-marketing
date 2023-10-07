@@ -6,7 +6,7 @@ import { Button } from '@/components/Button'
 import { FadeIn } from '@/components//FadeIn'
 import { Container } from '@/components/Container'
 import bgHome from '@/images/backgrounds/elk.jpg'
-import bgDefault from '@/images/backgrounds/default.jpg'
+import bgDefault from '@/images/backgrounds/moped.jpg'
 import Image from 'next/image'
 
 export function Header({ locale }) {
@@ -43,7 +43,7 @@ function HomeHero() {
 
           <FadeIn className="flex items-center justify-center gap-x-8">
             <p className="mt-4 text-xl font-medium leading-8 text-white">
-              Utvecklad tillsammans med trafikskolor i Sverige.
+              Utvecklad tillsammans med trafikskolor i Sverige
             </p>
           </FadeIn>
 
@@ -72,16 +72,16 @@ function PageHero() {
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
 
-      <div className="absolute inset-0 top-0 -z-10 h-full bg-black bg-opacity-50"></div>
+      <div className="absolute inset-0 top-0 -z-10 h-full bg-black bg-opacity-70"></div>
 
       <Container className="pb-24 pt-48">
-        <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
-          Support center
+        <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+          Framtidens trafikutbildning är här
         </h2>
+
         <p className="mt-6 text-lg leading-8 text-gray-200">
-          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
-          cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat
-          aliqua.
+          Ditt körkort, dina villkor. Vi hjälper dig att hitta en trafikskola
+          som passar just dig.
         </p>
       </Container>
     </div>
