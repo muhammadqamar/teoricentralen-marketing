@@ -174,16 +174,16 @@ export function Navigation({ lang }) {
             </Transition>
           </Popover>
 
-          <NavItem href="/utbildningar" locale={lang}>
-            Utbildningar
-          </NavItem>
-
           <NavItem href="/korkortsfragor" locale={lang}>
             Körkortsfrågor
           </NavItem>
 
           <NavItem href="/recensioner" locale={lang}>
             Recensioner
+          </NavItem>
+
+          <NavItem href="/trafikutbildare" locale={lang}>
+            För trafikutbildare
           </NavItem>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
