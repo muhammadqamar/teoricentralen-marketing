@@ -116,7 +116,7 @@ export function Navigation({ lang }) {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <Link href={'/'} className="-m-1.5 p-1.5" locale={lang}>
+          <Link href="/" className="-m-1.5 p-1.5" locale={lang}>
             <span className="sr-only">Teoricentralen</span>
             <Image
               src={logoTeoricentralen}
@@ -269,8 +269,8 @@ export function Navigation({ lang }) {
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-dark hover:bg-gray-50">
-                        Product
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-bold leading-7 text-dark hover:bg-gray-50">
+                        Alla utbildningar
                         <ChevronDownIcon
                           className={classNames(
                             open ? 'rotate-180' : '',
@@ -279,13 +279,14 @@ export function Navigation({ lang }) {
                           aria-hidden="true"
                         />
                       </Disclosure.Button>
+
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...products, ...callsToAction].map((item) => (
+                        {[...educations, ...callsToAction].map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-dark hover:bg-gray-50"
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-bold leading-7 text-dark hover:bg-gray-50"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -297,19 +298,19 @@ export function Navigation({ lang }) {
 
                 <Link
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 !text-dark hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                 >
                   Körkortsfrågor
                 </Link>
                 <Link
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-dark hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                 >
                   Recensioner
                 </Link>
                 <Link
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-dark hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                 >
                   Company
                 </Link>
@@ -317,7 +318,7 @@ export function Navigation({ lang }) {
               <div className="py-6">
                 <Link
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-dark hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                 >
                   Logga in
                 </Link>

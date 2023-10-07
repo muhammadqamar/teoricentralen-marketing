@@ -2,7 +2,7 @@ import { Container } from '@/components/Container'
 
 export const metadata = {
   title: 'Användarvillkor',
-  description: 'Framtidens trafikutbildning är här',
+  description: 'Användarvillkor',
 }
 
 export default async function Page({ params: { lang } }) {
