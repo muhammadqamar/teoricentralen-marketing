@@ -9,6 +9,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 
+
 import {
   ChevronDownIcon,
   PhoneIcon,
@@ -56,7 +57,7 @@ const callsToAction = [
   { name: 'View all products', href: '#', icon: RectangleGroupIcon },
 ]
 
-function NavItem({ href, lang, children }) {
+function NavItem({ href, lang, open, children }) {
   let isActive = usePathname() === href
 
   return (
@@ -64,7 +65,7 @@ function NavItem({ href, lang, children }) {
       href={href}
       className={clsx(
         'relative block text-sm font-bold leading-6 transition hover:text-primary',
-        isActive ? 'text-primary' : 'text-white',
+        isActive ? 'text-primary' : open ? 'text-dark' : 'text-white',
       )}
       locale={lang}
     >
@@ -79,7 +80,9 @@ function classNames(...classes) {
 
 export function Navigation({ lang }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  let [open, setOpen] = useState(false)
 
+  // console.log(styles, attributes)
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <nav
@@ -110,10 +113,18 @@ export function Navigation({ lang }) {
 
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover>
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-bold leading-6 text-white">
+            <Popover.Button
+              onClick={() => setOpen(!open)}
+              // ref={setReferenceElement}
+              className={`flex items-center gap-x-1 text-sm font-bold leading-6 ${
+                open ? 'text-dark' : 'text-white'
+              }`}
+            >
               Utbildningar
               <ChevronDownIcon
-                className="h-5 w-5 flex-none text-white"
+                className={`h-5 w-5 flex-none ${
+                  open ? 'text-dark' : 'text-white'
+                }`}
                 aria-hidden="true"
               />
             </Popover.Button>
@@ -127,7 +138,10 @@ export function Navigation({ lang }) {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 -translate-y-1"
             >
-              <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5">
+              <Popover.Panel
+                // ref={setReferenceElement}
+                className="absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5"
+              >
                 <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
                   {educations.map((item) => (
                     <div
@@ -179,13 +193,13 @@ export function Navigation({ lang }) {
             </Transition>
           </Popover>
 
-          <NavItem href="/korkortsfragor" lang={lang}>
+          <NavItem href="/korkortsfragor" lang={lang} open={open}>
             Körkortsfrågor
           </NavItem>
-          <NavItem href="/recensioner" lang={lang}>
+          <NavItem href="/recensioner" lang={lang} open={open}>
             Recensioner
           </NavItem>
-          <NavItem href="/trafikutbildare" lang={lang}>
+          <NavItem href="/trafikutbildare" lang={lang} open={open}>
             För trafikutbildare
           </NavItem>
         </Popover.Group>
@@ -258,7 +272,7 @@ export function Navigation({ lang }) {
 
                 <Link
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-dark hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 !text-dark hover:bg-gray-50"
                 >
                   Körkortsfrågor
                 </Link>
