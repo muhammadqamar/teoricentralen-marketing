@@ -138,6 +138,7 @@ export function Navigation({ locale }) {
             />
           </Link>
         </div>
+
         <div className="flex lg:hidden">
           <button
             type="button"

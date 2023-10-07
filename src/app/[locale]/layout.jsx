@@ -76,7 +76,7 @@ const mulish = Mulish({
 })
 
 export function generateStaticParams() {
-  return [{ lang: 'en' }, { lang: 'sv' }]
+  return [{ locale: 'en' }, { locale: 'sv' }]
 }
 
 export default function RootLayout({ children, params: { locale } }) {
