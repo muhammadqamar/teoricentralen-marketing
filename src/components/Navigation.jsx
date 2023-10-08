@@ -26,37 +26,37 @@ import Link from 'next/link'
 const educations = [
   {
     name: 'Moped',
-    description: 'Get a better understanding where your traffic is coming from',
+    description: 'Behörighet AM',
     href: '/utbildningar/moped',
     icon: amIcon,
   },
   {
     name: 'Personbil',
-    description: 'Speak directly to your customers with our engagement tool',
+    description: 'Behörighet B',
     href: '/utbildningar/personbil',
     icon: bIcon,
   },
   {
     name: 'Motorcykel',
-    description: 'Your customers’ data will be safe and secure',
+    description: 'Behörighet A1, A2, A',
     href: '/utbildningar/motorcykel',
     icon: aIcon,
   },
   {
     name: 'Personbil med tungt släp',
-    description: 'Your customers’ data will be safe and secure',
+    description: 'Behörighet BE',
     href: '/utbildningar/personbil-med-tungt-slap',
     icon: beIcon,
   },
   {
     name: 'Lastbil',
-    description: 'Your customers’ data will be safe and secure',
+    description: 'Behörighet C1, C, CE samt C1E',
     href: '/utbildningar/lastbil',
     icon: cIcon,
   },
   {
     name: 'Buss',
-    description: 'Your customers’ data will be safe and secure',
+    description: 'Behörighet D1, D, DE samt D1E',
     href: '/utbildningar/buss',
     icon: dIcon,
   },
@@ -64,8 +64,12 @@ const educations = [
 
 const callsToAction = [
   { name: 'Alla utbildningar', href: '/utbildningar', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
-  { name: 'View all products', href: '#', icon: RectangleGroupIcon },
+  { name: 'Recensioner', href: '/recensioner', icon: PhoneIcon },
+  {
+    name: 'Frågor och svar',
+    href: '/fragor-och-svar',
+    icon: RectangleGroupIcon,
+  },
 ]
 
 function NavItem({ href, locale, open, children }) {

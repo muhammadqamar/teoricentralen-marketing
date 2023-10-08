@@ -1,14 +1,8 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import clsx from 'clsx'
-
 import { Container } from '@/components/Container'
-import portraitImage from '@/images/logo.png'
 
 export const metadata = {
   title: 'Utbildningar',
-  description:
-    'I’m Spencer Sharp. I live in New York City, where I design the future.',
+  description: 'Upptäck våra utbildningar',
 }
 
 const posts = [
@@ -166,7 +160,7 @@ function Example() {
         {posts.map((post) => (
           <article
             key={post.id}
-            className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
+            className="relative isolate flex flex-col justify-end overflow-hidden rounded-lg bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
           >
             <img
               src={post.imageUrl}
@@ -213,11 +207,9 @@ function Example() {
 export default function Page() {
   return (
     <Container className="my-16">
-      <div>
-        <h1 className="text-4xl font-extrabold tracking-tight text-dark sm:text-5xl">
-          Våra utbildningar
-        </h1>
-      </div>
+      <h2 className="text-4xl font-extrabold tracking-tight text-dark sm:text-5xl">
+        Våra utbildningar
+      </h2>
 
       <Example />
     </Container>
