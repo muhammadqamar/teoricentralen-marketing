@@ -32,7 +32,7 @@ export async function generateMetadata() {
       template: '%s - Teoricentralen',
       default: 'Teoricentralen',
     },
-    description: 'Teoricentralen en utbildningsplattform för körkortsteori',
+    description: 'Teoricentralen - en utbildningsplattform för körkortsteori',
     applicationName: 'Teoricentralen',
     referrer: 'origin-when-cross-origin',
     keywords: [
@@ -51,8 +51,14 @@ export async function generateMetadata() {
       },
     },
     openGraph: {
-      title: 'Teoricentralen',
-      description: 'Teoricentralen - en utbildningsplattform för körkortsteori',
+      title: {
+        template: '%s - Teoricentralen',
+        default: 'Teoricentralen',
+      },
+      description: {
+        template: '%s',
+        default: 'Teoricentralen - en utbildningsplattform för körkortsteori',
+      },
       url: process.env.NEXT_PUBLIC_SITE_URL,
       siteName: 'Teoricentralen',
       images: [
