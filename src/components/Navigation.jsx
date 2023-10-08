@@ -108,7 +108,7 @@ export function Navigation({ lang }) {
       }
     }
   }, [])
-  
+
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <nav
@@ -129,7 +129,9 @@ export function Navigation({ lang }) {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+            className={`-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white ${
+              mobileMenuOpen ? 'hidden' : ''
+            }`}
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
