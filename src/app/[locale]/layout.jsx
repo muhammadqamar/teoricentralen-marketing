@@ -6,6 +6,8 @@ import { NextIntlClientProvider } from 'next-intl'
 import '@/styles/tailwind.css'
 import { headers } from 'next/headers'
 
+
+
 export async function generateMetadata() {
   const headersList = headers()
   const links = headersList.get('link')?.split(', ')

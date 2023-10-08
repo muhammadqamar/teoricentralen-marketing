@@ -10,6 +10,14 @@ export async function generateMetadata({ params: { locale, slug } }) {
   const description =
     fact?.excerpt ||
     'Teoricentralen - en utbildningsplattform för körkortsteori'
+  const images = [
+    fact?.image?.url || {
+      url: process.env.NEXT_PUBLIC_SITE_URL + '/og-image.png',
+      width: 1200,
+      height: 630,
+      alt: 'Teoricentralen',
+    },
+  ]
 
   return {
     title,
@@ -17,12 +25,12 @@ export async function generateMetadata({ params: { locale, slug } }) {
     openGraph: {
       title,
       description,
-      images: [fact?.image?.url],
+      images,
     },
     twitter: {
       title,
       description,
-      images: [fact?.image?.url],
+      images,
     },
   }
 }
