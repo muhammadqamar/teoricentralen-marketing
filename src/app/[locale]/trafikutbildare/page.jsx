@@ -18,20 +18,23 @@ export default async function Page({ params }) {
               <h2 className="text-3xl font-extrabold tracking-tight text-dark sm:text-4xl">
                 Ta din trafikutbildning till en ny nivå
               </h2>
+
               <p className="mt-6 text-xl leading-8 text-gray-600">
                 Quasi est quaerat. Sit molestiae et. Provident ad dolorem
                 occaecati eos iste. Soluta rerum quidem minus ut molestiae velit
                 error quod. Excepturi quidem expedita molestias quas.
               </p>
+
               <p className="mt-6 text-base leading-7 text-gray-600">
                 Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
                 lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
                 fugiat. Quasi aperiam sit non sit neque reprehenderit.
               </p>
-              <div className="mt-10 flex">
+
+              <div className="mt-6 flex">
                 <a
                   href="#"
-                  className="rounded-full bg-primary px-3.5 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="rounded-full bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Join our team <span aria-hidden="true">&rarr;</span>
                 </a>
