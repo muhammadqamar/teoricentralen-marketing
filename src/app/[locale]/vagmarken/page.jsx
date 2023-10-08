@@ -4,7 +4,7 @@ import { Container } from '@/components/Container'
 import portraitImage from '@/images/logo.png'
 
 export const metadata = {
-  title: 'Vägmärken',
+  title: 'Körkortsfrågor',
   description: 'Framtidens trafikutbildning är här',
 }
 
@@ -25,7 +25,7 @@ export default async function Page({ params }) {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-extrabold tracking-tight text-dark sm:text-5xl">
-              Framtidens trafikutbildning är här.
+              Alla Sveriges vägmärken
             </h1>
             <div className="mt-6 space-y-7 font-medium text-gray-600">
               <p>

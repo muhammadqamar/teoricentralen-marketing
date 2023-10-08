@@ -257,7 +257,7 @@ export function Navigation({ locale }) {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5" locale={locale}>
               <span className="sr-only">Teoricentralen</span>
@@ -296,7 +296,7 @@ export function Navigation({ locale }) {
                       </Disclosure.Button>
 
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...educations, ...callsToAction].map((item) => (
+                        {[...educations].map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as="a"
@@ -312,22 +312,28 @@ export function Navigation({ locale }) {
                 </Disclosure>
 
                 <Link
-                  href="/"
+                  href="/korkortsfragor"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                 >
                   Körkortsfrågor
                 </Link>
                 <Link
-                  href="/"
+                  href="/vagmarken"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
+                >
+                  Vägmärken
+                </Link>
+                <Link
+                  href="/recensioner"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                 >
                   Recensioner
                 </Link>
                 <Link
-                  href="/"
+                  href="/trafikutbildare"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                 >
-                  Company
+                  För trafikutbildare
                 </Link>
               </div>
               <div className="py-6">
@@ -335,7 +341,7 @@ export function Navigation({ locale }) {
                   href="/"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                 >
-                  Logga in
+                  Boka demo
                 </Link>
               </div>
             </div>

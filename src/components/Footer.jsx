@@ -8,16 +8,29 @@ import Image from 'next/image'
 const navigation = {
   educations: [
     { name: 'Alla utbildningar', href: '/utbildningar' },
+    { name: 'Moped', href: '/utbildningar/moped' },
+    { name: 'Personbil', href: '/utbildningar/personbil' },
+    { name: 'Motorcykel', href: '/utbildningar/motorcykel' },
+    {
+      name: 'Personbil med tungt släp',
+      href: '/utbildningar/personbil-med-tungt-slap',
+    },
+    { name: 'Lastbil', href: '/utbildningar/lastbil' },
+    { name: 'Buss', href: '/utbildningar/buss' },
+  ],
+  company: [
+    { name: 'Om oss', href: '/om-oss' },
+    { name: 'Körkortsfrågor', href: '/korkortsfragor' },
+    { name: 'Vägmärken', href: '/vagmarken' },
     { name: 'Faktabanken', href: '/faktabanken' },
     { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
     // { name: 'Ordlista', href: '/ordlista' },
   ],
-  company: [
-    { name: 'Om oss', href: '/om-oss' },
+  support: [
+    { name: 'Kontakta oss', href: '/kontakt' },
     { name: 'Frågor och svar', href: '/fragor-och-svar' },
     { name: 'Jobba med oss', href: '/jobba-med-oss' },
   ],
-  support: [{ name: 'Kontakta oss', href: '/kontakt' }],
   legal: [
     { name: 'Användarvillkor', href: '/anvandarvillkor' },
     { name: 'Integritetspolicy', href: '/integritetspolicy' },
