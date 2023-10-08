@@ -15,7 +15,7 @@ export function PageHero({ title, description, image }) {
 
       <div className="absolute inset-0 top-0 -z-10 h-full bg-black bg-opacity-70"></div>
 
-      <Container className="pb-24 pt-48">
+      <Container className="pb-16 pt-40 sm:pb-24 sm:pt-48">
         {title && (
           <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
             {title}
