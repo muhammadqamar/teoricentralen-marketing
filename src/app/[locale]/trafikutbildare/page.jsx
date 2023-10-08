@@ -2,8 +2,8 @@ import { Container } from '@/components/Container'
 import { PageHero } from '@/components/Hero/PageHero'
 import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 
-const title = 'Ta din trafikutbildning till en ny nivå'
-const description = 'Framtidens trafikutbildning är här'
+const title = 'För trafikutbildare'
+const description = 'Ett affärssystem anpassat för svenska trafikutbildare'
 const ogImage = '/og-image.png'
 
 export const metadata = {
