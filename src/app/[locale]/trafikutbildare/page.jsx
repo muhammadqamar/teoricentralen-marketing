@@ -15,7 +15,7 @@ export default async function Page({ params }) {
         <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
             <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-              <h2 className="text-3xl font-extrabold tracking-tight text-dark sm:text-4xl">
+              <h2 className="text-3xl font-extrabold tracking-tight text-dark">
                 Ta din trafikutbildning till en ny nivå
               </h2>
 

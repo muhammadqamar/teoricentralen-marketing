@@ -1,13 +1,6 @@
 import { Fragment, useEffect, useState, useRef } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
-import {
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import {
   ChevronDownIcon,
@@ -18,6 +11,13 @@ import {
 
 import { Button } from '@/components/Button'
 import { usePathname } from 'next/navigation'
+
+import amIcon from '@/images/icons/am.svg'
+import bIcon from '@/images/icons/b.svg'
+import aIcon from '@/images/icons/a.svg'
+import beIcon from '@/images/icons/be.svg'
+import cIcon from '@/images/icons/c.svg'
+import dIcon from '@/images/icons/d.svg'
 import logoTeoricentralen from '@/images/logos/mark.svg'
 import clsx from 'clsx'
 import Image from 'next/image'
@@ -28,42 +28,42 @@ const educations = [
     name: 'Moped',
     description: 'Get a better understanding where your traffic is coming from',
     href: '/utbildningar/moped',
-    icon: ChartPieIcon,
+    icon: amIcon,
   },
   {
     name: 'Personbil',
     description: 'Speak directly to your customers with our engagement tool',
     href: '/utbildningar/personbil',
-    icon: CursorArrowRaysIcon,
+    icon: bIcon,
   },
   {
     name: 'Motorcykel',
     description: 'Your customers’ data will be safe and secure',
     href: '/utbildningar/motorcykel',
-    icon: FingerPrintIcon,
+    icon: aIcon,
   },
   {
     name: 'Personbil med tungt släp',
     description: 'Your customers’ data will be safe and secure',
     href: '/utbildningar/personbil-med-tungt-slap',
-    icon: SquaresPlusIcon,
+    icon: beIcon,
   },
   {
     name: 'Lastbil',
     description: 'Your customers’ data will be safe and secure',
     href: '/utbildningar/lastbil',
-    icon: SquaresPlusIcon,
+    icon: cIcon,
   },
   {
     name: 'Buss',
     description: 'Your customers’ data will be safe and secure',
     href: '/utbildningar/buss',
-    icon: SquaresPlusIcon,
+    icon: dIcon,
   },
 ]
 
 const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
+  { name: 'Alla utbildningar', href: '/utbildningar', icon: PlayCircleIcon },
   { name: 'Contact sales', href: '#', icon: PhoneIcon },
   { name: 'View all products', href: '#', icon: RectangleGroupIcon },
 ]
@@ -182,28 +182,30 @@ export function Navigation({ locale }) {
                 // ref={setReferenceElement}
                 className="absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5"
               >
-                <div className="mx-auto grid max-w-7xl grid-cols-3 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
+                <div className="mx-auto grid max-w-7xl grid-cols-3 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-4">
                   {educations.map((item) => (
                     <div
                       key={item.name}
                       className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50"
                     >
-                      <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon
-                          className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-                          aria-hidden="true"
+                      <div className="flex h-12 w-12 items-center justify-center">
+                        <Image
+                          src={item.icon}
+                          alt={item.name}
+                          className="h-8"
+                          unoptimized
                         />
                       </div>
 
                       <Link
                         href={item.href}
-                        className="mt-6 block font-bold text-dark"
+                        className="mt-4 block font-bold text-dark"
                       >
                         {item.name}
                         <span className="absolute inset-0" />
                       </Link>
 
-                      <p className="mt-1 font-semibold text-gray-600">
+                      <p className="font-semibold text-gray-600">
                         {item.description}
                       </p>
                     </div>
