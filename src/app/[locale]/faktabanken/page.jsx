@@ -21,9 +21,10 @@ export default async function Page({ params: { locale } }) {
   const { isEnabled } = draftMode()
   const allFacts = await getAllFacts(isEnabled, locale)
 
-  return <>
-    <PageHero title={title} description={description} image={image} />
-    <div className='p-5' />
-    <Faktabanken data={allFacts} />
-  </>
+  return (
+    <>
+      <PageHero title={title} description={description} image={image} />
+      <Faktabanken data={allFacts} />
+    </>
+  )
 }

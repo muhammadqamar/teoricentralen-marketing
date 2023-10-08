@@ -1,10 +1,9 @@
 import Image from 'next/image'
 import { PageHero } from '@/components/Hero/PageHero'
-
 import { Container } from '@/components/Container'
 import portraitImage from '@/images/logo.png'
 
-const title = 'Vägmärken'
+const title = 'Körkortsfrågor'
 const description = 'Framtidens trafikutbildning är här'
 const image = '/og-image.png'
 
@@ -36,14 +35,14 @@ export default async function Page({ params }) {
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-4xl font-extrabold tracking-tight text-dark sm:text-5xl">
+            <h2 className="text-4xl font-extrabold tracking-tight text-dark">
               {title}
-            </h1>
+            </h2>
             <div className="mt-6 space-y-7 font-medium text-gray-600">
               <p>{description}</p>
               <p>
-                Smidig inskrivning av elever. Låt dina kunder själv skriva in sig
-                på din trafikskola med hjälp av enkel BankID identifiering.
+                Smidig inskrivning av elever. Låt dina kunder själv skriva in
+                sig på din trafikskola med hjälp av enkel BankID identifiering.
               </p>
             </div>
           </div>

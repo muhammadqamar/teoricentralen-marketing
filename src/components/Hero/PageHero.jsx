@@ -1,12 +1,13 @@
 import Image from 'next/image'
-import bgDefault from '@/images/backgrounds/moped.jpg'
+import defaultBackgroundImage from '@/images/backgrounds/default.jpg'
+
 import { Container } from '@/components/Container'
 
 export function PageHero({ title, description, image }) {
   return (
     <div className="relative isolate overflow-hidden">
       <Image
-        src={image || bgDefault}
+        src={image || defaultBackgroundImage}
         fill={true}
         alt="Teoricentralen"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
@@ -22,7 +23,7 @@ export function PageHero({ title, description, image }) {
         )}
 
         {description && (
-          <p className="mt-6 text-lg leading-8 text-gray-200">{description}</p>
+          <p className="mt-4 text-lg leading-8 text-gray-200">{description}</p>
         )}
       </Container>
     </div>
