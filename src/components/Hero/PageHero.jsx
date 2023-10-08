@@ -2,11 +2,12 @@ import Image from 'next/image'
 import bgDefault from '@/images/backgrounds/moped.jpg'
 import { Container } from '@/components/Container'
 
-export function PageHero({ title, description }) {
+export function PageHero({ title, description, image }) {
   return (
     <div className="relative isolate overflow-hidden">
       <Image
-        src={bgDefault}
+        src={image || bgDefault}
+        fill={true}
         alt="Teoricentralen"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />

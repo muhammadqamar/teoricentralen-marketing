@@ -2,16 +2,27 @@ import Image from 'next/image'
 
 import { Container } from '@/components/Container'
 import portraitImage from '@/images/logo.png'
+import { PageHero } from '@/components/Hero/PageHero'
+
+const title = 'Jobba med oss'
+const description = 'Var med och påverka framtidens körkortsutbildning.'
+const image = '/og-image.png'
 
 export const metadata = {
-  title: 'Jobba med oss',
-  description:
-    'Var med och påverka framtidens körkortsutbildning. Vi söker alltid efter nya talanger.',
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    images: [{ url: image }],
+  },
 }
 
 export default async function Page({ params }) {
   return (
     <>
+      <PageHero title={title} description={description} image={image} />
+
       <Container className="my-16">
         <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">

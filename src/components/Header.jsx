@@ -13,12 +13,12 @@ export function Header({ locale }) {
       <Navigation locale={locale} />
 
       {path === '/' && <HomeHero />}
-      {path !== '/' && (
+      {/* {path !== '/' && (
         <PageHero
           title="Framtidens trafikutbildning är här."
           description="Ditt körkort, dina villkor. Vi hjälper dig att hitta en trafikskola som passar just dig."
         ></PageHero>
-      )}
+      )} */}
     </>
   )
 }

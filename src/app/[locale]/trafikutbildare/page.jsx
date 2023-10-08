@@ -1,28 +1,38 @@
 import Image from 'next/image'
+import { PageHero } from '@/components/Hero/PageHero'
 
 import { Container } from '@/components/Container'
 import portraitImage from '@/images/logo.png'
 
+const title = 'Ta din trafikutbildning till en ny nivå'
+const description = 'Framtidens trafikutbildning är här'
+const image = '/og-image.png'
+
 export const metadata = {
-  title: 'Trafikutbildare',
-  description: 'Digitalisera din trafikutbildning',
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    images: [{ url: image }],
+  },
 }
 
 export default async function Page({ params }) {
   return (
     <>
+      <PageHero title={title} description={description} image={image} />
+
       <Container className="my-16">
         <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
             <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
               <h2 className="text-3xl font-extrabold tracking-tight text-dark">
-                Ta din trafikutbildning till en ny nivå
+                {title}
               </h2>
 
               <p className="mt-6 text-xl leading-8 text-gray-600">
-                Quasi est quaerat. Sit molestiae et. Provident ad dolorem
-                occaecati eos iste. Soluta rerum quidem minus ut molestiae velit
-                error quod. Excepturi quidem expedita molestias quas.
+                {description}
               </p>
 
               <p className="mt-6 text-base leading-7 text-gray-600">

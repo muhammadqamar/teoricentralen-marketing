@@ -30,10 +30,10 @@ export async function generateMetadata() {
   }
 
   return {
-    title: {
-      template: '%s - Teoricentralen',
-      default: 'Teoricentralen',
-    },
+    // title: {
+    //   template: '%s - Teoricentralen',
+    //   default: 'Teoricentralen',
+    // },
     description: 'Teoricentralen - en utbildningsplattform för körkortsteori',
     applicationName: 'Teoricentralen',
     referrer: 'origin-when-cross-origin',
