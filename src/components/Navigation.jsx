@@ -204,6 +204,7 @@ export function Navigation({ locale }) {
                       <Link
                         href={item.href}
                         className="mt-4 block font-bold text-dark"
+                        locale={locale}
                       >
                         {item.name}
                         <span className="absolute inset-0" />
@@ -224,6 +225,7 @@ export function Navigation({ locale }) {
                           key={item.name}
                           href={item.href}
                           className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-dark hover:bg-gray-100"
+                          locale={locale}
                         >
                           <item.icon
                             className="h-5 w-5 flex-none text-gray-500"
@@ -242,9 +244,11 @@ export function Navigation({ locale }) {
           <NavItem href="/korkortsfragor" locale={locale} open={open}>
             Körkortsfrågor
           </NavItem>
+
           <NavItem href="/recensioner" locale={locale} open={open}>
             Recensioner
           </NavItem>
+
           <NavItem href="/trafikutbildare" locale={locale} open={open}>
             För trafikutbildare
           </NavItem>
@@ -320,24 +324,28 @@ export function Navigation({ locale }) {
                 <Link
                   href="/korkortsfragor"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
+                  locale={locale}
                 >
                   Körkortsfrågor
                 </Link>
                 <Link
                   href="/vagmarken"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
+                  locale={locale}
                 >
                   Vägmärken
                 </Link>
                 <Link
                   href="/recensioner"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
+                  locale={locale}
                 >
                   Recensioner
                 </Link>
                 <Link
                   href="/trafikutbildare"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
+                  locale={locale}
                 >
                   För trafikutbildare
                 </Link>
@@ -346,6 +354,7 @@ export function Navigation({ locale }) {
                 <Link
                   href="/"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-bold leading-7 text-dark hover:bg-gray-50"
+                  locale={locale}
                 >
                   Boka demo
                 </Link>

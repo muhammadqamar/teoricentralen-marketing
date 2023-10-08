@@ -1,9 +1,17 @@
 import createIntlMiddleware from 'next-intl/middleware'
 
 export function middleware(request) {
+  // const pathnames = {
+  //   '/vagmarken': {
+  //     sv: '/vagmarken',
+  //     en: '/road-signs',
+  //   },
+  // }
+
   const handleI18nRouting = createIntlMiddleware({
-    locales: ['en', 'sv'],
+    locales: ['sv', 'en'],
     defaultLocale: 'sv',
+    // pathnames,
     localeDetection: false,
   })
 
