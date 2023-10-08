@@ -6,14 +6,11 @@ import { ContentDateFormat } from '@/lib/formatDate'
 import portraitImage from '@/images/blog-image.jpg'
 import Image from 'next/image'
 import PlaceholderImg from '@/images/og-image.png'
+import { Container } from '@/components/Container'
 
 const Index = ({ data }) => {
   return (
-    <SimpleLayout
-      bgImage={portraitImage}
-      title="Faktabanken. Innehåll för körkortsteori."
-      intro="Här hittar du allt om körkortsteori."
-    >
+    <Container class="py-16">
       <div className="md:border-l md:border-zinc-100 md:dark:border-zinc-700/40">
         <div className=" grid max-w-[1120px] grid-cols-4  gap-6 space-y-16">
           {data?.map((fact, index) => (
@@ -55,7 +52,7 @@ const Index = ({ data }) => {
           ))}
         </div>
       </div>
-    </SimpleLayout>
+    </Container>
   )
 }
 

@@ -6,12 +6,10 @@ export const metadata = {
   description: 'Vi svarar på de vanligaste frågorna',
 }
 
-export default async function Page({ params }) {
+export default async function Page({ params: { locale } }) {
   return (
-    <>
-      <Container className="my-16">
-        <Faq />
-      </Container>
-    </>
+    <Container className="my-16">
+      <Faq />
+    </Container>
   )
 }

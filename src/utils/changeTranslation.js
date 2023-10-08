@@ -12,13 +12,13 @@ const language = [
   { name: 'English', code: 'en', flag: EnglishLogo },
 ]
 
-const ChangeTranslation = ({ lang }) => {
+const ChangeTranslation = ({ locale }) => {
   const router = useRouter()
   const path = usePathname()
 
   // set the default language to lang
   const [selected, setSelected] = useState(
-    lang === 'en' ? language[1] : language[0],
+    locale === 'en' ? language[1] : language[0],
   )
 
   return (

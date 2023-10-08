@@ -1,6 +1,5 @@
 'use client'
 
-import { usePathname } from 'next-intl/client'
 import Link from 'next-intl/link'
 import logoTeoricentralen from '@/images/logos/mark.svg'
 import ChangeTranslation from '@/utils/changeTranslation'
@@ -25,27 +24,24 @@ const navigation = {
   ],
 }
 
-export function Footer({ lang }) {
-  const path = usePathname()
-
+export function Footer({ locale }) {
   return (
-    <footer className="flex-none bg-gray-100">
+    <footer className="bg-gray-100">
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-6">
             <Image
               src={logoTeoricentralen}
               alt="Teoricentralen"
-              className="h-7"
-              width={28}
-              height={28}
-              unoptimized
+              className="h-8"
             />
+
             <p className="text-sm font-semibold leading-6 text-gray-600">
-              Plattformen som hjälper trafikskolor att växa. Utvecklat
-              tillsammans med Trafikskolor i Sverige.
+              Plattformen som hjälper trafikskolor att växa. Utvecklad i
+              samarbeta med trafikskolor runt om i landet.
             </p>
-            <ChangeTranslation lang={lang} />
+
+            <ChangeTranslation locale={locale} />
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
@@ -58,7 +54,7 @@ export function Footer({ lang }) {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        locale={lang}
+                        locale={locale}
                         className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
@@ -76,7 +72,7 @@ export function Footer({ lang }) {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        locale={lang}
+                        locale={locale}
                         className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
@@ -96,7 +92,7 @@ export function Footer({ lang }) {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        locale={lang}
+                        locale={locale}
                         className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}
@@ -114,7 +110,7 @@ export function Footer({ lang }) {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        locale={lang}
+                        locale={locale}
                         className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
                         {item.name}

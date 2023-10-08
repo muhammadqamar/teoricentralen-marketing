@@ -5,7 +5,7 @@ export const metadata = {
   description: 'Användarvillkor',
 }
 
-export default async function Page({ params: { lang } }) {
+export default async function Page({ params: { locale } }) {
   return (
     <Container className="my-16">
       <h1 className="text-4xl font-bold tracking-tight text-dark sm:text-5xl">

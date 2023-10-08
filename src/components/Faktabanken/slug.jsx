@@ -5,6 +5,7 @@ import { SimpleLayout } from '../SimpleLayout'
 import { Card } from '../Card'
 import { ContentDateFormat } from '@/lib/formatDate'
 import portraitImage from '@/images/blog-image.jpg'
+import { Container } from '../Container'
 
 const Slug = ({ data }) => {
   return (
@@ -12,25 +13,23 @@ const Slug = ({ data }) => {
       bgImage={data?.image === null ? portraitImage : data?.image?.url}
       title={data?.title}
     >
-      <div className="container mx-auto px-5">
-        <div className="flex max-w-3xl flex-col space-y-16">
-          {data?.date && (
-            <Card as="article">
-              <Card.Eyebrow
-                className="!mb-3 "
-                as="date"
-                dateTime={data?.date}
-                decorate
-              >
-                <p className="!text-gray-600">
-                  {ContentDateFormat(data?.date || '')}
-                </p>
-              </Card.Eyebrow>
-            </Card>
-          )}
-          {ContentfulRender(data?.content?.json)}
-        </div>
-      </div>
+      {data?.date && (
+        <Card as="article">
+          <Card.Eyebrow
+            className="!mb-3 "
+            as="date"
+            dateTime={data?.date}
+            decorate
+          >
+            <p className="!text-gray-600">
+              {ContentDateFormat(data?.date || '')}
+            </p>
+          </Card.Eyebrow>
+        </Card>
+      )}
+      <Container class="py-16">
+        {ContentfulRender(data?.content?.json)}
+      </Container>
     </SimpleLayout>
   )
 }

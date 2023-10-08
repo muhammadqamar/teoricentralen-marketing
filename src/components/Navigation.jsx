@@ -48,6 +48,18 @@ const educations = [
     href: '/utbildningar/personbil-med-tungt-slap',
     icon: SquaresPlusIcon,
   },
+  {
+    name: 'Lastbil',
+    description: 'Your customers’ data will be safe and secure',
+    href: '/utbildningar/lastbil',
+    icon: SquaresPlusIcon,
+  },
+  {
+    name: 'Buss',
+    description: 'Your customers’ data will be safe and secure',
+    href: '/utbildningar/buss',
+    icon: SquaresPlusIcon,
+  },
 ]
 
 const callsToAction = [
@@ -56,7 +68,7 @@ const callsToAction = [
   { name: 'View all products', href: '#', icon: RectangleGroupIcon },
 ]
 
-function NavItem({ href, lang, open, children }) {
+function NavItem({ href, locale, open, children }) {
   let isActive = usePathname() === href
 
   return (
@@ -66,7 +78,7 @@ function NavItem({ href, lang, open, children }) {
         'relative block text-sm font-bold leading-6 transition hover:text-primary',
         isActive ? 'text-primary' : open ? 'text-dark' : 'text-white',
       )}
-      locale={lang}
+      locale={locale}
     >
       {children}
     </Link>
@@ -77,7 +89,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export function Navigation({ lang }) {
+export function Navigation({ locale }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   let [open, setOpen] = useState(false)
   const ref = useRef(null)
@@ -116,7 +128,7 @@ export function Navigation({ lang }) {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5" locale={lang}>
+          <Link href="/" className="-m-1.5 p-1.5" locale={locale}>
             <span className="sr-only">Teoricentralen</span>
             <Image
               src={logoTeoricentralen}
@@ -126,6 +138,7 @@ export function Navigation({ lang }) {
             />
           </Link>
         </div>
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -220,13 +233,13 @@ export function Navigation({ lang }) {
             </Transition>
           </Popover>
 
-          <NavItem href="/korkortsfragor" lang={lang} open={open}>
+          <NavItem href="/korkortsfragor" locale={locale} open={open}>
             Körkortsfrågor
           </NavItem>
-          <NavItem href="/recensioner" lang={lang} open={open}>
+          <NavItem href="/recensioner" locale={locale} open={open}>
             Recensioner
           </NavItem>
-          <NavItem href="/trafikutbildare" lang={lang} open={open}>
+          <NavItem href="/trafikutbildare" locale={locale} open={open}>
             För trafikutbildare
           </NavItem>
         </Popover.Group>
@@ -246,7 +259,7 @@ export function Navigation({ lang }) {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5" locale={lang}>
+            <Link href="/" className="-m-1.5 p-1.5" locale={locale}>
               <span className="sr-only">Teoricentralen</span>
               <Image
                 src={logoTeoricentralen}
