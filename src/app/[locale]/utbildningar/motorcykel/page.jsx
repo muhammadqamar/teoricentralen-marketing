@@ -19,7 +19,7 @@ export default async function Page({ params: { locale } }) {
   return (
     <>
       <PageHero title={title} description={description} image={image} />
-      <Container className="my-16">MotorCycle</Container>
+      <Container className="my-16">Körkortsteori för motorcykel</Container>
     </>
   )
 }
