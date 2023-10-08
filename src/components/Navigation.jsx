@@ -182,7 +182,7 @@ export function Navigation({ locale }) {
                 // ref={setReferenceElement}
                 className="absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5"
               >
-                <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
+                <div className="mx-auto grid max-w-7xl grid-cols-3 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
                   {educations.map((item) => (
                     <div
                       key={item.name}
