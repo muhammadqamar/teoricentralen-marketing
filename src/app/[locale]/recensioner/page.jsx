@@ -19,8 +19,10 @@ export const metadata = {
 export default async function Page({ params: { locale } }) {
   const lang = await getTranslations(locale)
 
-  return <>
-    <PageHero title={title} description={description} image={image} />
-    <Testimonials data={lang?.testimonials} />
-  </>
+  return (
+    <>
+      <PageHero title={title} description={description} image={image} />
+      <Testimonials data={lang?.testimonials} />
+    </>
+  )
 }
