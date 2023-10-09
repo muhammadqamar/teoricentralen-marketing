@@ -82,7 +82,7 @@ const mulish = Mulish({
   display: 'swap',
   variable: '--font-mulish',
 })
- function generateStaticParams() {
+ function getStaticParams() {
   return [{ locale: 'sv' }, { locale: 'en' }]
 }
 export const generateStaticParams = process.env.NODE_ENV === 'production' ? getStaticParams : undefined
