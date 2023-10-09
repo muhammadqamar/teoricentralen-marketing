@@ -35,7 +35,7 @@ function extractFactEntries(fetchResponse) {
   return fetchResponse?.data?.vagmarkeskategoriCollection?.items
 }
 
-export async function getPreviewPostBySlug(slug) {
+export async function getPreviewSignBySlug(slug) {
   const entry = await fetchGraphQL(
     `query {
     vagmarkeskategoriCollection( where: { slug: "${slug}" }, preview: true, limit: 1) {
