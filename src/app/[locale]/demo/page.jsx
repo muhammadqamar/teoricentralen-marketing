@@ -1,6 +1,7 @@
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { Calendly } from '@/components/Calendly'
 import { PageHero } from '@/components/Hero/PageHero'
+import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 
 const title = 'Demo'
 const description =
@@ -20,7 +21,12 @@ export const metadata = {
 export default function Demo() {
   return (
     <>
-      <PageHero title={title} description={description} image={image} />
+      <PageHero
+        title={title}
+        description={description}
+        backgroundImage={backgroundImage}
+      />
+
       <SimpleLayout title={title} intro={description}>
         <Calendly />
       </SimpleLayout>

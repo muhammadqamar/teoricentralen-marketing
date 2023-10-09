@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import { PageHero } from '@/components/Hero/PageHero'
 import { Container } from '@/components/Container'
-import backgroundImage from '@/images/backgrounds/vagmarke.jpg'
 import { draftMode } from 'next/headers'
 import { getAllRoadSign } from '@/lib/roadSign'
+import { Card } from '@/components/Card'
 import Link from 'next/link'
 import PlaceholderImg from '@/images/og-image.png'
-import { Card } from '@/components/Card'
+import backgroundImage from '@/images/backgrounds/vagmarke.jpg'
 
 const title = 'Vägmärken'
 const description = 'Alla Sveriges Vägmärken'
@@ -29,9 +29,9 @@ export default async function Page({ params: { locale } }) {
   return (
     <>
       <PageHero
-        image={backgroundImage}
         title={title}
         description={description}
+        backgroundImage={backgroundImage}
       />
 
       <Container className="my-16">

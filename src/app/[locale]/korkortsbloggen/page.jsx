@@ -3,10 +3,11 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 import { getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 import { PageHero } from '@/components/Hero/PageHero'
-
+import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 
 const title = 'Körkortsbloggen'
-const description = 'Från nybörjare till trafikexpert. En blogg om körkort, trafiksäkerhet och trafikregler.'
+const description =
+  'Från nybörjare till trafikexpert. En blogg om körkort, trafiksäkerhet och trafikregler.'
 const image = '/og-image.png'
 
 export const metadata = {
@@ -59,14 +60,16 @@ function Article({ article }) {
   )
 }
 
-
-
 export default async function ArticlesIndex() {
   let articles = await getAllArticles()
 
   return (
     <>
-      <PageHero title={title} description={description} image={image} />
+      <PageHero
+        title={title}
+        description={description}
+        backgroundImage={backgroundImage}
+      />
 
       <SimpleLayout
         title="Writing on software design, company building, and the aerospace industry."

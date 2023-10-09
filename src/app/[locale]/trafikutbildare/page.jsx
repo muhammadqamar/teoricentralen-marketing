@@ -22,7 +22,7 @@ export default async function Page({ params }) {
       <PageHero
         title={title}
         description={description}
-        image={backgroundImage}
+        backgroundImage={backgroundImage}
       />
 
       <Container className="my-16">

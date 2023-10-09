@@ -1,10 +1,10 @@
 import { Container } from '@/components/Container'
 import { PageHero } from '@/components/Hero/PageHero'
+import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 
 const title = 'Kontakt'
 const description = 'Framtidens trafikutbildning är här'
 const image = '/og-image.png'
-
 
 export const metadata = {
   title,
@@ -19,7 +19,11 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <PageHero title={title} description={description} image={image} />
+      <PageHero
+        title={title}
+        description={description}
+        backgroundImage={backgroundImage}
+      />
 
       <Container className="my-16">
         <h1 className="text-4xl font-extrabold tracking-tight text-dark sm:text-5xl">

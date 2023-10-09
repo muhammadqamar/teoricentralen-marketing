@@ -2,6 +2,7 @@ import { getAllFacts } from '@/lib/facts'
 import { draftMode } from 'next/headers'
 import Faktabanken from '@/components/Faktabanken'
 import { PageHero } from '@/components/Hero/PageHero'
+import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 
 const title = 'Faktabanken'
 const description = 'Faktabanken'
@@ -23,7 +24,12 @@ export default async function Page({ params: { locale } }) {
 
   return (
     <>
-      <PageHero title={title} description={description} image={image} />
+      <PageHero
+        title={title}
+        description={description}
+        backgroundImage={backgroundImage}
+      />
+
       <Faktabanken data={allFacts} />
     </>
   )

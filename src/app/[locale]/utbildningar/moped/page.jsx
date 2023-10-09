@@ -1,5 +1,5 @@
-import { PageHero } from '@/components/Hero/PageHero'
 import { Container } from '@/components/Container'
+import { PageHero } from '@/components/Hero/PageHero'
 import backgroundImage from '@/images/backgrounds/moped.jpg'
 
 const title = 'Mopedutbildning för AM-körkort'
@@ -20,9 +20,9 @@ export default async function Page({ params }) {
   return (
     <>
       <PageHero
-        image={backgroundImage}
         title={title}
         description={description}
+        backgroundImage={backgroundImage}
       />
 
       <Container className="my-16">

@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Container } from '@/components/Container'
 import portraitImage from '@/images/logo.png'
 import { PageHero } from '@/components/Hero/PageHero'
+import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 
 const title = 'Vägmärken'
 const description = 'Framtidens trafikutbildning är här'
@@ -20,7 +21,11 @@ export const metadata = {
 export default async function Page({ params }) {
   return (
     <>
-      <PageHero title={title} description={description} image={image} />
+      <PageHero
+        title={title}
+        description={description}
+        backgroundImage={backgroundImage}
+      />
 
       <Container className="my-16">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -41,8 +46,8 @@ export default async function Page({ params }) {
             <div className="mt-6 space-y-7 font-medium text-gray-600">
               <p>{description}</p>
               <p>
-                Smidig inskrivning av elever. Låt dina kunder själv skriva in sig
-                på din trafikskola med hjälp av enkel BankID identifiering.
+                Smidig inskrivning av elever. Låt dina kunder själv skriva in
+                sig på din trafikskola med hjälp av enkel BankID identifiering.
               </p>
             </div>
           </div>

@@ -1,7 +1,8 @@
 import Image from 'next/image'
-import { PageHero } from '@/components/Hero/PageHero'
 import { Container } from '@/components/Container'
+import { PageHero } from '@/components/Hero/PageHero'
 import portraitImage from '@/images/logo.png'
+import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 
 const title = 'Körkortsfrågor'
 const description = 'Framtidens trafikutbildning är här'
@@ -20,7 +21,11 @@ export const metadata = {
 export default async function Page({ params }) {
   return (
     <>
-      <PageHero title={title} description={description} image={image} />
+      <PageHero
+        title={title}
+        description={description}
+        backgroundImage={backgroundImage}
+      />
 
       <Container className="my-16">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">

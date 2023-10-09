@@ -6,7 +6,6 @@ const title = 'Car with trailer'
 const description = 'Vi svarar på de vanligaste frågorna'
 const image = '/og-image.png'
 
-
 export const metadata = {
   title,
   description,
@@ -18,8 +17,15 @@ export const metadata = {
 }
 
 export default async function Page({ params: { locale } }) {
-  return <>
-    <PageHero title={title} description={description} image={image} />
-    <Container className="my-16">Car with trailer</Container>
-  </>
+  return (
+    <>
+      <PageHero
+        title={title}
+        description={description}
+        backgroundImage={backgroundImage}
+      />
+
+      <Container className="my-16">Car with trailer</Container>
+    </>
+  )
 }

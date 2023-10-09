@@ -1,6 +1,7 @@
 import Testimonials from '@/components/Testimonials/Testimonials'
 import { getTranslations } from '../../../../getTranslations'
 import { PageHero } from '@/components/Hero/PageHero'
+import backgroundImage from '@/images/backgrounds/moped.jpg'
 
 const title = 'Recensioner'
 const description = 'Framtidens trafikutbildning är här'
@@ -21,7 +22,12 @@ export default async function Page({ params: { locale } }) {
 
   return (
     <>
-      <PageHero title={title} description={description} image={image} />
+      <PageHero
+        title={title}
+        description={description}
+        backgroundImage={backgroundImage}
+      />
+
       <Testimonials data={lang?.testimonials} />
     </>
   )

@@ -3,13 +3,14 @@ import defaultBackgroundImage from '@/images/backgrounds/default.jpg'
 
 import { Container } from '@/components/Container'
 
-export function PageHero({ title, description, image }) {
+export function PageHero({ title, description, backgroundImage }) {
   return (
     <div className="relative isolate overflow-hidden">
       <Image
-        src={image || defaultBackgroundImage}
+        src={backgroundImage || defaultBackgroundImage}
         fill={true}
         alt="Teoricentralen"
+        placeholder="blur"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
 

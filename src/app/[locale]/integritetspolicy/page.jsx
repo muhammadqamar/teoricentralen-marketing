@@ -1,5 +1,6 @@
 import { Container } from '@/components/Container'
 import { PageHero } from '@/components/Hero/PageHero'
+import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 
 const title = 'Integritetspolicy'
 const description = 'Framtidens trafikutbildning är här'
@@ -18,7 +19,11 @@ export const metadata = {
 export default function PrivacyPolicy() {
   return (
     <>
-      <PageHero title={title} description={description} image={image} />
+      <PageHero
+        title={title}
+        description={description}
+        backgroundImage={backgroundImage}
+      />
 
       <Container className="my-16">
         <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
