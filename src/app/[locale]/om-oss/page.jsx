@@ -5,7 +5,7 @@ import portraitImage from '@/images/logo.png'
 import { PageHero } from '@/components/Hero/PageHero'
 import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 
-const title = 'Vägmärken'
+const title = 'Om oss'
 const description = 'Framtidens trafikutbildning är här'
 const image = '/og-image.png'
 
