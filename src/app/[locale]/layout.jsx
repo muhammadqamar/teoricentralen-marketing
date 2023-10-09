@@ -6,8 +6,6 @@ import { NextIntlClientProvider } from 'next-intl'
 import '@/styles/tailwind.css'
 import { headers } from 'next/headers'
 
-
-
 export async function generateMetadata() {
   const headersList = headers()
   const links = headersList.get('link')?.split(', ')
@@ -30,11 +28,12 @@ export async function generateMetadata() {
   }
 
   return {
-    // title: {
-    //   template: '%s - Teoricentralen',
-    //   default: 'Teoricentralen',
-    // },
-    description: 'Teoricentralen - en utbildningsplattform för körkortsteori',
+    title: {
+      template: '%s - Teoricentralen',
+      default: 'Teoricentralen - en utbildningsplattform för körkortsteori',
+    },
+    description:
+      'Utbildningsplattform för trafikutbildare och elever som vill ta körkort',
     applicationName: 'Teoricentralen',
     referrer: 'origin-when-cross-origin',
     keywords: [
@@ -82,7 +81,8 @@ const mulish = Mulish({
   display: 'swap',
   variable: '--font-mulish',
 })
- export default function RootLayout({ children, params: { locale } }) {
+
+export default function RootLayout({ children, params: { locale } }) {
   return (
     <html
       lang={locale}
