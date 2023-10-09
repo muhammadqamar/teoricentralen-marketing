@@ -26,9 +26,9 @@ export default async function Page({ params: { locale } }) {
       />
 
       <Container className="my-16">
-        <h1 className="text-4xl font-bold tracking-tight text-dark sm:text-5xl">
-          Användarvillkor
-        </h1>
+        <h2 className="text-2xl font-extrabold tracking-tight text-dark">
+          Våra användarvillkor
+        </h2>
         <div className="mt-6 space-y-7 text-base text-zinc-600">
           <p>
             Din verksamhet, dina villkor. Vi hjälper dig att ta din trafikskola
