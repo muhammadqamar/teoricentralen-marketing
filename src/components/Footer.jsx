@@ -24,7 +24,7 @@ const navigation = {
     { name: 'Vägmärken', href: '/vagmarken' },
     { name: 'Faktabanken', href: '/faktabanken' },
     { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
-    // { name: 'Ordlista', href: '/ordlista' },
+    { name: 'Ordlista', href: '/ordlista' },
   ],
   support: [
     { name: 'Kontakta oss', href: '/kontakt' },
