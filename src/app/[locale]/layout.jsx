@@ -5,7 +5,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { NextIntlClientProvider } from 'next-intl'
 import '@/styles/tailwind.css'
 import { headers } from 'next/headers'
-
+import {unstable_setRequestLocale} from 'next-intl/server';
 export async function generateMetadata() {
   const headersList = headers()
   const links = headersList.get('link')?.split(', ')
@@ -82,7 +82,13 @@ const mulish = Mulish({
   variable: '--font-mulish',
 })
 
+export function generateStaticParams() {
+  return [{ locale: 'sv' }, { locale: 'en' }]
+}
+
 export default function RootLayout({ children, params: { locale } }) {
+
+  unstable_setRequestLocale(['en', 'sv']);
   return (
     <html
       lang={locale}

@@ -10,7 +10,7 @@ import { Container } from '@/components/Container'
 
 const Index = ({ data }) => {
   return (
-    <Container class="py-16">
+    <Container className="py-16">
       <div className="md:border-l md:border-zinc-100 md:dark:border-zinc-700/40">
         <div className=" grid max-w-[1120px] grid-cols-4  gap-6 space-y-16">
           {data?.map((fact, index) => (
@@ -26,13 +26,13 @@ const Index = ({ data }) => {
                     loading="lazy"
                     alt=""
                     fill
-                    className="inset-0 aspect-square h-full w-full animate-pulse  "
+                    className="inset-0 w-full h-full aspect-square animate-pulse "
                     placeholder={
                       'data:image/jpeg;base64,/9j/4gxYSUNDX1BST0ZJTEUAAQEAAAxITGlub...'
                     }
                   />
                 </div>
-                <div className="bg-white px-5 py-4 ">
+                <div className="px-5 py-4 bg-white ">
                   <p className="mb-2">{fact?.title}</p>
                   {fact?.sys?.publishedAt && (
                     <Card as="article">

@@ -1,6 +1,7 @@
 import { Container } from '@/components/Container'
 import { Faq } from '@/components/Faq'
 import { PageHero } from '@/components/Hero/PageHero'
+import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 
 const title = 'Car with trailer'
 const description = 'Vi svarar på de vanligaste frågorna'

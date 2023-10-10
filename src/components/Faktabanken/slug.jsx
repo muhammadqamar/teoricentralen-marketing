@@ -27,7 +27,7 @@ const Slug = ({ data }) => {
           </Card.Eyebrow>
         </Card>
       )}
-      <Container class="py-16">
+      <Container className="py-16">
         {ContentfulRender(data?.content?.json)}
       </Container>
     </SimpleLayout>
