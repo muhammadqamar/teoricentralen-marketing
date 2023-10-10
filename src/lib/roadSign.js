@@ -50,7 +50,7 @@ export async function getPreviewSignBySlug(slug) {
   return extractPost(entry)
 }
 
-export async function getAllRoadSign(isDraftMode, locale) {
+export async function getAllRoadSignCategory(isDraftMode, locale) {
   const entries = await fetchGraphQL(
     `query {
       vagmarkeskategoriCollection(locale: "${locale}" , where: { slug_exists: true }, preview: ${
@@ -64,7 +64,51 @@ export async function getAllRoadSign(isDraftMode, locale) {
     isDraftMode,
   )
 
-  return extractFactEntries(entries)
+  return entries?.data?.vagmarkeskategoriCollection?.items
+}
+
+export async function getCategorySignDetail(slug, locale) {
+  const entry = await fetchGraphQL(
+    `query {
+      vagmarkeskategoriCollection(locale: "${locale}", where: { slug: "${slug}" }, limit: 1) {
+        items {
+          slug
+          title
+          allsignsCollection(locale: "${locale}" ) {
+            items {
+              title
+              slug
+              image {
+                url
+              }
+              
+            }
+        }
+        }
+      }
+    }`,
+  )
+  console.log('all detail', entry)
+  return {
+    detail: entry?.data?.vagmarkeskategoriCollection.items,
+  }
+}
+
+export async function getAllRoadSign(isDraftMode, locale) {
+  const entries = await fetchGraphQL(
+    `query {
+      vagmarkeCollection(locale: "${locale}" , where: { slug_exists: true }, preview: ${
+        isDraftMode ? 'true' : 'false'
+      }) {
+        items {
+          slug
+        }
+      }
+    }`,
+    isDraftMode,
+  )
+
+  return entries?.data?.vagmarkeCollection?.items
 }
 
 export async function getRoadSign(slug, preview, locale) {

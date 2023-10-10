@@ -1,16 +1,22 @@
-import createMiddleware from 'next-intl/middleware';
-import {
-  createLocalizedPathnamesNavigation
-} from 'next-intl/navigation';
-export const locales = ['en', 'sv'];
+import createMiddleware from 'next-intl/middleware'
+import { createLocalizedPathnamesNavigation } from 'next-intl/navigation'
+export const locales = ['en', 'sv']
 export const pathnames = {
   '/vagmarken': {
     en: '/road-signs',
-    sv: '/vagmarken'
+    sv: '/vagmarken',
   },
-};
+  '/vagmarken/[categoryslug]': {
+    en: '/road-signs/[categoryslug]',
+    sv: '/vagmarken/[categoryslug]',
+  },
+  '/vagmarken/[categoryslug]/[signSlug]': {
+    en: '/road-signs/[categoryslug]/[signSlug]',
+    sv: '/vagmarken/[categoryslug]/[signSlug]',
+  },
+}
 export const { Link, redirect, usePathname, useRouter, getPathname } =
-  createLocalizedPathnamesNavigation({ locales, pathnames });
+  createLocalizedPathnamesNavigation({ locales, pathnames })
 
 export function middleware(request) {
   const handleI18nRouting = createMiddleware({
