@@ -3,8 +3,8 @@ import { Faq } from '@/components/Faq'
 import { PageHero } from '@/components/Hero/PageHero'
 import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 
-const title = 'Användarvillkor'
-const description = 'Användarvillkor'
+const title = 'Frågor och svar'
+const description = 'Vi har svar på de vanligaste frågorna'
 const image = '/og-image.png'
 
 export const metadata = {
@@ -13,7 +13,6 @@ export const metadata = {
   openGraph: {
     title,
     description,
-    images: [{ url: image }],
   },
 }
 
