@@ -63,7 +63,7 @@ export default async function Page({ params: { locale }, params }) {
                   />
                 </div>
 
-                <div className="bg-white px-5 py-4 ">
+                <div className="px-5 py-4 bg-white ">
                   <p className="mb-2">{sign?.title}</p>
                 </div>
               </div>

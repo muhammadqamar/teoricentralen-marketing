@@ -5,28 +5,31 @@ import { Analytics } from '@vercel/analytics/react'
 import { NextIntlClientProvider } from 'next-intl'
 import '@/styles/tailwind.css'
 import { headers } from 'next/headers'
-import {unstable_setRequestLocale} from 'next-intl/server';
+import { unstable_setRequestLocale } from 'next-intl/server';
+
 export async function generateMetadata() {
   const headersList = headers()
   const links = headersList.get('link')?.split(', ')
   const linkObjects = []
-
+  console.log('links', links)
   let header_url
   if (links) {
     const header_url = new URL(headersList.get('x-url') || '')
     for (const link of links) {
-      const match = /<([^>]+)>;\s*rel="([^"]+)";\s*hreflang="([^"]+)"/.exec(
-        link,
-      )
+      const urlMatch = link.match(/<([^>]+)>/);
+      const relMatch = link.match(/rel="([^"]+)"/);
+      const hreflangMatch = link.match(/hreflang="([^"]+)"/);
 
-      if (match) {
-        const [url, rel, hreflang] = match
-        const linkObject = { url, rel, hreflang }
-        linkObjects.push(linkObject)
-      }
+      // Create an object with the extracted values
+      const result = {
+        url: urlMatch ? urlMatch[1] : '',
+        rel: relMatch ? relMatch[1] : '',
+        hreflang: hreflangMatch ? hreflangMatch[1] : '',
+      };
+      linkObjects.push(result)
     }
   }
-
+  console.log('links', linkObjects)
   return {
     title: {
       template: '%s - Teoricentralen',

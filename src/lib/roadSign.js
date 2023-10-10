@@ -81,14 +81,14 @@ export async function getCategorySignDetail(slug, locale) {
               image {
                 url
               }
-              
+
             }
         }
         }
       }
     }`,
   )
-  console.log('all detail', entry)
+
   return {
     detail: entry?.data?.vagmarkeskategoriCollection.items,
   }
@@ -114,18 +114,23 @@ export async function getAllRoadSign(isDraftMode, locale) {
 export async function getRoadSign(slug, preview, locale) {
   const entry = await fetchGraphQL(
     `query {
-      vagmarkeskategoriCollection(locale: "${locale}", where: { slug: "${slug}" }, preview: ${
+      vagmarkeCollection(locale: "${locale}", where: { slug: "${slug}" }, preview: ${
         preview ? 'true' : 'false'
       }, limit: 1) {
         items {
-          ${POST_GRAPHQL_FIELDS}
+          slug
+          title
+          image {
+            url
+          }
+          content {
+            json
+          }
         }
       }
     }`,
     preview,
   )
 
-  return {
-    fact: extractFact(entry),
-  }
+  return entry.data?.vagmarkeCollection?.items
 }
