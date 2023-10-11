@@ -14,6 +14,15 @@ export const pathnames = {
     en: '/road-signs/[categoryslug]/[signSlug]',
     sv: '/vagmarken/[categoryslug]/[signSlug]',
   },
+
+  '/ordlista': {
+    en: '/dictionary',
+    sv: '/ordlista',
+  },
+  '/ordlista/[slug]': {
+    en: '/dictionary/[slug]',
+    sv: '/ordlista/[slug]',
+  },
 }
 export const { Link, redirect, usePathname, useRouter, getPathname } =
   createLocalizedPathnamesNavigation({ locales, pathnames })

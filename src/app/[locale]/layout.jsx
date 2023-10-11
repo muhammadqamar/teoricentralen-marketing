@@ -5,31 +5,31 @@ import { Analytics } from '@vercel/analytics/react'
 import { NextIntlClientProvider } from 'next-intl'
 import '@/styles/tailwind.css'
 import { headers } from 'next/headers'
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { unstable_setRequestLocale } from 'next-intl/server'
 
 export async function generateMetadata() {
   const headersList = headers()
   const links = headersList.get('link')?.split(', ')
   const linkObjects = []
-  console.log('links', links)
+
   let header_url
   if (links) {
     const header_url = new URL(headersList.get('x-url') || '')
     for (const link of links) {
-      const urlMatch = link.match(/<([^>]+)>/);
-      const relMatch = link.match(/rel="([^"]+)"/);
-      const hreflangMatch = link.match(/hreflang="([^"]+)"/);
+      const urlMatch = link.match(/<([^>]+)>/)
+      const relMatch = link.match(/rel="([^"]+)"/)
+      const hreflangMatch = link.match(/hreflang="([^"]+)"/)
 
       // Create an object with the extracted values
       const result = {
         url: urlMatch ? urlMatch[1] : '',
         rel: relMatch ? relMatch[1] : '',
         hreflang: hreflangMatch ? hreflangMatch[1] : '',
-      };
+      }
       linkObjects.push(result)
     }
   }
-  console.log('links', linkObjects)
+
   return {
     title: {
       template: '%s - Teoricentralen',
@@ -90,8 +90,7 @@ export function generateStaticParams() {
 }
 
 export default function RootLayout({ children, params: { locale } }) {
-
-  unstable_setRequestLocale(['en', 'sv']);
+  unstable_setRequestLocale(['en', 'sv'])
   return (
     <html
       lang={locale}
