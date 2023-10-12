@@ -41,19 +41,19 @@ function extractFactEntries(fetchResponse) {
   return fetchResponse?.data?.ordlistaCollection?.items
 }
 
-export async function getPreviewOrdBySlug(slug) {
-  const entry = await fetchGraphQL(
-    `query {
-    ordlistaCollection( where: { slug: "${slug}" }, preview: true, limit: 1) {
-      items {
-        ${POST_GRAPHQL_FIELDS}
-      }
-    }
-  }`,
-    true,
-  )
-  return extractPost(entry)
-}
+// export async function getPreviewordBySlug(slug) {
+//   const entry = await fetchGraphQL(
+//     `query {
+//     ordlistaCollection( where: { slug: "${slug}" }, preview: true, limit: 1) {
+//       items {
+//         ${POST_GRAPHQL_FIELDS}
+//       }
+//     }
+//   }`,
+//     true,
+//   )
+//   return extractPost(entry)
+// }
 
 export async function getAllOrdlista(isDraftMode, locale) {
   const entries = await fetchGraphQL(

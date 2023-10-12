@@ -13,6 +13,7 @@ export async function generateMetadata() {
   const linkObjects = []
 
   let header_url
+  console.log(links)
   if (links) {
     const header_url = new URL(headersList.get('x-url') || '')
     for (const link of links) {

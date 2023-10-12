@@ -5,18 +5,21 @@ import { Container } from '@/components/Container'
 
 export function PageHero({ title, description, backgroundImage }) {
   return (
-    <div className="relative isolate overflow-hidden">
+    <div className="relative overflow-hidden isolate">
       <Image
         src={backgroundImage || defaultBackgroundImage}
         fill={true}
         alt="Teoricentralen"
         placeholder="blur"
-        className="absolute inset-0 -z-10 h-full w-full object-cover"
+        className="absolute inset-0 object-cover w-full h-full -z-10"
+        blurDataURL={
+          'data:image/jpeg;base64,/9j/4gxYSUNDX1BST0ZJTEUAAQEAAAxITGlubwIQ...'
+        }
       />
 
-      <div className="absolute inset-0 top-0 -z-10 h-full bg-black bg-opacity-70"></div>
+      <div className="absolute inset-0 top-0 h-full bg-black -z-10 bg-opacity-70"></div>
 
-      <Container className="pb-16 pt-40 sm:pb-24 sm:pt-48">
+      <Container className="pt-40 pb-16 sm:pb-24 sm:pt-48">
         {title && (
           <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
             {title}
