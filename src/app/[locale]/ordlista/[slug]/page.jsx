@@ -49,7 +49,6 @@ export async function generateStaticParams({ params: { locale } }) {
 }
 
 export default async function Page({ params: { locale, slug } }) {
-  console.log(slug)
   const { isEnabled } = draftMode()
   const { fact } = await getOrdlista(slug, isEnabled, locale)
 

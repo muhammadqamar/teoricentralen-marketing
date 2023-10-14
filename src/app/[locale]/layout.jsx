@@ -9,7 +9,6 @@ import { notFound } from 'next/navigation'
 import '@/styles/tailwind.css'
 
 export async function generateMetadata({ params }) {
-  console.log(params)
   return {
     title: {
       template: '%s - Teoricentralen',

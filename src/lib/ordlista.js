@@ -86,7 +86,6 @@ export async function getOrdlista(slug, preview, locale) {
     preview,
   )
 
-  console.log('entry', entry)
   return {
     fact: extractFact(entry),
   }
