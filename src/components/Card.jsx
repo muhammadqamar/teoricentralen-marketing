@@ -1,8 +1,5 @@
-import { createSharedPathnamesNavigation } from 'next-intl/navigation'
 import clsx from 'clsx'
-
-import { locales } from '@/navigation'
-const { Link } = createSharedPathnamesNavigation({ locales })
+import { Link } from '@/navigation'
 
 function ChevronRightIcon(props) {
   return (

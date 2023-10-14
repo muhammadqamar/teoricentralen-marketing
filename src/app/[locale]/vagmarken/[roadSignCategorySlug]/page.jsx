@@ -3,10 +3,7 @@ import { Container } from '@/components/Container'
 import { getAllRoadSignCategory, getCategorySignDetail } from '@/lib/roadSign'
 import { PageHero } from '@/components/Hero/PageHero'
 import backgroundImage from '@/images/backgrounds/vagmarke.jpg'
-import { createSharedPathnamesNavigation } from 'next-intl/navigation'
-
-import { locales } from '@/navigation'
-const { Link } = createSharedPathnamesNavigation({ locales })
+import { Link } from '@/navigation'
 
 export async function generateStaticParams({ params }) {
   const allCategories = await getAllRoadSignCategory(false, params.locale)

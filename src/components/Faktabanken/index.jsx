@@ -1,14 +1,9 @@
-import React from 'react'
+import PlaceholderImg from '@/images/og-image.png'
 import { Card } from '../Card'
 import { ContentDateFormat } from '@/lib/formatDate'
 import Image from 'next/image'
-import PlaceholderImg from '@/images/og-image.png'
 import { Container } from '@/components/Container'
-
-import { createSharedPathnamesNavigation } from 'next-intl/navigation'
-
-import { locales } from '@/navigation'
-const { Link } = createSharedPathnamesNavigation({ locales })
+import { Link } from '@/navigation'
 
 const Index = ({ data }) => {
   return (

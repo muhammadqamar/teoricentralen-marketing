@@ -3,11 +3,7 @@
 import logoTeoricentralen from '@/images/logos/mark.svg'
 import ChangeTranslation from '@/utils/changeTranslation'
 import Image from 'next/image'
-
-import { createSharedPathnamesNavigation } from 'next-intl/navigation'
-
-import { locales } from '@/navigation'
-const { Link } = createSharedPathnamesNavigation({ locales })
+import { Link } from '@/navigation'
 
 const navigation = {
   educations: [

@@ -1,8 +1,5 @@
 import clsx from 'clsx'
-import { createSharedPathnamesNavigation } from 'next-intl/navigation'
-
-import { locales } from '@/navigation'
-const { Link } = createSharedPathnamesNavigation({ locales })
+import { Link } from '@/navigation'
 
 const variantStyles = {
   success: 'bg-success text-white hover:bg-success-dark active:bg-success-dark',
