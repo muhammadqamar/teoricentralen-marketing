@@ -7,12 +7,10 @@ import { ContentDateFormat } from '@/lib/formatDate'
 import Image from 'next/image'
 import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 import PlaceholderImg from '@/images/og-image.png'
+import { locales } from '@/navigation'
 
 import { createSharedPathnamesNavigation } from 'next-intl/navigation'
-
-const locales = ['sv', 'en']
-const { Link, useRouter, usePathname, redirect } =
-  createSharedPathnamesNavigation({ locales })
+const { Link } = createSharedPathnamesNavigation({ locales })
 
 const title = 'Ordlista'
 const description = 'Framtidens trafikutbildning är här'

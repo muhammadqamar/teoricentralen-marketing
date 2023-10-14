@@ -7,9 +7,8 @@ import { Container } from '@/components/Container'
 
 import { createSharedPathnamesNavigation } from 'next-intl/navigation'
 
-const locales = ['sv', 'en']
-const { Link, useRouter, usePathname, redirect } =
-  createSharedPathnamesNavigation({ locales })
+import { locales } from '@/navigation'
+const { Link } = createSharedPathnamesNavigation({ locales })
 
 const Index = ({ data }) => {
   return (

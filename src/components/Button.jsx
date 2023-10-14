@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { createSharedPathnamesNavigation } from 'next-intl/navigation'
 
-const locales = ['sv', 'en']
+import { locales } from '@/navigation'
 const { Link } = createSharedPathnamesNavigation({ locales })
 
 const variantStyles = {

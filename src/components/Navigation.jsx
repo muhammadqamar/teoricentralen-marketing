@@ -22,7 +22,7 @@ import Image from 'next/image'
 
 import { createSharedPathnamesNavigation } from 'next-intl/navigation'
 
-const locales = ['sv', 'en']
+import { locales } from '@/navigation'
 const { Link, usePathname } = createSharedPathnamesNavigation({ locales })
 
 const educations = [

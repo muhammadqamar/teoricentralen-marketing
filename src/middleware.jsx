@@ -1,45 +1,24 @@
 import createMiddleware from 'next-intl/middleware'
+import { locales, pathnames } from '@/navigation'
 
 export default createMiddleware({
-  locales: ['sv', 'en'],
-  defaultLocale: 'sv',
+  // All locales
+  locales,
+
+  // Localized pathnames
+  pathnames,
+
+  // Locale prefix
   localePrefix: 'always',
-
-  pathnames: {
-    /**
-     * Vägmärken / Road signs
-     */
-    '/vagmarken': {
-      sv: '/vagmarken',
-      en: '/road-signs',
-    },
-    '/vagmarken/[roadSignCategorySlug]': {
-      sv: '/vagmarken/[roadSignCategorySlug]',
-      en: '/road-signs/[roadSignCategorySlug]',
-    },
-    '/vagmarken/[roadSignCategorySlug]/[roadSignSlug]': {
-      sv: '/vagmarken/[roadSignCategorySlug]/[roadSignSlug]',
-      en: '/road-signs/[roadSignCategorySlug]/[roadSignSlug]',
-    },
-
-    /**
-     * Ordlista / Wordlist
-     */
-    '/ordlista': {
-      sv: '/ordlista',
-      en: '/dictionary',
-    },
-    '/ordlista/[slug]': {
-      sv: '/ordlista/[slug]',
-      en: '/dictionary/[slug]',
-    },
-  },
 
   // Locale detection
   localeDetection: true,
+
+  // Default locale
+  defaultLocale: 'sv',
 })
 
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ['/', '/(sv|en)/:path*'],
+  // Skip all paths that should not be internationalized
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
 }

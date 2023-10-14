@@ -1,14 +1,12 @@
+import Image from 'next/image'
 import { Menu } from '@headlessui/react'
 import { useState } from 'react'
 import { createSharedPathnamesNavigation } from 'next-intl/navigation'
-import Image from 'next/image'
-
-const locales = ['sv', 'en']
-const { useRouter, usePathname } = createSharedPathnamesNavigation({ locales })
-
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import SwedishLogo from '@/images/logos/sv-flag.svg'
 import EnglishLogo from '@/images/logos/en-flag.svg'
+import { locales } from '@/navigation'
+const { useRouter, usePathname } = createSharedPathnamesNavigation({ locales })
 
 const language = [
   { name: 'Svenska', code: 'sv', flag: SwedishLogo },

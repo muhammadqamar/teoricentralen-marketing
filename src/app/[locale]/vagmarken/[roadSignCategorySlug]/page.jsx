@@ -5,7 +5,7 @@ import { PageHero } from '@/components/Hero/PageHero'
 import backgroundImage from '@/images/backgrounds/vagmarke.jpg'
 import { createSharedPathnamesNavigation } from 'next-intl/navigation'
 
-const locales = ['sv', 'en']
+import { locales } from '@/navigation'
 const { Link } = createSharedPathnamesNavigation({ locales })
 
 export async function generateStaticParams({ params }) {

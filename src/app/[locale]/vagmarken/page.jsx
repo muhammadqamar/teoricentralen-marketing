@@ -1,15 +1,12 @@
 import Image from 'next/image'
+import PlaceholderImg from '@/images/og-image.png'
+import backgroundImage from '@/images/backgrounds/vagmarke.jpg'
 import { PageHero } from '@/components/Hero/PageHero'
 import { Container } from '@/components/Container'
 import { draftMode } from 'next/headers'
 import { getAllRoadSignCategory } from '@/lib/roadSign'
-
-import PlaceholderImg from '@/images/og-image.png'
-import backgroundImage from '@/images/backgrounds/vagmarke.jpg'
-
 import { createSharedPathnamesNavigation } from 'next-intl/navigation'
-
-const locales = ['sv', 'en']
+import { locales } from '@/navigation'
 const { Link } = createSharedPathnamesNavigation({ locales })
 
 const title = 'Vägmärken'
