@@ -74,7 +74,7 @@ const callsToAction = [
   },
 ]
 
-function NavItem({ href, locale, open, children }) {
+function NavItem({ href, locale, desktopOpen, children }) {
   let isActive = usePathname() === href
 
   return (
@@ -82,7 +82,7 @@ function NavItem({ href, locale, open, children }) {
       href={href}
       className={clsx(
         'relative block text-sm font-bold leading-6 transition hover:text-primary',
-        isActive ? 'text-primary' : open ? 'text-dark' : 'text-white',
+        isActive ? 'text-primary' : desktopOpen ? 'text-dark' : 'text-white',
       )}
       locale={locale}
     >
@@ -96,8 +96,8 @@ function classNames(...classes) {
 }
 
 export function Navigation({ locale }) {
+  const [desktopOpen, setDesktopOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  let [open, setOpen] = useState(false)
   const ref = useRef(null)
 
   useEffect(() => {
@@ -107,7 +107,7 @@ export function Navigation({ locale }) {
           const attributeName = mutation.attributeName
           const newValue = mutation.target.getAttribute(attributeName)
           if (attributeName == 'aria-expanded') {
-            setOpen(newValue === 'true')
+            setDesktopOpen(newValue === 'true')
           }
           // console.log(`Attribute "${attributeName}" changed to "${newValue}"`)
         }
@@ -163,13 +163,13 @@ export function Navigation({ locale }) {
             <Popover.Button
               ref={ref}
               className={`flex items-center gap-x-1 text-sm font-bold leading-6 ${
-                open ? 'text-dark' : 'text-white'
+                desktopOpen ? 'text-dark' : 'text-white'
               }`}
             >
               Utbildningar
               <ChevronDownIcon
                 className={`h-5 w-5 flex-none ${
-                  open ? 'text-dark' : 'text-white'
+                  desktopOpen ? 'text-dark' : 'text-white'
                 }`}
                 aria-hidden="true"
               />
@@ -231,6 +231,7 @@ export function Navigation({ locale }) {
                               href={item.href}
                               className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-dark hover:bg-gray-100"
                               locale={locale}
+                              onClick={() => close()}
                             >
                               <item.icon
                                 className="h-5 w-5 flex-none text-gray-500"
@@ -248,15 +249,30 @@ export function Navigation({ locale }) {
             </Transition>
           </Popover>
 
-          <NavItem href="/korkortsfragor" locale={locale} open={open}>
+          <NavItem
+            href="/korkortsfragor"
+            locale={locale}
+            open={desktopOpen}
+            onClick={() => close()}
+          >
             Körkortsfrågor
           </NavItem>
 
-          <NavItem href="/recensioner" locale={locale} open={open}>
+          <NavItem
+            href="/recensioner"
+            locale={locale}
+            open={desktopOpen}
+            onClick={() => close()}
+          >
             Recensioner
           </NavItem>
 
-          <NavItem href="/trafikutbildare" locale={locale} open={open}>
+          <NavItem
+            href="/trafikutbildare"
+            locale={locale}
+            open={desktopOpen}
+            onClick={() => close()}
+          >
             För trafikutbildare
           </NavItem>
         </Popover.Group>
@@ -299,13 +315,13 @@ export function Navigation({ locale }) {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
-                  {({ open }) => (
+                  {({ desktopOpen }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-bold leading-7 text-dark hover:bg-gray-50">
                         Alla utbildningar
                         <ChevronDownIcon
                           className={classNames(
-                            open ? 'rotate-180' : '',
+                            desktopOpen ? 'rotate-180' : '',
                             'h-5 w-5 flex-none',
                           )}
                           aria-hidden="true"
@@ -316,11 +332,16 @@ export function Navigation({ locale }) {
                         {[...educations].map((item) => (
                           <Disclosure.Button
                             key={item.name}
-                            as="a"
-                            href={item.href}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-bold leading-7 text-dark hover:bg-gray-50"
                           >
-                            {item.name}
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              locale={locale}
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {item.name}
+                            </Link>
                           </Disclosure.Button>
                         ))}
                       </Disclosure.Panel>
@@ -332,6 +353,7 @@ export function Navigation({ locale }) {
                   href="/korkortsfragor"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                   locale={locale}
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   Körkortsfrågor
                 </Link>
@@ -339,6 +361,7 @@ export function Navigation({ locale }) {
                   href="/vagmarken"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                   locale={locale}
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   Vägmärken
                 </Link>
@@ -346,6 +369,7 @@ export function Navigation({ locale }) {
                   href="/recensioner"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                   locale={locale}
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   Recensioner
                 </Link>
@@ -353,6 +377,7 @@ export function Navigation({ locale }) {
                   href="/trafikutbildare"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                   locale={locale}
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   För trafikutbildare
                 </Link>
@@ -362,6 +387,7 @@ export function Navigation({ locale }) {
                   href="/"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                   locale={locale}
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   Boka demo
                 </Link>
