@@ -2,6 +2,9 @@ import createMiddleware from 'next-intl/middleware'
 import { locales, pathnames } from '@/navigation'
 
 export default createMiddleware({
+  // Default locale
+  defaultLocale: 'sv',
+
   // All locales
   locales,
 
@@ -13,9 +16,6 @@ export default createMiddleware({
 
   // Locale detection
   localeDetection: true,
-
-  // Default locale
-  defaultLocale: 'sv',
 })
 
 export const config = {
