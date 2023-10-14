@@ -12,7 +12,7 @@ export default createMiddleware({
   pathnames,
 
   // Locale prefix
-  localePrefix: 'always',
+  localePrefix: 'as-needed',
 
   // Locale detection
   localeDetection: true,

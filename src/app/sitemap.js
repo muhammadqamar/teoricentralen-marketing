@@ -5,15 +5,6 @@ async function sitemap() {
 
   const singleStatic = [
     '',
-    'anvandarvillkor',
-    'integritetspolicy',
-    'faktabanken',
-    'kontakt',
-    'korkortsbloggen',
-    'korkortsfragor',
-    'om-oss',
-    'ordlista',
-    'recensioner',
     'utbildningar',
     'utbildningar/moped',
     'utbildningar/personbil',
@@ -21,6 +12,16 @@ async function sitemap() {
     'utbildningar/personbil-med-tungt-slap',
     'utbildningar/lastbil',
     'utbildningar/buss',
+    'korkortsfragor',
+    'recensioner',
+    'trafikutbildare',
+    'faktabanken',
+    'kontakt',
+    'korkortsbloggen',
+    'om-oss',
+    'ordlista',
+    'anvandarvillkor',
+    'integritetspolicy',
   ]
 
   // Push all routes

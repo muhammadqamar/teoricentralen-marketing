@@ -10,26 +10,26 @@ const description =
   'Från nybörjare till trafikexpert. En blogg om körkort, trafiksäkerhet och trafikregler.'
 const image = '/og-image.png'
 
-export const metadata = {
-  title,
-  description,
-  openGraph: {
-    title,
-    description,
-    url: 'https://www.teoricentralen.se',
-    siteName: 'Teoricentralen',
-    images: [
-      {
-        url: image,
-        width: 1200,
-        height: 630,
-        alt: 'Teoricentralen',
-      },
-    ],
-    locale: 'sv',
-    type: 'website',
-  },
-}
+// export const metadata = {
+//   title,
+//   description,
+//   openGraph: {
+//     title,
+//     description,
+//     url: 'https://www.teoricentralen.se',
+//     siteName: 'Teoricentralen',
+//     images: [
+//       {
+//         url: image,
+//         width: 1200,
+//         height: 630,
+//         alt: 'Teoricentralen',
+//       },
+//     ],
+//     locale: 'sv',
+//     type: 'website',
+//   },
+// }
 
 function Article({ article }) {
   return (
