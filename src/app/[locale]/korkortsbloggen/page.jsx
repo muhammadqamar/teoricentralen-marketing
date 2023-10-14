@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Container } from '@/components/Container'
 import { PageHero } from '@/components/Hero/PageHero'
 import portraitImage from '@/images/logo.png'
-import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
+import backgroundImage from '@/images/backgrounds/barn.jpg'
 
 const title = 'Körkortsbloggen'
 const description = 'Framtidens trafikutbildning är här'

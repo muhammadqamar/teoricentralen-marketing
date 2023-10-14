@@ -1,7 +1,7 @@
 import { Container } from '@/components/Container'
 import { Faq } from '@/components/Faq'
 import { PageHero } from '@/components/Hero/PageHero'
-import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
+import backgroundImage from '@/images/backgrounds/barn.jpg'
 
 const title = 'Frågor och svar'
 const description = 'Vi har svar på de vanligaste frågorna'

@@ -2,7 +2,7 @@ import { getAllFacts } from '@/lib/facts'
 import { draftMode } from 'next/headers'
 import Faktabanken from '@/components/Faktabanken'
 import { PageHero } from '@/components/Hero/PageHero'
-import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
+import backgroundImage from '@/images/backgrounds/barn.jpg'
 
 const title = 'Faktabanken'
 const description = 'Faktabanken'

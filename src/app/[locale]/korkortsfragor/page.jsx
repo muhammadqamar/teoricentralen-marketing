@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Container } from '@/components/Container'
 import { PageHero } from '@/components/Hero/PageHero'
 import portraitImage from '@/images/logo.png'
-import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
+import backgroundImage from '@/images/backgrounds/barn.jpg'
 
 const title = 'Körkortsfrågor'
 const description =
@@ -34,8 +34,7 @@ export default async function Page({ params }) {
             <div className="max-w-xs px-2.5 lg:max-w-none">
               <Image
                 src={portraitImage}
-                alt=""
-                sizes="(min-width: 1024px) 32rem, 20rem"
+                alt="Teoricentralen"
                 className="aspect-square rotate-3 object-cover"
               />
             </div>

@@ -1,6 +1,6 @@
 import { Container } from '@/components/Container'
 import { PageHero } from '@/components/Hero/PageHero'
-import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
+import backgroundImage from '@/images/backgrounds/barn.jpg'
 
 const title = 'Användarvillkor'
 const description = 'Användarvillkor'

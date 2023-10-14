@@ -5,7 +5,7 @@ import { Card } from '@/components/Card'
 import { draftMode } from 'next/headers'
 import { ContentDateFormat } from '@/lib/formatDate'
 import Image from 'next/image'
-import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
+import backgroundImage from '@/images/backgrounds/barn.jpg'
 import PlaceholderImg from '@/images/og-image.png'
 import { Link } from '@/navigation'
 

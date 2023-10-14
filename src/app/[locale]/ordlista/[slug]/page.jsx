@@ -2,7 +2,7 @@ import { getAllOrdlista, getOrdlista } from '@/lib/ordlista'
 import { draftMode } from 'next/headers'
 import { PageHero } from '@/components/Hero/PageHero'
 import { Container } from '@/components/Container'
-import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
+import backgroundImage from '@/images/backgrounds/barn.jpg'
 
 import { ContentfulRender } from '@/utils/contentful'
 import { Card } from '@/components/Card'

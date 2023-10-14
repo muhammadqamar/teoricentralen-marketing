@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Container } from '@/components/Container'
 import portraitImage from '@/images/logo.png'
 import { PageHero } from '@/components/Hero/PageHero'
-import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
+import backgroundImage from '@/images/backgrounds/barn.jpg'
 
 const title = 'Om oss'
 const description = 'Framtidens trafikutbildning är här'
