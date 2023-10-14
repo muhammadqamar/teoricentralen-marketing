@@ -3,8 +3,42 @@ import { createLocalizedPathnamesNavigation } from 'next-intl/navigation'
 export const locales = ['sv', 'en']
 
 export const pathnames = {
-  // If all locales use the same pathname, a single external path can be provided.
+  /**
+   * Hem / Home
+   */
   '/': '/',
+
+  /**
+   * Utbildningar (Educations)
+   */
+  '/utbildningar': {
+    sv: '/utbildningar',
+    en: '/educations',
+  },
+
+  /**
+   * Körkortsfrågor
+   */
+  '/korkortsfragor': {
+    sv: '/korkortsfragor',
+    en: '/driving-license-questions',
+  },
+
+  /**
+   * Recensioner
+   */
+  '/recensioner': {
+    sv: '/recensioner',
+    en: '/reviews',
+  },
+
+  /**
+   * Om oss / About us
+   */
+  '/om-oss': {
+    sv: '/om-oss',
+    en: '/about-us',
+  },
 
   /**
    * Vägmärken / Road signs
@@ -32,30 +66,6 @@ export const pathnames = {
   '/faktabanken/[factSlug]': {
     sv: '/faktabanken/[factSlug]',
     en: '/facts/[factSlug]',
-  },
-
-  /**
-   * Om oss / About us
-   */
-  '/om-oss': {
-    sv: '/om-oss',
-    en: '/about-us',
-  },
-
-  /**
-   * Körkortsfrågor
-   */
-  '/korkortsfragor': {
-    sv: '/korkortsfragor',
-    en: '/driving-license-questions',
-  },
-
-  /**
-   * Recensioner
-   */
-  '/recensioner': {
-    sv: '/recensioner',
-    en: '/reviews',
   },
 
   /**
