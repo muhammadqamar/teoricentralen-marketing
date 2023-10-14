@@ -6,7 +6,6 @@ import { NextIntlClientProvider } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import { locales } from '@/navigation'
 import { notFound } from 'next/navigation'
-import '@/styles/tailwind.css'
 
 export async function generateMetadata({ params: { locale } }) {
   console.log('generateMetadata', locale)
@@ -28,11 +27,11 @@ export async function generateMetadata({ params: { locale } }) {
     ],
     metadataBase: process.env.NEXT_PUBLIC_SITE_URL,
     // alternates: {
-    // canonical: process.env.NEXT_PUBLIC_SITE_URL,
-    // languages: {
-    //   sv: process.env.NEXT_PUBLIC_SITE_URL + '/',
-    //   sv: process.env.NEXT_PUBLIC_SITE_URL + '/en',
-    // },
+    //   canonical: process.env.NEXT_PUBLIC_SITE_URL,
+    //   languages: {
+    //     sv: process.env.NEXT_PUBLIC_SITE_URL + '/',
+    //     sv: process.env.NEXT_PUBLIC_SITE_URL + '/en',
+    //   },
     // },
     openGraph: {
       title: 'Teoricentralen',

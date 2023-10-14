@@ -16,6 +16,9 @@ export default createMiddleware({
 
   // Locale detection
   localeDetection: false,
+
+  // alternateLinks
+  alternateLinks: true,
 })
 
 export const config = {
