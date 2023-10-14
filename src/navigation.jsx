@@ -1,6 +1,6 @@
 import { createLocalizedPathnamesNavigation } from 'next-intl/navigation'
 
-export const locales = ['sv', 'en']
+export const locales = ['sv']
 
 export const pathnames = {
   // If all locales use the same pathname, a single external path can be provided.

@@ -2,6 +2,7 @@ import { getAllFacts } from '@/lib/facts'
 
 async function sitemap() {
   const routes = []
+
   const singleStatic = [
     '',
     'anvandarvillkor',
@@ -13,6 +14,7 @@ async function sitemap() {
     'om-oss',
     'ordlista',
     'recensioner',
+    'utbildningar',
     'utbildningar/moped',
     'utbildningar/personbil',
     'utbildningar/motorcykel',
@@ -21,7 +23,7 @@ async function sitemap() {
     'utbildningar/buss',
   ]
 
-  // /
+  // Push all routes
   routes.push(
     ...singleStatic.map((route) => ({
       url: `${process.env.NEXT_PUBLIC_SITE_URL}/${route}`,
@@ -29,25 +31,25 @@ async function sitemap() {
   )
 
   // /faktabanken
-  routes.push(
-    ...(await getAllFacts(false, 'sv'))?.map((fact) => ({
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/faktabanken/${fact.slug}`,
-    })),
-  )
+  // routes.push(
+  //   ...(await getAllFacts(false, 'sv'))?.map((fact) => ({
+  //     url: `${process.env.NEXT_PUBLIC_SITE_URL}/faktabanken/${fact.slug}`,
+  //   })),
+  // )
 
   // /en
-  routes.push(
-    ...singleStatic.map((route) => ({
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/en/${route}`,
-    })),
-  )
+  // routes.push(
+  //   ...singleStatic.map((route) => ({
+  //     url: `${process.env.NEXT_PUBLIC_SITE_URL}/en/${route}`,
+  //   })),
+  // )
 
   // /en/faktabanken
-  routes.push(
-    ...(await getAllFacts(false, 'en'))?.map((fact) => ({
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/en/faktabanken/${fact.slug}`,
-    })),
-  )
+  // routes.push(
+  //   ...(await getAllFacts(false, 'en'))?.map((fact) => ({
+  //     url: `${process.env.NEXT_PUBLIC_SITE_URL}/en/faktabanken/${fact.slug}`,
+  //   })),
+  // )
 
   return routes.map((route) => ({
     url: route.url,
