@@ -23,6 +23,26 @@ export const pathnames = {
   },
 
   /**
+   * Faktabanken
+   */
+  '/faktabanken': {
+    sv: '/faktabanken',
+    en: '/facts',
+  },
+  '/faktabanken/[factSlug]': {
+    sv: '/faktabanken/[factSlug]',
+    en: '/facts/[factSlug]',
+  },
+
+  /**
+   * Om oss / About us
+   */
+  '/om-oss': {
+    sv: '/om-oss',
+    en: '/about-us',
+  },
+
+  /**
    * Ordlista / Wordlist
    */
   '/ordlista': {

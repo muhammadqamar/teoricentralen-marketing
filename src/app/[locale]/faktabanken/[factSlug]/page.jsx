@@ -1,15 +1,16 @@
 import FaktabankenSlug from '@/components/Faktabanken/slug'
 import { getAllFacts, getFact } from '@/lib/facts'
 import { draftMode } from 'next/headers'
-import { PageHero } from '@/components/Hero/PageHero'
 
 export async function generateMetadata({ params: { locale, slug } }) {
   const { isEnabled } = draftMode()
   const { fact } = await getFact(slug, isEnabled, locale)
   const title = fact?.title || 'Teoricentralen'
+
   const description =
     fact?.excerpt ||
     'Teoricentralen - en utbildningsplattform för körkortsteori'
+
   const images = [
     fact?.image?.url || {
       url: process.env.NEXT_PUBLIC_SITE_URL + '/og-image.png',
@@ -39,13 +40,13 @@ export async function generateStaticParams({ params: { locale } }) {
   const allFacts = await getAllFacts(false, locale)
 
   return allFacts?.map((fact) => ({
-    slug: fact.slug,
+    slug: fact.factSlug,
   }))
 }
 
-export default async function Page({ params: { locale, slug } }) {
+export default async function Page({ params: { locale, factSlug } }) {
   const { isEnabled } = draftMode()
-  const { fact } = await getFact(slug, isEnabled, locale)
+  const { fact } = await getFact(factSlug, isEnabled, locale)
 
   return <FaktabankenSlug data={fact} />
 }

@@ -1,3 +1,4 @@
+import { HomeHero } from '@/components/Hero/HomeHero'
 import { Partners } from '@/components/Partners'
 import {
   CloudArrowUpIcon,
@@ -26,8 +27,6 @@ const features = [
   },
 ]
 
-import { HomeHero } from '@/components/Hero/HomeHero'
-
 export default async function Home({ data }) {
   return (
     <>
@@ -35,13 +34,13 @@ export default async function Home({ data }) {
 
       <Partners />
 
-      <FeatureRight />
+      {/* <FeatureRight />
 
       <FeatureLeft />
 
       <FeatureRight />
 
-      <FeatureLeft />
+      <FeatureLeft /> */}
     </>
   )
 }

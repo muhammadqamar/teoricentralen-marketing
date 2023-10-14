@@ -4,8 +4,8 @@ import { ContentfulRender } from '@/utils/contentful'
 import { SimpleLayout } from '../SimpleLayout'
 import { Card } from '../Card'
 import { ContentDateFormat } from '@/lib/formatDate'
+import { Container } from '@/components/Container'
 import portraitImage from '@/images/blog-image.jpg'
-import { Container } from '../Container'
 
 const Slug = ({ data }) => {
   return (
@@ -16,7 +16,7 @@ const Slug = ({ data }) => {
       {data?.date && (
         <Card as="article">
           <Card.Eyebrow
-            className="!mb-3 "
+            className="!mb-3"
             as="date"
             dateTime={data?.date}
             decorate

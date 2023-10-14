@@ -31,24 +31,29 @@ async function sitemap() {
     })),
   )
 
-  // /faktabanken
-  // routes.push(
-  //   ...(await getAllFacts(false, 'sv'))?.map((fact) => ({
-  //     url: `${process.env.NEXT_PUBLIC_SITE_URL}/faktabanken/${fact.slug}`,
-  //   })),
-  // )
+  /**
+   * Faktabanken
+   */
+  routes.push(
+    ...(await getAllFacts(false, 'sv'))?.map((fact) => ({
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/faktabanken/${fact.slug}`,
+    })),
+  )
+
+  routes.push(
+    ...(await getAllFacts(false, 'en'))?.map((fact) => ({
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/en/facts/${fact.slug}`,
+    })),
+  )
+
+  /**
+   * Ordlista
+   */
 
   // /en
   // routes.push(
   //   ...singleStatic.map((route) => ({
   //     url: `${process.env.NEXT_PUBLIC_SITE_URL}/en/${route}`,
-  //   })),
-  // )
-
-  // /en/faktabanken
-  // routes.push(
-  //   ...(await getAllFacts(false, 'en'))?.map((fact) => ({
-  //     url: `${process.env.NEXT_PUBLIC_SITE_URL}/en/faktabanken/${fact.slug}`,
   //   })),
   // )
 
