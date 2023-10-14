@@ -5,8 +5,8 @@ import portraitImage from '@/images/logo.png'
 import { PageHero } from '@/components/Hero/PageHero'
 import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 
-const title = 'Jobba med oss'
-const description = 'Var med och påverka framtidens körkortsutbildning.'
+const title = 'Karriär'
+const description = 'Var med och påverka framtidens körkortsutbildning'
 const image = '/og-image.png'
 
 export const metadata = {

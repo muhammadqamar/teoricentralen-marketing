@@ -1,8 +1,20 @@
 import { Container } from '@/components/Container'
+import { Faq } from '@/components/Faq'
+import { PageHero } from '@/components/Hero/PageHero'
+import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
+
+const title = 'Utbildningar'
+const description = 'Upptäck våra utbildningar'
+const image = '/og-image.png'
 
 export const metadata = {
-  title: 'Utbildningar',
-  description: 'Upptäck våra utbildningar',
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    images: [{ url: image }],
+  },
 }
 
 const posts = [
@@ -153,7 +165,7 @@ const posts = [
   // More posts...
 ]
 
-function Example() {
+function Educations() {
   return (
     <div className="mx-auto max-w-7xl">
       <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -206,12 +218,19 @@ function Example() {
 
 export default function Page() {
   return (
-    <Container className="my-16">
-      <h2 className="text-4xl font-extrabold tracking-tight text-dark sm:text-5xl">
-        Våra utbildningar
-      </h2>
+    <>
+      <PageHero
+        title={title}
+        description={description}
+        backgroundImage={backgroundImage}
+      />
+      <Container className="my-16">
+        <h2 className="text-4xl font-extrabold tracking-tight text-dark sm:text-5xl">
+          Våra utbildningar
+        </h2>
 
-      <Example />
-    </Container>
+        <Educations />
+      </Container>
+    </>
   )
 }

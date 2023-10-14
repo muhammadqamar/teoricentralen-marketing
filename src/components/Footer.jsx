@@ -29,7 +29,7 @@ const navigation = {
   support: [
     { name: 'Kontakta oss', href: '/kontakt' },
     { name: 'Frågor och svar', href: '/fragor-och-svar' },
-    { name: 'Jobba med oss', href: '/jobba-med-oss' },
+    { name: 'Karriär', href: '/karriar' },
   ],
   legal: [
     { name: 'Användarvillkor', href: '/anvandarvillkor' },
@@ -51,7 +51,7 @@ export function Footer({ locale }) {
 
             <p className="text-sm font-semibold leading-6 text-gray-600">
               Plattformen som hjälper trafikskolor att växa. Utvecklad i
-              samarbeta med trafikskolor runt om i landet.
+              samarbete med trafikskolor runt om i landet.
             </p>
 
             <ChangeTranslation locale={locale} />
