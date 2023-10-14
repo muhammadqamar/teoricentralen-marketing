@@ -15,6 +15,10 @@ export const pathnames = {
     sv: '/utbildningar',
     en: '/educations',
   },
+  '/utbildningar/personbil': {
+    sv: '/utbildningar/personbil',
+    en: '/educations/passenger-car',
+  },
 
   /**
    * Körkortsfrågor
