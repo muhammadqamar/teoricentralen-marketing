@@ -17,7 +17,7 @@ async function sitemap() {
     'trafikutbildare',
     'faktabanken',
     'kontakt',
-    'korkortsbloggen',
+    // 'korkortsbloggen',
     'om-oss',
     'ordlista',
     'anvandarvillkor',

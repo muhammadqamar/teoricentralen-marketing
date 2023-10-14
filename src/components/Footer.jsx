@@ -23,7 +23,7 @@ const navigation = {
     { name: 'Körkortsfrågor', href: '/korkortsfragor' },
     { name: 'Vägmärken', href: '/vagmarken' },
     { name: 'Faktabanken', href: '/faktabanken' },
-    { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
+    // { name: 'Körkortsbloggen', href: '/korkortsbloggen' },
     { name: 'Ordlista', href: '/ordlista' },
   ],
   support: [
