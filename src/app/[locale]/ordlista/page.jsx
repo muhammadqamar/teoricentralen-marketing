@@ -1,15 +1,18 @@
 import { getAllOrdlista } from '@/lib/ordlista'
-import Link from 'next-intl/link'
 import { Container } from '@/components/Container'
 import { PageHero } from '@/components/Hero/PageHero'
-import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { draftMode } from 'next/headers'
-
+import { ContentDateFormat } from '@/lib/formatDate'
+import Image from 'next/image'
 import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 import PlaceholderImg from '@/images/og-image.png'
-import { headers } from 'next/headers'
-import { ContentDateFormat } from '@/lib/formatDate'
+
+import { createSharedPathnamesNavigation } from 'next-intl/navigation'
+
+const locales = ['sv', 'en']
+const { Link, useRouter, usePathname, redirect } =
+  createSharedPathnamesNavigation({ locales })
 
 const title = 'Ordlista'
 const description = 'Framtidens trafikutbildning är här'
@@ -28,8 +31,6 @@ export const metadata = {
 export default async function Page({ params: { locale } }) {
   const { isEnabled } = draftMode()
   const allList = await getAllOrdlista(isEnabled, locale)
-  const headersList = headers()
-  const header_url = new URL(headersList.get('x-url') || '')
 
   return (
     <>
@@ -45,7 +46,7 @@ export default async function Page({ params: { locale } }) {
             {allList?.map((fact, index) => (
               <Link
                 className="!m-0 h-full"
-                href={`${header_url.pathname.replace('/en', '')}/${fact?.slug}`}
+                href={fact.slug}
                 locale={locale}
                 key={fact.slug}
               >

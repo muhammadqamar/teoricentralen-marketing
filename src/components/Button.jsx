@@ -1,5 +1,8 @@
-import Link from 'next/link'
 import clsx from 'clsx'
+import { createSharedPathnamesNavigation } from 'next-intl/navigation'
+
+const locales = ['sv', 'en']
+const { Link } = createSharedPathnamesNavigation({ locales })
 
 const variantStyles = {
   success: 'bg-success text-white hover:bg-success-dark active:bg-success-dark',

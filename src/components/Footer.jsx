@@ -1,9 +1,14 @@
 'use client'
 
-import Link from 'next-intl/link'
 import logoTeoricentralen from '@/images/logos/mark.svg'
 import ChangeTranslation from '@/utils/changeTranslation'
 import Image from 'next/image'
+
+import { createSharedPathnamesNavigation } from 'next-intl/navigation'
+
+const locales = ['sv', 'en']
+const { Link, useRouter, usePathname, redirect } =
+  createSharedPathnamesNavigation({ locales })
 
 const navigation = {
   educations: [

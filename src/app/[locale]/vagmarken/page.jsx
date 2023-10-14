@@ -3,13 +3,15 @@ import { PageHero } from '@/components/Hero/PageHero'
 import { Container } from '@/components/Container'
 import { draftMode } from 'next/headers'
 import { getAllRoadSignCategory } from '@/lib/roadSign'
-import { Card } from '@/components/Card'
-import Link from 'next-intl/link'
-import { headers } from 'next/headers'
 
 import PlaceholderImg from '@/images/og-image.png'
 import backgroundImage from '@/images/backgrounds/vagmarke.jpg'
-import { locales } from 'next-intl'
+
+import { createSharedPathnamesNavigation } from 'next-intl/navigation'
+
+const locales = ['sv', 'en']
+const { Link } = createSharedPathnamesNavigation({ locales })
+
 const title = 'Vägmärken'
 const description = 'Alla Sveriges Vägmärken'
 const ogImage = '/og-image.png'
@@ -26,8 +28,6 @@ export const metadata = {
 
 export default async function Page({ params: { locale }, params }) {
   const { isEnabled } = draftMode()
-  const headersList = headers()
-  const header_url = new URL(headersList.get('x-url') || '')
 
   const allRoadSign = await getAllRoadSignCategory(isEnabled, locale)
 
@@ -44,7 +44,7 @@ export default async function Page({ params: { locale }, params }) {
           {allRoadSign?.map((sign) => (
             <Link
               className="!m-0 h-full"
-              href={`${header_url.pathname.replace('/en', '')}/${sign?.slug}`}
+              href={sign.slug}
               locale={locale}
               key={sign.slug}
             >
@@ -63,7 +63,7 @@ export default async function Page({ params: { locale }, params }) {
                   />
                 </div>
 
-                <div className="px-5 py-4 bg-white ">
+                <div className="bg-white px-5 py-4 ">
                   <p className="mb-2">{sign?.title}</p>
                 </div>
               </div>

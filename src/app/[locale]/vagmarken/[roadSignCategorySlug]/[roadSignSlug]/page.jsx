@@ -13,9 +13,12 @@ export async function generateStaticParams({ params }) {
 }
 
 export default async function Page({ params }) {
-
   const { isEnabled } = draftMode()
-  const signDetail = await getRoadSign(params.signSlug, isEnabled, params.locale)
+  const signDetail = await getRoadSign(
+    params.roadSignSlug,
+    isEnabled,
+    params.locale,
+  )
 
   return (
     <>
@@ -37,16 +40,15 @@ export default async function Page({ params }) {
                     quality={90}
                     fill
                     style={{ objectFit: 'contain' }}
-                    className="inset-0 w-full h-full aspect-square animate-pulse "
+                    className="inset-0 aspect-square h-full w-full animate-pulse "
                     placeholder={
                       'data:image/jpeg;base64,/9j/4gxYSUNDX1BST0ZJTEUAAQEAAAxITGlub...'
                     }
                   />
                 </div>
-                <div className="px-5 py-4 bg-white ">
+                <div className="bg-white px-5 py-4 ">
                   <p className="mb-2">{data?.title}</p>
                   {ContentfulRender(data.content?.json)}
-
                 </div>
               </div>
             )

@@ -1,45 +1,45 @@
 import createMiddleware from 'next-intl/middleware'
-import { createLocalizedPathnamesNavigation } from 'next-intl/navigation'
-export const locales = ['en', 'sv']
-export const pathnames = {
-  '/vagmarken': {
-    en: '/road-signs',
-    sv: '/vagmarken',
-  },
-  '/vagmarken/[categoryslug]': {
-    en: '/road-signs/[categoryslug]',
-    sv: '/vagmarken/[categoryslug]',
-  },
-  '/vagmarken/[categoryslug]/[signSlug]': {
-    en: '/road-signs/[categoryslug]/[signSlug]',
-    sv: '/vagmarken/[categoryslug]/[signSlug]',
+
+export default createMiddleware({
+  locales: ['sv', 'en'],
+  defaultLocale: 'sv',
+  localePrefix: 'always',
+
+  pathnames: {
+    /**
+     * Vägmärken / Road signs
+     */
+    '/vagmarken': {
+      sv: '/vagmarken',
+      en: '/road-signs',
+    },
+    '/vagmarken/[roadSignCategorySlug]': {
+      sv: '/vagmarken/[roadSignCategorySlug]',
+      en: '/road-signs/[roadSignCategorySlug]',
+    },
+    '/vagmarken/[roadSignCategorySlug]/[roadSignSlug]': {
+      sv: '/vagmarken/[roadSignCategorySlug]/[roadSignSlug]',
+      en: '/road-signs/[roadSignCategorySlug]/[roadSignSlug]',
+    },
+
+    /**
+     * Ordlista / Wordlist
+     */
+    '/ordlista': {
+      sv: '/ordlista',
+      en: '/dictionary',
+    },
+    '/ordlista/[slug]': {
+      sv: '/ordlista/[slug]',
+      en: '/dictionary/[slug]',
+    },
   },
 
-  '/ordlista': {
-    en: '/dictionary',
-    sv: '/ordlista',
-  },
-  '/ordlista/[slug]': {
-    en: '/dictionary/[slug]',
-    sv: '/ordlista/[slug]',
-  },
-}
-export const { Link, redirect, usePathname, useRouter, getPathname } =
-  createLocalizedPathnamesNavigation({ locales, pathnames })
+  // Locale detection
+  localeDetection: true,
+})
 
-export function middleware(request) {
-  const handleI18nRouting = createMiddleware({
-    locales,
-    defaultLocale: 'sv',
-    pathnames,
-    localeDetection: false,
-  })
-
-  const response = handleI18nRouting(request)
-  response.headers.set('x-url', request.url)
-
-  return response
-}
 export const config = {
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
+  // Match only internationalized pathnames
+  matcher: ['/', '/(sv|en)/:path*'],
 }

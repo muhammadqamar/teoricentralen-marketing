@@ -10,8 +10,6 @@ import {
 } from '@heroicons/react/20/solid'
 
 import { Button } from '@/components/Button'
-import { usePathname } from 'next/navigation'
-
 import amIcon from '@/images/icons/am.svg'
 import bIcon from '@/images/icons/b.svg'
 import aIcon from '@/images/icons/a.svg'
@@ -21,7 +19,11 @@ import dIcon from '@/images/icons/d.svg'
 import logoTeoricentralen from '@/images/logos/mark.svg'
 import clsx from 'clsx'
 import Image from 'next/image'
-import Link from 'next/link'
+
+import { createSharedPathnamesNavigation } from 'next-intl/navigation'
+
+const locales = ['sv', 'en']
+const { Link, usePathname } = createSharedPathnamesNavigation({ locales })
 
 const educations = [
   {
@@ -146,8 +148,9 @@ export function Navigation({ locale }) {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className={`-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white ${mobileMenuOpen ? 'hidden' : ''
-              }`}
+            className={`-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white ${
+              mobileMenuOpen ? 'hidden' : ''
+            }`}
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -159,13 +162,15 @@ export function Navigation({ locale }) {
           <Popover>
             <Popover.Button
               ref={ref}
-              className={`flex items-center gap-x-1 text-sm font-bold leading-6 ${open ? 'text-dark' : 'text-white'
-                }`}
+              className={`flex items-center gap-x-1 text-sm font-bold leading-6 ${
+                open ? 'text-dark' : 'text-white'
+              }`}
             >
               Utbildningar
               <ChevronDownIcon
-                className={`h-5 w-5 flex-none ${open ? 'text-dark' : 'text-white'
-                  }`}
+                className={`h-5 w-5 flex-none ${
+                  open ? 'text-dark' : 'text-white'
+                }`}
                 aria-hidden="true"
               />
             </Popover.Button>
@@ -190,7 +195,6 @@ export function Navigation({ locale }) {
                         <div
                           key={item.name}
                           className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50"
-
                         >
                           <div className="flex h-12 w-12 items-center justify-center">
                             <Image
@@ -217,7 +221,6 @@ export function Navigation({ locale }) {
                         </div>
                       ))}
                     </div>
-
 
                     <div className="bg-gray-50">
                       <div className="mx-auto max-w-7xl px-6 lg:px-8">

@@ -4,33 +4,9 @@ import { Mulish } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { NextIntlClientProvider } from 'next-intl'
 import '@/styles/tailwind.css'
-import { headers } from 'next/headers'
 import { unstable_setRequestLocale } from 'next-intl/server'
 
 export async function generateMetadata() {
-  const headersList = headers()
-  const links = headersList.get('link')?.split(', ')
-  const linkObjects = []
-
-  let header_url
-  console.log(links)
-  if (links) {
-    const header_url = new URL(headersList.get('x-url') || '')
-    for (const link of links) {
-      const urlMatch = link.match(/<([^>]+)>/)
-      const relMatch = link.match(/rel="([^"]+)"/)
-      const hreflangMatch = link.match(/hreflang="([^"]+)"/)
-
-      // Create an object with the extracted values
-      const result = {
-        url: urlMatch ? urlMatch[1] : '',
-        rel: relMatch ? relMatch[1] : '',
-        hreflang: hreflangMatch ? hreflangMatch[1] : '',
-      }
-      linkObjects.push(result)
-    }
-  }
-
   return {
     title: {
       template: '%s - Teoricentralen',
@@ -47,14 +23,14 @@ export async function generateMetadata() {
       'Utbildningsplattform',
     ],
     metadataBase: process.env.NEXT_PUBLIC_SITE_URL,
-    alternates: {
-      canonical: linkObjects?.filter((data) => data.hreflang === 'x-default')[0]
-        ?.url,
-      languages: {
-        sv: linkObjects?.filter((data) => data.hreflang === 'sv')[0]?.url,
-        en: linkObjects?.filter((data) => data.hreflang === 'en')[0]?.url,
-      },
-    },
+    // alternates: {
+    //   canonical: linkObjects?.filter((data) => data.hreflang === 'x-default')[0]
+    //     ?.url,
+    //   languages: {
+    //     sv: linkObjects?.filter((data) => data.hreflang === 'sv')[0]?.url,
+    //     en: linkObjects?.filter((data) => data.hreflang === 'en')[0]?.url,
+    //   },
+    // },
     openGraph: {
       title: {
         template: '%s - Teoricentralen',
@@ -74,7 +50,7 @@ export async function generateMetadata() {
           alt: 'Teoricentralen',
         },
       ],
-      locale: header_url?.href?.includes('/en') ? 'en' : 'sv',
+      // locale: header_url?.href?.includes('/en') ? 'en' : 'sv',
       type: 'website',
     },
   }
@@ -86,12 +62,15 @@ const mulish = Mulish({
   variable: '--font-mulish',
 })
 
+const locales = ['sv', 'en']
+
 export function generateStaticParams() {
-  return [{ locale: 'sv' }, { locale: 'en' }]
+  return locales.map((locale) => ({ locale }))
 }
 
 export default function RootLayout({ children, params: { locale } }) {
-  unstable_setRequestLocale(['en', 'sv'])
+  unstable_setRequestLocale(['sv', 'en'])
+
   return (
     <html
       lang={locale}
@@ -99,7 +78,7 @@ export default function RootLayout({ children, params: { locale } }) {
       suppressHydrationWarning
     >
       <body className="gray-50">
-        <NextIntlClientProvider locale={locale}>
+        <NextIntlClientProvider>
           <Header locale={locale} />
           <main>{children}</main>
           <Footer locale={locale} />

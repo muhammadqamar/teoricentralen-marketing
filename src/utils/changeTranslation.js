@@ -1,7 +1,10 @@
 import { Menu } from '@headlessui/react'
 import { useState } from 'react'
-import { usePathname, useRouter } from 'next-intl/client'
+import { createSharedPathnamesNavigation } from 'next-intl/navigation'
 import Image from 'next/image'
+
+const locales = ['sv', 'en']
+const { useRouter, usePathname } = createSharedPathnamesNavigation({ locales })
 
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import SwedishLogo from '@/images/logos/sv-flag.svg'
@@ -22,25 +25,25 @@ const ChangeTranslation = ({ locale }) => {
   )
   return (
     <Menu>
-      <div className="w-56 text-left top-16">
-        <Menu.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-md shadow cursor-default focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+      <div className="top-16 w-56 text-left">
+        <Menu.Button className="relative w-full cursor-default rounded-md bg-white py-2 pl-3 pr-10 text-left shadow focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
           <div className="flex items-center gap-2">
             <Image
               src={selected?.flag}
               alt="Teoricentralen"
-              className="w-5 h-5"
+              className="h-5 w-5"
               unoptimized
             />
             <span className="block truncate">{selected?.name}</span>
           </div>
-          <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+          <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
             <ChevronDownIcon
-              className="w-5 h-5 text-gray-400"
+              className="h-5 w-5 text-gray-400"
               aria-hidden="true"
             />
           </span>
         </Menu.Button>
-        <Menu.Items className="relative w-full mt-2 text-left bg-white rounded-md shadow-md cursor-default focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+        <Menu.Items className="relative mt-2 w-full cursor-default rounded-md bg-white text-left shadow-md focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
           {language.map((language, languageIdx) => (
             <Menu.Item
               key={languageIdx}
@@ -59,7 +62,6 @@ const ChangeTranslation = ({ locale }) => {
                     //   pathname: '/users/[userId]',
                     //   params: {userId: '12'}
                     // });
-
                   }}
                 >
                   <div className="flex items-center gap-2">

@@ -1,11 +1,12 @@
-import { Card } from '@/components/Card'
+import Image from 'next/image'
 import { Container } from '@/components/Container'
 import { getAllRoadSignCategory, getCategorySignDetail } from '@/lib/roadSign'
-import { headers } from 'next/headers'
-import Image from 'next/image'
-import Link from 'next-intl/link'
 import { PageHero } from '@/components/Hero/PageHero'
 import backgroundImage from '@/images/backgrounds/vagmarke.jpg'
+import { createSharedPathnamesNavigation } from 'next-intl/navigation'
+
+const locales = ['sv', 'en']
+const { Link } = createSharedPathnamesNavigation({ locales })
 
 export async function generateStaticParams({ params }) {
   const allCategories = await getAllRoadSignCategory(false, params.locale)
@@ -16,11 +17,9 @@ export async function generateStaticParams({ params }) {
 
 export default async function Page({ params }) {
   const { detail } = await getCategorySignDetail(
-    params.categoryslug,
+    params.roadSignCategorySlug,
     params.locale,
   )
-  const headersList = headers()
-  const header_url = new URL(headersList.get('x-url') || '')
 
   return (
     <>
@@ -34,13 +33,7 @@ export default async function Page({ params }) {
           {detail?.map((data) => {
             return data?.allsignsCollection?.items?.map((data1) => {
               return (
-                <Link
-                  href={`${header_url.pathname.replace('/en', '')}/${
-                    data1.slug
-                  }`}
-                  locale={params.locale}
-                  className=""
-                >
+                <Link href={data1.slug} locale={params.locale} className="">
                   <div className="flex h-full min-h-[65px] w-full items-center overflow-hidden rounded-md bg-white py-2 pl-1 pr-2 shadow-md">
                     <div className="relative h-[62px] w-[100px]">
                       <Image

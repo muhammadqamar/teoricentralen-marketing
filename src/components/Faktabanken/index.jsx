@@ -1,12 +1,15 @@
 import React from 'react'
-import { SimpleLayout } from '../SimpleLayout'
-import Link from 'next-intl/link'
 import { Card } from '../Card'
 import { ContentDateFormat } from '@/lib/formatDate'
-import portraitImage from '@/images/blog-image.jpg'
 import Image from 'next/image'
 import PlaceholderImg from '@/images/og-image.png'
 import { Container } from '@/components/Container'
+
+import { createSharedPathnamesNavigation } from 'next-intl/navigation'
+
+const locales = ['sv', 'en']
+const { Link, useRouter, usePathname, redirect } =
+  createSharedPathnamesNavigation({ locales })
 
 const Index = ({ data }) => {
   return (
@@ -26,13 +29,13 @@ const Index = ({ data }) => {
                     loading="lazy"
                     alt=""
                     fill
-                    className="inset-0 w-full h-full aspect-square animate-pulse "
+                    className="inset-0 aspect-square h-full w-full animate-pulse "
                     placeholder={
                       'data:image/jpeg;base64,/9j/4gxYSUNDX1BST0ZJTEUAAQEAAAxITGlub...'
                     }
                   />
                 </div>
-                <div className="px-5 py-4 bg-white ">
+                <div className="bg-white px-5 py-4 ">
                   <p className="mb-2">{fact?.title}</p>
                   {fact?.sys?.publishedAt && (
                     <Card as="article">
