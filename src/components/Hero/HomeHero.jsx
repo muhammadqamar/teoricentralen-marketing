@@ -2,7 +2,6 @@ import Image from 'next/image'
 import bgHome from '@/images/backgrounds/elk.jpg'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
-import { FadeIn } from '@/components/FadeIn'
 
 export function HomeHero() {
   return (
@@ -18,20 +17,16 @@ export function HomeHero() {
 
       <Container className="pb-24 pt-40 sm:pb-48 sm:pt-64">
         <div className="text-center">
-          <FadeIn className="flex items-center justify-center gap-x-8">
-            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+          <div className="flex flex-col items-center justify-center gap-x-8 text-white">
+            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
               Framtidens trafikutbildning är här
             </h1>
-          </FadeIn>
 
-          <FadeIn className="flex items-center justify-center gap-x-8">
-            <p className="mt-4 text-xl font-medium leading-8 text-white">
+            <p className="mt-4 text-xl font-medium leading-8">
               Utvecklad tillsammans med trafikskolor i Sverige
             </p>
-          </FadeIn>
 
-          <FadeIn className="mt-10 flex items-center justify-center gap-x-6">
-            <div className="flex max-w-md flex-col gap-2">
+            <div className="mt-8 flex max-w-md flex-col gap-2">
               <Button href="https://app.teoricentralen.se" variant="primary">
                 Logga in som elev
               </Button>
@@ -39,7 +34,7 @@ export function HomeHero() {
                 Logga in som trafikskola
               </Button>
             </div>
-          </FadeIn>
+          </div>
         </div>
       </Container>
     </div>

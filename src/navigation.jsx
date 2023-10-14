@@ -43,6 +43,22 @@ export const pathnames = {
   },
 
   /**
+   * Körkortsfrågor
+   */
+  '/korkortsfragor': {
+    sv: '/korkortsfragor',
+    en: '/driving-license-questions',
+  },
+
+  /**
+   * Recensioner
+   */
+  '/recensioner': {
+    sv: '/recensioner',
+    en: '/reviews',
+  },
+
+  /**
    * Ordlista / Wordlist
    */
   '/ordlista': {

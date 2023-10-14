@@ -5,7 +5,8 @@ import portraitImage from '@/images/logo.png'
 import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 
 const title = 'Körkortsfrågor'
-const description = 'Framtidens trafikutbildning är här'
+const description =
+  'Aktuella körkortsfrågor för att du ska bli en trafiksäker förare.'
 const image = '/og-image.png'
 
 export const metadata = {

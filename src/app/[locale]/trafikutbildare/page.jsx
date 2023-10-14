@@ -3,7 +3,7 @@ import { PageHero } from '@/components/Hero/PageHero'
 import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
 
 const title = 'För trafikutbildare'
-const description = 'Ett affärssystem anpassat för svenska trafikutbildare'
+const description = 'Plattformen som hjälper trafikskolor att växa'
 const ogImage = '/og-image.png'
 
 export const metadata = {
@@ -38,17 +38,16 @@ export default async function Page({ params }) {
               </p>
 
               <p className="mt-6 text-base leading-7 text-gray-600">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                fugiat. Quasi aperiam sit non sit neque reprehenderit.
+                Vill du ta din verksamhet till nästa nivå? Upptäck hur vi kan
+                hjälpa dig att automatisera och digitalisera din verksamhet.
               </p>
 
               <div className="mt-6 flex">
                 <a
-                  href="#"
+                  href="/demo"
                   className="rounded-full bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Join our team <span aria-hidden="true">&rarr;</span>
+                  Boka en demo <span aria-hidden="true">&rarr;</span>
                 </a>
               </div>
             </div>

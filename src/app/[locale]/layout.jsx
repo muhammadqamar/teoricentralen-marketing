@@ -8,10 +8,12 @@ import { locales } from '@/navigation'
 import { notFound } from 'next/navigation'
 import '@/styles/tailwind.css'
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params: { locale } }) {
+  console.log('generateMetadata', locale)
+
   return {
     title: {
-      template: '%s - Teoricentralen',
+      template: '%s | Teoricentralen',
       default: 'Teoricentralen - en utbildningsplattform för körkortsteori',
     },
     description:
@@ -26,35 +28,32 @@ export async function generateMetadata({ params }) {
     ],
     metadataBase: process.env.NEXT_PUBLIC_SITE_URL,
     // alternates: {
-    //   canonical: linkObjects?.filter((data) => data.hreflang === 'x-default')[0]
-    //     ?.url,
-    //   languages: {
-    //     sv: linkObjects?.filter((data) => data.hreflang === 'sv')[0]?.url,
-    //     en: linkObjects?.filter((data) => data.hreflang === 'en')[0]?.url,
-    //   },
+    // canonical: process.env.NEXT_PUBLIC_SITE_URL,
+    // languages: {
+    //   sv: process.env.NEXT_PUBLIC_SITE_URL + '/',
+    //   sv: process.env.NEXT_PUBLIC_SITE_URL + '/en',
     // },
-    // openGraph: {
-    //   title: {
-    //     template: '%s - Teoricentralen',
-    //     default: 'Teoricentralen',
-    //   },
-    //   description: {
-    //     template: '%s',
-    //     default: 'Teoricentralen - en utbildningsplattform för körkortsteori',
-    //   },
-    //   url: process.env.NEXT_PUBLIC_SITE_URL,
-    //   siteName: 'Teoricentralen',
-    //   images: [
-    //     {
-    //       url: process.env.NEXT_PUBLIC_SITE_URL + '/og-image.png',
-    //       width: 1200,
-    //       height: 630,
-    //       alt: 'Teoricentralen',
-    //     },
-    //   ],
-    // locale: useLocale(),
-    // type: 'website',
     // },
+    openGraph: {
+      title: 'Teoricentralen',
+      description: 'Teoricentralen - en utbildningsplattform för körkortsteori',
+      url: process.env.NEXT_PUBLIC_SITE_URL,
+      siteName: 'Teoricentralen',
+      images: [
+        {
+          url: process.env.NEXT_PUBLIC_SITE_URL + '/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: 'Teoricentralen',
+        },
+      ],
+      locale: locale,
+      type: 'website',
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   }
 }
 
@@ -70,9 +69,10 @@ export function generateStaticParams() {
 
 export default function LocaleLayout({ children, params: { locale } }) {
   // Validate that the incoming `locale` parameter is valid
-  if (!locales.includes(locale)) notFound()
+  const isValidLocale = locales.some((cur) => cur === locale)
+  if (!isValidLocale) notFound()
 
-  unstable_setRequestLocale(['sv', 'en'])
+  unstable_setRequestLocale(locale)
 
   return (
     <html
