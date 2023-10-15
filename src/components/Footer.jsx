@@ -66,7 +66,9 @@ export function Footer({ locale }) {
                   {navigation.educations.map((item) => (
                     <li key={item.name}>
                       <Link
-                        href={item.href}
+                        href={{
+                          pathname: item.href,
+                        }}
                         locale={locale}
                         className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
@@ -84,7 +86,9 @@ export function Footer({ locale }) {
                   {navigation.company.map((item) => (
                     <li key={item.name}>
                       <Link
-                        href={item.href}
+                        href={{
+                          pathname: item.href,
+                        }}
                         locale={locale}
                         className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
@@ -104,7 +108,9 @@ export function Footer({ locale }) {
                   {navigation.support.map((item) => (
                     <li key={item.name}>
                       <Link
-                        href={item.href}
+                        href={{
+                          pathname: item.href,
+                        }}
                         locale={locale}
                         className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
@@ -122,7 +128,9 @@ export function Footer({ locale }) {
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
                       <Link
-                        href={item.href}
+                        href={{
+                          pathname: item.href,
+                        }}
                         locale={locale}
                         className="text-sm font-semibold leading-6 text-gray-600 hover:text-dark"
                       >
