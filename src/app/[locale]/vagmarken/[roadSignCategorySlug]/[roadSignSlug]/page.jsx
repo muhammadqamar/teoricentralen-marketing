@@ -27,7 +27,8 @@ export default async function Page({ params }) {
         description={''}
         backgroundImage={backgroundImage}
       />
-      <Container className="my-16 ">
+
+      <Container className="my-16">
         <div className="flex flex-col gap-6">
           {signDetail?.map((data) => {
             return (

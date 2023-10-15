@@ -25,12 +25,23 @@ export default async function Page({ params }) {
         description={''}
         backgroundImage={backgroundImage}
       />
-      <Container className="my-16 ">
+
+      <Container className="my-16">
         <div className="flex flex-col gap-6">
           {detail?.map((data) => {
             return data?.allsignsCollection?.items?.map((data1) => {
               return (
-                <Link href={data1.slug} locale={params.locale} className="">
+                <Link
+                  href={{
+                    pathname:
+                      '/vagmarken/[roadSignCategorySlug]/[roadSignSlug]',
+                    params: {
+                      roadSignCategorySlug: params.roadSignCategorySlug,
+                      roadSignSlug: data1.slug,
+                    },
+                  }}
+                  locale={params.locale}
+                >
                   <div className="flex h-full min-h-[65px] w-full items-center overflow-hidden rounded-md bg-white py-2 pl-1 pr-2 shadow-md">
                     <div className="relative h-[62px] w-[100px]">
                       <Image

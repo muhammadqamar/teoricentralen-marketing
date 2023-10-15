@@ -5,7 +5,7 @@ import { PageHero } from '@/components/Hero/PageHero'
 import { Container } from '@/components/Container'
 import { draftMode } from 'next/headers'
 import { getAllRoadSignCategory } from '@/lib/roadSign'
-import { Link } from '@/navigation'
+import { Link, getPathname } from '@/navigation'
 
 const title = 'Vägmärken'
 const description = 'Alla Sveriges Vägmärken'
@@ -39,7 +39,10 @@ export default async function Page({ params: { locale }, params }) {
           {allRoadSign?.map((sign) => (
             <Link
               className="!m-0 h-full"
-              href={sign.slug}
+              href={{
+                pathname: '/vagmarken/[roadSignCategorySlug]',
+                params: { roadSignCategorySlug: sign.slug },
+              }}
               locale={locale}
               key={sign.slug}
             >
