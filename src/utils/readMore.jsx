@@ -10,10 +10,11 @@ export function ReadMore({ content, moreContent }) {
     };
 
     return (
-        <div>
-            {content}
-            <div onClick={() => toggleReadMore()}>{isExpanded ? 'Read Less' : 'Read More'}</div>
-            <div className="">{moreContent}</div>
+        <div className="my-[20px]">
+            <p>{content}</p>
+            <p className="overflow-hidden " style={{ height: isExpanded ? 'auto' : '0' }}>{moreContent}</p>
+            <button className="flex m-auto italic underline" onClick={() => toggleReadMore()}>{isExpanded ? 'Read Less' : 'Read More'}</button>
+
         </div>
     );
 }

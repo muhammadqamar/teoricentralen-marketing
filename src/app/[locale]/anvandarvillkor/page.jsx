@@ -33,7 +33,27 @@ export default async function Page({ params: { locale } }) {
             till nästa nivå. Se till att du har de verktyg som krävs för att
             erbjuda dina elever kvalité och samtidigt öka din lönsamhet."
           moreContent="     Smidig inskrivning av elever. Låt dina kunder själv skriva in sig på
-          din trafikskola med hjälp av enkel BankID identifiering."
+          din trafikskola med hjälp av enkel BankID identifiering.
+          Din verksamhet, dina villkor. Vi hjälper dig att ta din trafikskola
+            till nästa nivå. Se till att du har de verktyg som krävs för att
+            erbjuda dina elever kvalité och samtidigt öka din lönsamhetDin verksamhet, dina villkor. Vi hjälper dig att ta din trafikskola
+            till nästa nivå. Se till att du har de verktyg som krävs för att
+            erbjuda dina elever kvalité och samtidigt öka din lönsamhetDin verksamhet, dina villkor. Vi hjälper dig att ta din trafikskola
+            till nästa nivå. Se till att du har de verktyg som krävs för att
+            erbjuda dina elever kvalité och samtidigt öka din lönsamhetDin verksamhet, dina villkor. Vi hjälper dig att ta din trafikskola
+            till nästa nivå. Se till att du har de verktyg som krävs för att
+            erbjuda dina elever kvalité och samtidigt öka din lönsamhetDin verksamhet, dina villkor. Vi hjälper dig att ta din trafikskola
+            till nästa nivå. Se till att du har de verktyg som krävs för att
+            erbjuda dina elever kvalité och samtidigt öka din lönsamhetDin verksamhet, dina villkor. Vi hjälper dig att ta din trafikskola
+            till nästa nivå. Se till att du har de verktyg som krävs för att
+            erbjuda dina elever kvalité och samtidigt öka din lönsamhetDin verksamhet, dina villkor. Vi hjälper dig att ta din trafikskola
+            till nästa nivå. Se till att du har de verktyg som krävs för att
+            erbjuda dina elever kvalité och samtidigt öka din lönsamhetDin verksamhet, dina villkor. Vi hjälper dig att ta din trafikskola
+            till nästa nivå. Se till att du har de verktyg som krävs för att
+            erbjuda dina elever kvalité och samtidigt öka din lönsamhet
+
+
+          "
         />
 
       </Container>
