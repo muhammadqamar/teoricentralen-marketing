@@ -5,10 +5,10 @@ import { Mulish } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { NextIntlClientProvider } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
-import { locales } from '@/navigation'
+import { locales, getPathname } from '@/navigation'
 import { notFound } from 'next/navigation'
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params: { locale } }, params) {
   console.log('generateMetadata', locale)
 
   return {

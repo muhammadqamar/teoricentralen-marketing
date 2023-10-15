@@ -31,14 +31,14 @@ export function SimpleLayout({ bgImage, title, intro, children }) {
           <header className="relative z-[2] max-w-2xl">
             <h1
               className={`text-4xl font-extrabold tracking-tight text-dark sm:text-5xl ${
-                bgImage && 'mb-3 !text-white'
+                bgImage && 'mb-3 text-white'
               }`}
             >
               {title}
             </h1>
             <p
               className={`mt-6 text-base text-gray-600 ${
-                bgImage && '!text-white'
+                bgImage && 'text-white'
               }`}
             >
               {intro}
@@ -47,9 +47,7 @@ export function SimpleLayout({ bgImage, title, intro, children }) {
         </Container>
       </div>
 
-      <Container>
-        {children && <div className="mt-16 sm:mt-20">{children}</div>}
-      </Container>
+      <Container>{children}</Container>
     </>
   )
 }

@@ -1,19 +1,45 @@
 import { Container } from '@/components/Container'
 import { PageHero } from '@/components/Hero/PageHero'
-import backgroundImage from '@/images/backgrounds/barn.jpg'
 import { ReadMore } from '@/utils/readMore'
+import backgroundImage from '@/images/backgrounds/barn.jpg'
 const title = 'Användarvillkor'
 const description = 'Användarvillkor'
 const image = '/og-image.png'
 
-export const metadata = {
-  title,
-  description,
-  openGraph: {
+import { getPathname } from '@/navigation'
+
+export async function generateMetadata({ params: { locale } }) {
+  return {
     title,
     description,
-    images: [{ url: image }],
-  },
+    alternates: {
+      canonical: getPathname({
+        locale: locale,
+        href: {
+          pathname: '/anvandarvillkor',
+        },
+      }),
+      languages: {
+        sv: getPathname({
+          locale: 'sv',
+          href: {
+            pathname: '/anvandarvillkor',
+          },
+        }),
+        en: getPathname({
+          locale: 'en',
+          href: {
+            pathname: '/en/anvandarvillkor',
+          },
+        }),
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      images: [{ url: image }],
+    },
+  }
 }
 
 export default async function Page({ params: { locale } }) {
@@ -29,7 +55,8 @@ export default async function Page({ params: { locale } }) {
         <h2 className="text-2xl font-extrabold tracking-tight text-dark">
           Våra användarvillkor
         </h2>
-        <ReadMore content=" Din verksamhet, dina villkor. Vi hjälper dig att ta din trafikskola
+        <ReadMore
+          content=" Din verksamhet, dina villkor. Vi hjälper dig att ta din trafikskola
             till nästa nivå. Se till att du har de verktyg som krävs för att
             erbjuda dina elever kvalité och samtidigt öka din lönsamhet."
           moreContent="     Smidig inskrivning av elever. Låt dina kunder själv skriva in sig på
@@ -55,7 +82,6 @@ export default async function Page({ params: { locale } }) {
 
           "
         />
-
       </Container>
     </>
   )

@@ -5,7 +5,7 @@ import { PageHero } from '@/components/Hero/PageHero'
 import { Container } from '@/components/Container'
 import { draftMode } from 'next/headers'
 import { getAllRoadSignCategory } from '@/lib/roadSign'
-import { Link, getPathname } from '@/navigation'
+import { Link } from '@/navigation'
 
 const title = 'Vägmärken'
 const description = 'Alla Sveriges Vägmärken'
