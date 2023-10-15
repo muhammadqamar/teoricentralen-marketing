@@ -1,10 +1,11 @@
 import { Container } from '@/components/Container'
 import { Faq } from '@/components/Faq'
 import { PageHero } from '@/components/Hero/PageHero'
-import backgroundImage from '@/images/backgrounds/barn.jpg'
+import backgroundImage from '@/images/backgrounds/truck.jpg'
 
-const title = 'Lastbil'
-const description = 'Vi svarar på de vanligaste frågorna'
+const title = 'Körkort för tung lastbil'
+const description =
+  'Vi utbildar på alla fyra olika körkortsbehörigheter för tunga lastbilar: C1, C1E, C och CE.'
 const image = '/og-image.png'
 
 export const metadata = {
