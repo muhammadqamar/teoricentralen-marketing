@@ -1,9 +1,10 @@
 import { Container } from '@/components/Container'
 import { PageHero } from '@/components/Hero/PageHero'
-import backgroundImage from '@/images/backgrounds/barn.jpg'
+import backgroundImage from '@/images/backgrounds/bus.jpg'
 
-const title = 'Buss'
-const description = 'Vi svarar på de vanligaste frågorna'
+const title = 'Körkort för buss'
+const description =
+  'Vi utbildar på alla fyra olika körkortsbehörigheter för bussar: D1, D1E, D och D.'
 const image = '/og-image.png'
 
 export const metadata = {
