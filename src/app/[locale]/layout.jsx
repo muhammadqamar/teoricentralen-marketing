@@ -81,7 +81,7 @@ export default function LocaleLayout({ children, params: { locale } }) {
       suppressHydrationWarning
     >
       <body className="gray-50">
-        <NextIntlClientProvider locales={locale}>
+        <NextIntlClientProvider locale={locale}>
           <Header locale={locale} />
           <main>{children}</main>
           <Footer locale={locale} />

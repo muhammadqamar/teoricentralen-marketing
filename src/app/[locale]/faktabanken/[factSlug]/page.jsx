@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import FaktabankenSlug from '@/components/Faktabanken/slug'
 import { getAllFacts, getFact } from '@/lib/facts'
 import { draftMode } from 'next/headers'
@@ -50,3 +51,4 @@ export default async function Page({ params: { locale, factSlug } }) {
 
   return <FaktabankenSlug data={fact} />
 }
+

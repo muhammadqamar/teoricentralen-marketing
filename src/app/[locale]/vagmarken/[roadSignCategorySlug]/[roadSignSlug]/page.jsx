@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import { Container } from '@/components/Container'
 import { getAllRoadSign, getRoadSign } from '@/lib/roadSign'
 import { draftMode } from 'next/headers'
@@ -41,13 +42,13 @@ export default async function Page({ params }) {
                     quality={90}
                     fill
                     style={{ objectFit: 'contain' }}
-                    className="inset-0 aspect-square h-full w-full animate-pulse "
+                    className="inset-0 w-full h-full aspect-square animate-pulse "
                     placeholder={
                       'data:image/jpeg;base64,/9j/4gxYSUNDX1BST0ZJTEUAAQEAAAxITGlub...'
                     }
                   />
                 </div>
-                <div className="bg-white px-5 py-4 ">
+                <div className="px-5 py-4 bg-white ">
                   <p className="mb-2">{data?.title}</p>
                   {ContentfulRender(data.content?.json)}
                 </div>
