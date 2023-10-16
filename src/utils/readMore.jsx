@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
-export function ReadMore({ content, moreContent }) {
+import { motion } from 'framer-motion'
+export const ReadMore = ({ content, moreContent }) => {
   const [isExpanded, setIsExpanded] = useState(false)
 
   // Function to toggle the read more/less state
@@ -10,13 +11,23 @@ export function ReadMore({ content, moreContent }) {
 
   return (
     <div className="my-[20px]">
-      <p>{content}</p>
-      <p
-        className="overflow-hidden "
-        style={{ height: isExpanded ? 'auto' : '0' }}
+      <p className="mb-3 text-center">{content}</p>
+      <motion.div
+        initial={isExpanded ? 'open' : 'closed'}
+        animate={isExpanded ? 'open' : 'closed'}
+        variants={{
+          open: {
+            height: 'auto',
+            overflow: 'visible',
+          },
+          closed: {
+            height: '0',
+            overflow: 'hidden',
+          },
+        }}
       >
-        {moreContent}
-      </p>
+        <p className="mb-3  text-center">{moreContent}</p>
+      </motion.div>
       <button
         className="m-auto flex italic underline"
         onClick={() => toggleReadMore()}
