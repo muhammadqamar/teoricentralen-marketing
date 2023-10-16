@@ -9,8 +9,6 @@ import { locales, getPathname } from '@/navigation'
 import { notFound } from 'next/navigation'
 
 export async function generateMetadata({ params: { locale } }, params) {
-  console.log('generateMetadata', locale)
-
   return {
     title: {
       template: '%s | Teoricentralen',

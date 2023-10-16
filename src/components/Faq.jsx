@@ -9,12 +9,27 @@ const faqs = [
     answer:
       "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
   },
+  {
+    question: "What's the best thing about Switzerland?",
+    answer:
+      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+  },
+  {
+    question: "What's the best thing about Switzerland?",
+    answer:
+      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+  },
+  {
+    question: "What's the best thing about Switzerland?",
+    answer:
+      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+  },
   // More questions...
 ]
 
 export function Faq() {
   return (
-    <div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
+    <div className="max-w-4xl mx-auto divide-y divide-gray-900/10">
       <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900">
         Vanliga frågor och svar
       </h2>
@@ -24,27 +39,27 @@ export function Faq() {
             {({ open }) => (
               <>
                 <dt>
-                  <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
+                  <Disclosure.Button className="flex items-start justify-between w-full text-left text-gray-900">
                     <span className="text-base font-semibold leading-7">
                       {faq.question}
                     </span>
-                    <span className="ml-6 flex h-7 items-center">
+                    <span className="flex items-center ml-6 h-7">
                       {open ? (
                         <MinusSmallIcon
-                          className="h-6 w-6"
+                          className="w-6 h-6"
                           aria-hidden="true"
                         />
                       ) : (
-                        <PlusSmallIcon className="h-6 w-6" aria-hidden="true" />
+                        <PlusSmallIcon className="w-6 h-6" aria-hidden="true" />
                       )}
                     </span>
                   </Disclosure.Button>
                 </dt>
-                <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                  <p className="text-base leading-7 text-gray-600">
+                <div className="pr-12 mt-2 overflow-hidden" style={{ height: open ? 'auto' : '0' }}>
+                  <p className="text-base leading-7 text-gray-600" >
                     {faq.answer}
                   </p>
-                </Disclosure.Panel>
+                </div>
               </>
             )}
           </Disclosure>
