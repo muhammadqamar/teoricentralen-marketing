@@ -19,7 +19,7 @@ import dIcon from '@/images/icons/d.svg'
 import logoTeoricentralen from '@/images/logos/mark.svg'
 import clsx from 'clsx'
 import Image from 'next/image'
-import { Link, usePathname  } from '@/navigation'
+import { Link, usePathname } from '@/navigation'
 
 const educations = [
   {
@@ -126,7 +126,7 @@ export function Navigation({ locale }) {
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <nav
-        className="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -135,7 +135,7 @@ export function Navigation({ locale }) {
             <Image
               src={logoTeoricentralen}
               alt="Teoricentralen"
-              className="w-auto h-8"
+              className="h-8 w-auto"
               unoptimized
             />
           </Link>
@@ -150,7 +150,7 @@ export function Navigation({ locale }) {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="w-6 h-6" aria-hidden="true" />
+            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
 
@@ -182,17 +182,17 @@ export function Navigation({ locale }) {
             >
               <Popover.Panel
                 // ref={setReferenceElement}
-                className="absolute inset-x-0 top-0 bg-white shadow-lg -z-10 pt-14 ring-1 ring-gray-900/5"
+                className="absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5"
               >
                 {({ close }) => (
                   <>
-                    <div className="grid grid-cols-3 px-6 py-10 mx-auto max-w-7xl gap-x-4 lg:px-8 xl:gap-x-4">
+                    <div className="mx-auto grid max-w-7xl grid-cols-3 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-4">
                       {educations.map((item) => (
                         <div
                           key={item.name}
-                          className="relative p-6 text-sm leading-6 rounded-lg group hover:bg-gray-50"
+                          className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50"
                         >
-                          <div className="flex items-center justify-center w-12 h-12">
+                          <div className="flex h-12 w-12 items-center justify-center">
                             <Image
                               src={item.icon}
                               alt={item.name}
@@ -203,7 +203,7 @@ export function Navigation({ locale }) {
 
                           <Link
                             href={item.href}
-                            className="block mt-4 font-bold text-dark"
+                            className="mt-4 block font-bold text-dark"
                             locale={locale}
                             onClick={() => close()}
                           >
@@ -219,7 +219,7 @@ export function Navigation({ locale }) {
                     </div>
 
                     <div className="bg-gray-50">
-                      <div className="px-6 mx-auto max-w-7xl lg:px-8">
+                      <div className="mx-auto max-w-7xl px-6 lg:px-8">
                         <div className="grid grid-cols-3 divide-x divide-gray-900/5 border-x border-gray-900/5">
                           {callsToAction.map((item) => (
                             <Link
@@ -230,7 +230,7 @@ export function Navigation({ locale }) {
                               onClick={() => close()}
                             >
                               <item.icon
-                                className="flex-none w-5 h-5 text-gray-500"
+                                className="h-5 w-5 flex-none text-gray-500"
                                 aria-hidden="true"
                               />
                               {item.name}
@@ -286,14 +286,14 @@ export function Navigation({ locale }) {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full p-6 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5" locale={locale}>
               <span className="sr-only">Teoricentralen</span>
               <Image
                 src={logoTeoricentralen}
                 alt="Teoricentralen"
-                className="w-auto h-8"
+                className="h-8 w-auto"
                 unoptimized
               />
             </Link>
@@ -304,12 +304,12 @@ export function Navigation({ locale }) {
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon className="w-6 h-6" aria-hidden="true" />
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="flow-root mt-6">
+          <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="py-6 space-y-2">
+              <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
                   {({ desktopOpen }) => (
                     <>
@@ -326,19 +326,15 @@ export function Navigation({ locale }) {
 
                       <Disclosure.Panel className="mt-2 space-y-2">
                         {[...educations].map((item) => (
-                          <Disclosure.Button
+                          <Link
                             key={item.name}
-                            className="block py-2 pl-6 pr-3 text-sm font-bold leading-7 rounded-lg text-dark hover:bg-gray-50"
+                            href={item.href}
+                            locale={locale}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-bold leading-7 text-dark hover:bg-gray-50"
                           >
-                            <Link
-                              key={item.name}
-                              href={item.href}
-                              locale={locale}
-                              onClick={() => setMobileMenuOpen(false)}
-                            >
-                              {item.name}
-                            </Link>
-                          </Disclosure.Button>
+                            {item.name}
+                          </Link>
                         ))}
                       </Disclosure.Panel>
                     </>
@@ -347,7 +343,7 @@ export function Navigation({ locale }) {
 
                 <Link
                   href="/korkortsfragor"
-                  className="block px-3 py-2 -mx-3 text-base font-bold leading-7 rounded-lg text-dark hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                   locale={locale}
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -355,7 +351,7 @@ export function Navigation({ locale }) {
                 </Link>
                 <Link
                   href="/vagmarken"
-                  className="block px-3 py-2 -mx-3 text-base font-bold leading-7 rounded-lg text-dark hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                   locale={locale}
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -363,7 +359,7 @@ export function Navigation({ locale }) {
                 </Link>
                 <Link
                   href="/recensioner"
-                  className="block px-3 py-2 -mx-3 text-base font-bold leading-7 rounded-lg text-dark hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                   locale={locale}
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -371,7 +367,7 @@ export function Navigation({ locale }) {
                 </Link>
                 <Link
                   href="/trafikutbildare"
-                  className="block px-3 py-2 -mx-3 text-base font-bold leading-7 rounded-lg text-dark hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-dark hover:bg-gray-50"
                   locale={locale}
                   onClick={() => setMobileMenuOpen(false)}
                 >
