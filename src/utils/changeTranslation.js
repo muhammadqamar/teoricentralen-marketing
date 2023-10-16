@@ -19,10 +19,11 @@ const ChangeTranslation = ({ locale }) => {
   const [selected, setSelected] = useState(
     locale === 'en' ? language[1] : language[0],
   )
+
   return (
     <Menu>
       <div className="top-16 w-56 text-left">
-        <Menu.Button className="relative w-full cursor-default rounded-md bg-white py-2 pl-3 pr-10 text-left shadow focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+        <Menu.Button className="relative w-full cursor-default rounded-md bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:outline-none sm:text-sm">
           <div className="flex items-center gap-2">
             <Image
               src={selected?.flag}
@@ -39,7 +40,8 @@ const ChangeTranslation = ({ locale }) => {
             />
           </span>
         </Menu.Button>
-        <Menu.Items className="relative mt-2 w-full cursor-default rounded-md bg-white text-left shadow-md focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+
+        <Menu.Items className="relative mt-2 w-full cursor-default overflow-hidden rounded-md bg-white text-left shadow-sm sm:text-sm">
           {language.map((language, languageIdx) => (
             <Menu.Item
               key={languageIdx}
@@ -54,26 +56,18 @@ const ChangeTranslation = ({ locale }) => {
                   className="block cursor-pointer"
                   onClick={() => {
                     router.replace(path, { locale: language.code })
-                    // router.push({
-                    //   pathname: '/users/[userId]',
-                    //   params: {userId: '12'}
-                    // });
                   }}
                 >
                   <div className="flex items-center gap-2">
                     <Image
                       src={language.flag}
-                      alt="Teoricentralen"
+                      alt={language.name}
                       className="h-5"
                       width={20}
                       height={20}
                       unoptimized
                     />
-                    <span
-                      className={`block truncate ${
-                        active ? 'font-medium' : 'font-normal'
-                      }`}
-                    >
+                    <span className="block truncate font-medium">
                       {language.name}
                     </span>
                   </div>
