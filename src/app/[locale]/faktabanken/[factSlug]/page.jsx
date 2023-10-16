@@ -3,9 +3,10 @@ import FaktabankenSlug from '@/components/Faktabanken/slug'
 import { getAllFacts, getFact } from '@/lib/facts'
 import { draftMode } from 'next/headers'
 
-export async function generateMetadata({ params: { locale, slug } }) {
+export async function generateMetadata({ params: { locale, factSlug } }) {
   const { isEnabled } = draftMode()
-  const { fact } = await getFact(slug, isEnabled, locale)
+  const { fact } = await getFact(factSlug, isEnabled, locale)
+
   const title = fact?.title || 'Teoricentralen'
 
   const description =
@@ -51,4 +52,3 @@ export default async function Page({ params: { locale, factSlug } }) {
 
   return <FaktabankenSlug data={fact} />
 }
-
