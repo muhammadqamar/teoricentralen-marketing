@@ -30,12 +30,14 @@ export default async function Page({ params }) {
         backgroundImage={backgroundImage}
       />
 
-      <Container>
+      <Container className="bg-slate-100 py-8">
         <FeatureSection
           title="Vi stöttar din verksamhet"
           text="“Vi utvecklar ditt nya affärssystem för att möta dina framtida utmaningar. Hos oss bedriver du din verksamhet på dina villkor.”"
           image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640a4874cdb3d1770f94a5fe_enkel%20view-transcode.mp4"}
           isVideo>
+
+          {/* TODO: Move testimonial component to own file */}
           <figcaption className="mt-6 flex gap-x-4 text-base leading-6">
             <Image
               width={64}
@@ -50,6 +52,16 @@ export default async function Page({ params }) {
             </div>
           </figcaption>
         </FeatureSection>
+
+        <FeatureSection
+          title={"Boknings\xADsystem"}
+          text={"Aldrig har du kunnat arbeta så effektivt som nu. Vi har tagit fram ett bokningssystem efter trafikskolebranschens önskemål. Och det kommer inte sluta utvecklas där. Har du feedback så lyssnar vi.  "}
+          image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640da84b299a53198ed2d73f_New%20Recording%20Mar%2012%202023%201102%20AM-transcode.mp4"}
+          isVideo
+          isFlipped>
+
+        </FeatureSection>
+
 
         {/* placeholder content */}
         <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
