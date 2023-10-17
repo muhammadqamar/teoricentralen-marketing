@@ -59,6 +59,11 @@ export default async function Page({ params }) {
           image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640da84b299a53198ed2d73f_New%20Recording%20Mar%2012%202023%201102%20AM-transcode.mp4"}
           isVideo
           isFlipped>
+          <div className='mt-4'>
+            <CheckMarkText text="Boka in en elev med ett knapptryck." />
+            <CheckMarkText text="Sista minuten bokningar tillgängliga för dina elever." />
+            <CheckMarkText text="Optimera din tid och fokusera på servicen för eleven." />
+          </div>
 
         </FeatureSection>
 
@@ -150,5 +155,17 @@ export default async function Page({ params }) {
         </div>
       </Container>
     </>
+  )
+}
+
+export function CheckMarkText({ text }) {
+  return (
+    <div className='flex flex-row pt-4'>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+
+      <p className='pl-2'>{text}</p>
+    </div>
   )
 }
