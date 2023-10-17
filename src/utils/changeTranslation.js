@@ -5,8 +5,8 @@ import { useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import SwedishLogo from '@/images/logos/sv-flag.svg'
 import EnglishLogo from '@/images/logos/en-flag.svg'
-import { useRouter, usePathname } from '@/navigation'
-
+import { useRouter, usePathname, getPathname } from '@/navigation'
+import {useParams} from 'next/navigation';
 const language = [
   { name: 'Svenska', code: 'sv', flag: SwedishLogo },
   { name: 'English', code: 'en', flag: EnglishLogo },
@@ -15,11 +15,13 @@ const language = [
 const ChangeTranslation = ({ locale }) => {
   const router = useRouter()
   const path = usePathname()
+  const params = useParams();
 
   // set the default language to lang
   const [selected, setSelected] = useState(
     locale === 'en' ? language[1] : language[0],
   )
+  console.log(path, params)
   return (
     <Menu>
       <div className="w-56 text-left top-16">
@@ -54,11 +56,11 @@ const ChangeTranslation = ({ locale }) => {
                 <div
                   className="block cursor-pointer"
                   onClick={() => {
-                    router.replace(path, { locale: language.code })
-                    // router.push({
-                    //   pathname: '/users/[userId]',
-                    //   params: {userId: '12'}
-                    // });
+                    // router.replace({path}, { locale: language.code })
+                    router.push({
+                      pathname: path,
+                      params
+                    },{ locale: language.code });
                   }}
                 >
                   <div className="flex items-center gap-2">

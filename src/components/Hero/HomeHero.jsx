@@ -5,19 +5,20 @@ import { Button } from '@/components/Button'
 
 export function HomeHero() {
   return (
-    <div className="relative isolate overflow-hidden">
+    <div className="relative overflow-hidden isolate">
       <Image
         src={bgHome}
         alt="Teoricentralen"
         placeholder="blur"
-        className="absolute inset-0 -z-10 h-full w-full object-cover"
+        priority
+        className="absolute inset-0 object-cover w-full h-full -z-10"
       />
 
-      <div className="absolute inset-0 top-0 -z-10 h-full bg-black bg-opacity-50"></div>
+      <div className="absolute inset-0 top-0 h-full bg-black bg-opacity-50 -z-10"></div>
 
-      <Container className="pb-24 pt-40 sm:pb-48 sm:pt-64">
+      <Container className="pt-40 pb-24 sm:pb-48 sm:pt-64">
         <div className="text-center">
-          <div className="flex flex-col items-center justify-center gap-x-8 text-white">
+          <div className="flex flex-col items-center justify-center text-white gap-x-8">
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
               Framtidens trafikutbildning är här
             </h1>
@@ -26,7 +27,7 @@ export function HomeHero() {
               Utvecklad tillsammans med trafikskolor i Sverige
             </p>
 
-            <div className="mt-8 flex max-w-md flex-col gap-2">
+            <div className="flex flex-col max-w-md gap-2 mt-8">
               <Button href="https://app.teoricentralen.se" variant="primary">
                 Logga in som elev
               </Button>

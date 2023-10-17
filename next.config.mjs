@@ -11,7 +11,7 @@ const withNextIntlInstance = withNextIntl(i18nConfig);
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   images: {
-    domains: ['images.ctfassets.net'],
+    domains: ['images.ctfassets.net', 'images.unsplash.com'],
   },
 }
 
