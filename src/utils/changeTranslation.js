@@ -56,11 +56,7 @@ const ChangeTranslation = ({ locale }) => {
                 <div
                   className="block cursor-pointer"
                   onClick={() => {
-                    router.replace(path, { locale: language.code })
-                    // router.push({
-                    //   pathname: path,
-                    //   params
-                    // },{ locale: language.code });
+                    router.replace('/', { locale: language.code })
                   }}
                 >
                   <div className="flex items-center gap-2">

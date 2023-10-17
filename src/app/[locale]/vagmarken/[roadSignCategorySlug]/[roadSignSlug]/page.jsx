@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic'
 import { Container } from '@/components/Container'
-import { getAllRoadSign, getRoadSign } from '@/lib/roadSign'
+import { getAllRoadSign, getRoadSign, getCategorySignDetail } from '@/lib/roadSign'
 import { draftMode } from 'next/headers'
 import backgroundImage from '@/images/backgrounds/vagmarke.jpg'
 import { PageHero } from '@/components/Hero/PageHero'
@@ -11,6 +11,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 export async function generateMetadata({ params: { roadSignSlug, locale } }) {
   const { isEnabled } = draftMode()
   const signDetail = await getRoadSign(roadSignSlug, isEnabled, locale)
+
 
   const title = signDetail?.[0]?.title || 'Teoricentralen'
 
@@ -57,6 +58,10 @@ export default async function Page({ params }) {
     isEnabled,
     params.locale,
   )
+  const { detail } = await getCategorySignDetail(
+    params.roadSignCategorySlug,
+    params.locale,
+  )
 
   const pages = [
     {
@@ -71,7 +76,7 @@ export default async function Page({ params }) {
       current: false,
     },
     {
-      name: params?.roadSignCategorySlug,
+      name: detail?.[0]?.title,
       href:
         params.locale === 'sv'
           ? `/vagmarken/${params.roadSignCategorySlug}`
@@ -80,7 +85,7 @@ export default async function Page({ params }) {
       current: true,
     },
     {
-      name: params.roadSignSlug,
+      name: signDetail?.[0]?.title,
       href:
         params.locale === 'sv'
           ? `/vagmarken/${params.roadSignCategorySlug}/${params.roadSignSlug}`
@@ -114,13 +119,13 @@ export default async function Page({ params }) {
                     quality={90}
                     fill
                     style={{ objectFit: 'contain' }}
-                    className="inset-0 aspect-square h-full w-full animate-pulse "
+                    className="inset-0 w-full h-full aspect-square animate-pulse "
                     placeholder={
                       'data:image/jpeg;base64,/9j/4gxYSUNDX1BST0ZJTEUAAQEAAAxITGlub...'
                     }
                   />
                 </div>
-                <div className="bg-white px-5 py-4 ">
+                <div className="px-5 py-4 bg-white ">
                   <p className="mb-2">{data?.title}</p>
                   {ContentfulRender(data.content?.json)}
                 </div>
