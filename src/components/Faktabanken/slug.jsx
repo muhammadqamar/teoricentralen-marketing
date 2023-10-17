@@ -16,12 +16,12 @@ const Slug = ({ data }) => {
       {data?.date && (
         <Card as="article">
           <Card.Eyebrow
-            className="!mb-3"
+            className="mb-3"
             as="date"
             dateTime={data?.date}
             decorate
           >
-            <p className="!text-gray-600">
+            <p className="text-gray-600">
               {ContentDateFormat(data?.date || '')}
             </p>
           </Card.Eyebrow>

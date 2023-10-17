@@ -12,9 +12,7 @@ export function PageHero({ title, description, backgroundImage }) {
         alt="Teoricentralen"
         placeholder="blur"
         className="absolute inset-0 object-cover w-full h-full -z-10"
-        blurDataURL={
-          'data:image/jpeg;base64,/9j/4gxYSUNDX1BST0ZJTEUAAQEAAAxITGlubwIQ...'
-        }
+        priority
       />
 
       <div className="absolute inset-0 top-0 h-full bg-black -z-10 bg-opacity-70"></div>

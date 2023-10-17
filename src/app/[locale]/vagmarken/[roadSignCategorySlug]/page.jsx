@@ -71,7 +71,7 @@ export default async function Page({ params }) {
       current: false,
     },
     {
-      name: params?.roadSignCategorySlug,
+      name: detail?.[0]?.title,
       href:
         params.locale === 'sv'
           ? `/vagmarken/${params.roadSignCategorySlug}`
@@ -118,13 +118,13 @@ export default async function Page({ params }) {
                         quality={90}
                         fill
                         style={{ objectFit: 'contain' }}
-                        className="inset-0 aspect-square h-full w-full animate-pulse "
+                        className="inset-0 w-full h-full aspect-square animate-pulse "
                         placeholder={
                           'data:image/jpeg;base64,/9j/4gxYSUNDX1BST0ZJTEUAAQEAAAxITGlub...'
                         }
                       />
                     </div>
-                    <div className="bg-white px-5 py-4 ">
+                    <div className="px-5 py-4 bg-white ">
                       <p className="mb-2">{data1?.title}</p>
                     </div>
                   </div>

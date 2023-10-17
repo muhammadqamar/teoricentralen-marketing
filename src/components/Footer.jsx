@@ -1,9 +1,11 @@
-'use client'
+// 'use client'
 
 import logoTeoricentralen from '@/images/logos/mark.svg'
 import ChangeTranslation from '@/utils/changeTranslation'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation'
+
 
 const navigation = {
   educations: [
@@ -38,9 +40,10 @@ const navigation = {
 }
 
 export function Footer({ locale }) {
+  const t = useTranslations('footer');
   return (
     <footer className="bg-gray-100">
-      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8">
+      <div className="px-6 pt-16 pb-8 mx-auto max-w-7xl sm:pt-24 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-6">
             <Image
@@ -56,7 +59,7 @@ export function Footer({ locale }) {
 
             <ChangeTranslation locale={locale} />
           </div>
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+          <div className="grid grid-cols-2 gap-8 mt-16 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-bold leading-6 text-dark">
@@ -143,10 +146,11 @@ export function Footer({ locale }) {
             </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+        <div className="pt-8 mt-16 border-t border-gray-900/10 sm:mt-20 lg:mt-24">
           <p className="text-xs leading-5 text-gray-500">
-            Copyright &copy; 2023 Teoricentralen Sverige AB. Alla rättigheter
-            reserveras.
+            {t('copyright')}
+            {/* Copyright &copy; 2023 Teoricentralen Sverige AB. Alla rättigheter
+            reserveras. */}
           </p>
         </div>
       </div>
