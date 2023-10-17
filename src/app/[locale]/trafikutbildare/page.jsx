@@ -72,22 +72,26 @@ export default async function Page({ params }) {
             text={"Vi vågar säga att vår utbildning är Sverige bästa. Framtagen av meriterade trafiklärare och granskad av trafikskolor runt om i Sverige. Utöver det så har vi  kontinuerliga dialoger med Trafikverket för att förbättra materialet."}
             image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640da8a94b3f34a7ff227072_utbmat%20square-transcode.mp4"}
             isVideo
-            isVertical
-          >
-
-          </FeatureSection>
+            isVertical />
 
           <FeatureSection
             title={"Varumärkes\xADanpassning"}
             text={"Det stämmer! Vi tar detta till nästa nivå och vill att du som trafikskola ska kunna bygga upp ditt varumärke för morgondagens körkortstagare. Hänvisa dina elever till din egen hemsida."}
             image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640db156e1340e8ad98f5bf7_varumarke%20square-transcode.mp4"}
             isVideo
-            isVertical
-          >
-
-          </FeatureSection>
-
+            isVertical />
         </div>
+
+        <FeatureSection
+          title={"Rapporter"}
+          text={"Aldrig har det varit så enkelt att hämta hem relevanta rapporter baserat på ditt urval. Få fram SIE filen automatiskt utan någon manuell hantering."}
+          image="https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/63f6609043611333dcd7a73e_Antal%20elever.svg">
+          <div className='mt-4'>
+            <CheckMarkText text={"Skicka rapporter direkt till din bokföringsprogam."} />
+            <CheckMarkText text={"Slipp manuell kassa avstämning."} />
+            <CheckMarkText text={"Följ din verksamhet i realtid."} />
+          </div>
+        </FeatureSection>
 
         {/* placeholder content */}
         <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">

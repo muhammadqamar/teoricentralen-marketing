@@ -35,6 +35,7 @@ export default function FeatureSection(props) {
                             src={image}
                         />
                         :
+                        //TODO: Fix image scaling
                         <Image
                             className="rounded-lg"
                             width={"500"}
