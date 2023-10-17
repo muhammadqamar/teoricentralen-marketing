@@ -6,6 +6,7 @@ import { Container } from '@/components/Container'
 import { draftMode } from 'next/headers'
 import { getAllRoadSignCategory } from '@/lib/roadSign'
 import { Link } from '@/navigation'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 const title = 'Vägmärken'
 const description = 'Alla Sveriges Vägmärken'
@@ -21,10 +22,17 @@ export const metadata = {
   },
 }
 
-export default async function Page({ params: { locale }, params }) {
+export default async function Page({ params: { locale } }) {
   const { isEnabled } = draftMode()
-
   const allRoadSign = await getAllRoadSignCategory(isEnabled, locale)
+
+  const pages = [
+    {
+      name: locale === 'sv' ? 'Vagmarken' : locale === 'en' && 'Road Signs',
+      href: locale === 'sv' ? '/vagmarken' : locale === 'en' && '/road-signs',
+      current: false,
+    },
+  ]
 
   return (
     <>
@@ -33,6 +41,9 @@ export default async function Page({ params: { locale }, params }) {
         description={description}
         backgroundImage={backgroundImage}
       />
+      <Container className="my-8">
+        <Breadcrumbs pages={pages} />
+      </Container>
 
       <Container className="my-16">
         <div className=" flex max-w-[1120px] flex-col gap-8 space-y-16">

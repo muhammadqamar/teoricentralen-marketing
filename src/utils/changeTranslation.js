@@ -56,27 +56,23 @@ const ChangeTranslation = ({ locale }) => {
                 <div
                   className="block cursor-pointer"
                   onClick={() => {
-                    // router.replace({path}, { locale: language.code })
-                    router.push({
-                      pathname: path,
-                      params
-                    },{ locale: language.code });
+                    router.replace(path, { locale: language.code })
+                    // router.push({
+                    //   pathname: path,
+                    //   params
+                    // },{ locale: language.code });
                   }}
                 >
                   <div className="flex items-center gap-2">
                     <Image
                       src={language.flag}
-                      alt="Teoricentralen"
+                      alt={language.name}
                       className="h-5"
                       width={20}
                       height={20}
                       unoptimized
                     />
-                    <span
-                      className={`block truncate ${
-                        active ? 'font-medium' : 'font-normal'
-                      }`}
-                    >
+                    <span className="block font-medium truncate">
                       {language.name}
                     </span>
                   </div>

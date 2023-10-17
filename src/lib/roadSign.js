@@ -90,7 +90,7 @@ export async function getCategorySignDetail(slug, locale) {
   )
 
   return {
-    detail: entry?.data?.vagmarkeskategoriCollection.items,
+    detail: entry?.data?.vagmarkeskategoriCollection?.items,
   }
 }
 
