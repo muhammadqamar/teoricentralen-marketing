@@ -67,7 +67,7 @@ export default async function Page({ params }) {
           </div>
         </FeatureSection>
 
-        <div className='flex md:flex-row '>
+        <div className='flex lg:flex-row flex-col'>
           <FeatureSection
             title={"Teori\xADutbildning"}
             text={"Vi vågar säga att vår utbildning är Sverige bästa. Framtagen av meriterade trafiklärare och granskad av trafikskolor runt om i Sverige. Utöver det så har vi  kontinuerliga dialoger med Trafikverket för att förbättra materialet."}
@@ -94,6 +94,46 @@ export default async function Page({ params }) {
             <CheckMarkText text={"Följ din verksamhet i realtid."} />
           </div>
         </FeatureSection>
+
+        <FeatureSection
+          title={"Vad säger våra användare?"}
+          text={""}
+          images={[]}>
+          <div className='overflow-x-auto flex flex-row gap-8 py-4'>
+            <TestimonialCard
+              name={"Maria Selling"}
+              text={"\"Att kunna sälja teorimaterial direkt till kund är en självklarhet för oss och det kan vi fortsätta göra med Teoricentralen.\""}
+              company={"Stenstans Trafikskola"}
+              image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/63f5e6c664b133c0129f6332_Maria%20recenstion.png"} />
+
+            <TestimonialCard
+              name={"Anders Persson"}
+              text={"\"Det finns inget annat alternativ som uppfyller våra krav samt att priset är konkurrenskraftigt!\""}
+              company={"Ottossons Trafikskola"}
+              image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/63f5e44d919e4140ba9156ba_Anders%20recention.png"}
+            />
+            <TestimonialCard
+              name={"Christian Kaumi"}
+              text={"\"Framtiden ser väldigt ljus ut. Ett otroligt bra gäng som utvecklar och gör det efter våra önskemål.\""}
+              company={"CK Trafikskola"}
+              image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/641303a7c3de727b89a63511_a57950ba-4f4d-4f95-b76f-2f428311fc77-p-500.jpg"}
+            />
+            <TestimonialCard
+              name={"Hevy Kamal"}
+              text={"\"Våra elever älskar vårt nya utbildningsmaterial. Super nöjd med supporten från Teoricentralen\""}
+              company={"Hevs Trafikskola"}
+              image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640e0bbf90971b466d16ef6f_hevs.jpeg"}
+            />
+            <TestimonialCard
+              name={"Johan Krekola"}
+              text={"\"Teoricentralen delar vår ambition att ligga i framkant och vi vill vara med på tåget och utveckla oss för framtiden.\""}
+              company={"Krekolas Trafikskola"}
+              image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/63f5e8bf3a53631498aa0077_Johan%20recenstion.png"}
+            />
+          </div>
+        </FeatureSection>
+
+
 
         {/* placeholder content */}
         <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
@@ -201,7 +241,7 @@ export function CheckMarkText({ text }) {
 
 export function TestimonialCard({ name, text, company, image }) {
   return (
-    <section className="bg-white p-4 s lg:p-8 max-w-[24rem] bg-slate-200 rounded-xl">
+    <section className="bg-white p-4 s lg:p-8 lg:max-w-[24rem] max-w-[12rem] bg-slate-200 rounded-xl shrink-0">
       <figure className="mx-auto max-w-2xl">
         <p className="sr-only">5 out of 5 stars</p>
         <div className="flex gap-x-1 text-yellow-600">
@@ -216,9 +256,9 @@ export function TestimonialCard({ name, text, company, image }) {
         </blockquote>
         <figcaption className="mt-4 flex items-center gap-x-6">
           <img
-            className="h-12 w-12 rounded-full bg-gray-50"
+            className="h-12 w-12 rounded-full bg-gray-50 object-cover"
             src={image}
-            alt=""
+            alt={name}
           />
           <div className="text-sm leading-6">
             <div className="font-semibold text-gray-900">{name}</div>
