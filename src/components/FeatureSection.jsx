@@ -16,7 +16,7 @@ export default function FeatureSection(props) {
     return (
         <div className="overflow-hidden bg-white md:p-8  rounded-[2rem] lg:m-8 m-4">
             <div className={`grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:max-w-none 
-            ${isVertical ? "lg:grid-cols-1" : "lg:grid-cols-2  lg:items-center"}
+            ${isVertical || images.length == 0 ? "lg:grid-cols-1" : "lg:grid-cols-2  lg:items-center"}
             `}>
                 <div>
                     <div className="lg:max-w-lgy">
@@ -27,7 +27,7 @@ export default function FeatureSection(props) {
                         {children}
                     </div>
                 </div>
-                <div className={`${isFlipped ? "lg:-order-1" : ""}`}>
+                {images ? <div className={`${isFlipped ? "lg:-order-1" : ""}`}>
                     {images.map(e => (isVideo ?
                         <video
                             className="rounded-lg"
@@ -43,7 +43,7 @@ export default function FeatureSection(props) {
                             height={0}
                             src={e} />)
                     )}
-                </div>
+                </div> : null}
             </div>
         </div>
     )
