@@ -32,9 +32,9 @@ export default async function Page({ params }) {
 
       <Container className="bg-slate-100 py-8">
         <FeatureSection
-          title="Vi stöttar din verksamhet"
-          text="“Vi utvecklar ditt nya affärssystem för att möta dina framtida utmaningar. Hos oss bedriver du din verksamhet på dina villkor.”"
-          image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640a4874cdb3d1770f94a5fe_enkel%20view-transcode.mp4"}
+          title={"Vi stöttar din verksamhet"}
+          text={"“Vi utvecklar ditt nya affärssystem för att möta dina framtida utmaningar. Hos oss bedriver du din verksamhet på dina villkor.”"}
+          images={["https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640a4874cdb3d1770f94a5fe_enkel%20view-transcode.mp4"]}
           isVideo>
 
           {/* TODO: Move testimonial component to own file */}
@@ -56,7 +56,7 @@ export default async function Page({ params }) {
         <FeatureSection
           title={"Boknings\xADsystem"}
           text={"Aldrig har du kunnat arbeta så effektivt som nu. Vi har tagit fram ett bokningssystem efter trafikskolebranschens önskemål. Och det kommer inte sluta utvecklas där. Har du feedback så lyssnar vi.  "}
-          image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640da84b299a53198ed2d73f_New%20Recording%20Mar%2012%202023%201102%20AM-transcode.mp4"}
+          images={["https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640da84b299a53198ed2d73f_New%20Recording%20Mar%2012%202023%201102%20AM-transcode.mp4"]}
           isVideo
           isFlipped>
           <div className='mt-4'>
@@ -70,14 +70,14 @@ export default async function Page({ params }) {
           <FeatureSection
             title={"Teori\xADutbildning"}
             text={"Vi vågar säga att vår utbildning är Sverige bästa. Framtagen av meriterade trafiklärare och granskad av trafikskolor runt om i Sverige. Utöver det så har vi  kontinuerliga dialoger med Trafikverket för att förbättra materialet."}
-            image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640da8a94b3f34a7ff227072_utbmat%20square-transcode.mp4"}
+            images={["https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640da8a94b3f34a7ff227072_utbmat%20square-transcode.mp4"]}
             isVideo
             isVertical />
 
           <FeatureSection
             title={"Varumärkes\xADanpassning"}
             text={"Det stämmer! Vi tar detta till nästa nivå och vill att du som trafikskola ska kunna bygga upp ditt varumärke för morgondagens körkortstagare. Hänvisa dina elever till din egen hemsida."}
-            image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640db156e1340e8ad98f5bf7_varumarke%20square-transcode.mp4"}
+            images={["https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640db156e1340e8ad98f5bf7_varumarke%20square-transcode.mp4"]}
             isVideo
             isVertical />
         </div>
@@ -85,7 +85,8 @@ export default async function Page({ params }) {
         <FeatureSection
           title={"Rapporter"}
           text={"Aldrig har det varit så enkelt att hämta hem relevanta rapporter baserat på ditt urval. Få fram SIE filen automatiskt utan någon manuell hantering."}
-          image="https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/63f6609043611333dcd7a73e_Antal%20elever.svg">
+          images={["https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/63f6609043611333dcd7a73e_Antal%20elever.svg",
+            "https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/63f66090f5152226ab897ad9_belaggning%201.svg"]}>
           <div className='mt-4'>
             <CheckMarkText text={"Skicka rapporter direkt till din bokföringsprogam."} />
             <CheckMarkText text={"Slipp manuell kassa avstämning."} />
@@ -185,10 +186,12 @@ export default async function Page({ params }) {
 
 export function CheckMarkText({ text }) {
   return (
-    <div className='flex flex-row pt-4'>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
+    <div className='flex flex-row pt-4 shrink-0 items-left  '>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
 
       <p className='pl-2'>{text}</p>
     </div>
