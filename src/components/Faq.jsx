@@ -6,26 +6,41 @@ import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline'
 
 const faqs = [
   {
-    question: "What's the best thing about Switzerland?",
+    question: "Hur fungerar en migrering?",
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      `Vi hjälper dig att exportera ut den data du behöver från ditt existerande affärssystem och migrerar in det till ditt nya affärssystem. Smidigt och kostnadsfritt!`,
   },
   {
-    question: "What's the best thing about Switzerland?",
+    question: "Kan eleven boka in en körlektion själv?",
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      `Eleverna kan logga in på plattformen (Teoricentralen.se) och se tillgängliga lektionstider, samt boka lektioner enligt deras schema. Detta underlättar din planering och eliminerar dubbelbokningar. Självklart bestämmer du om eleven får eller inte får boka körlektioner på egen hand.
+
+      Elevbokningen är enkel att använda och tillgänglig dygnet runt, vilket gör det möjligt för eleverna att boka sina körlektioner när det passar dem bäst. Detta ger en smidigare och mer flexibel process för bokning av körlektioner.`,
   },
   {
-    question: "What's the best thing about Switzerland?",
+    question: "Vad menas med varumärksanpassning?",
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      `Vi ger dig friheten och möjligheten att äga din elev hela vägen även inuti utbildningsmaterialet. Vi erbjuder alla våra nya partner en gratis domän. (Gäller de 100 första trafikskolor).
+
+      Se exempel - elev.ottossons.nu`,
   },
   {
-    question: "What's the best thing about Switzerland?",
+    question: "Schemaläggning & bokning?",
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      `Vår schemaläggningsfunktion för trafikskolor gör det enkelt att hantera bokningar och bokade körlektioner. Trafikskolor kan logga in via dator eller mobilen och få en översikt över schemat, samt se vilka körlektioner som är bokade och när de ska äga rum. Detta sparar tid och minskar risken för dubbelbokningar.`,
   },
-  // More questions...
+  {
+    question: "Hur hanterar jag min e-handel?",
+    answer:
+      `Aldrig har det varit så enkelt att publicera produkter på din egen e-handel. Du administrerar din e-handel direkt i systemet enkelt och utan någon tidigare erfarenhet av teknik. Vi stödjer även de populäraste betalmetoderna för att dina kunder ska konvertera.
+
+      Självklart hjälper vi till att sätta upp din e-handel helt kostnadsfritt.`,
+  },
+  {
+    question: "Får man sälja teorimaterial?",
+    answer:
+      `Ja! Hos oss på Teoricentralen säljer du teorimaterial direkt till eleven. Eleven kan bara köpa vårt utbildningsmaterial hos våra anslutna partner. Riktpris för vår utbildning ligger på 1995 kr.`,
+  },
 ]
 
 export function Faq() {
