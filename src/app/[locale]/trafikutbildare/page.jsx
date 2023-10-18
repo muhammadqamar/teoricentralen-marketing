@@ -6,6 +6,7 @@ import denny from '@/images/testimonials/denny.jpg'
 import getBase64 from '@/utils/getLocalBase64'
 import Image from 'next/image'
 import { StarIcon } from '@heroicons/react/20/solid'
+import { Faq } from '@/components/Faq'
 
 const title = 'För trafikutbildare'
 const description = 'Plattformen som hjälper trafikskolor att växa'
@@ -133,6 +134,9 @@ export default async function Page({ params }) {
           </div>
         </FeatureSection>
 
+       <div className='m-16'>
+            <Faq />
+       </div>
 
 
         {/* placeholder content */}
