@@ -5,16 +5,17 @@ export default function FeatureSection(props) {
     const {
         title,
         text,
-        image,
+        images,
         isVideo,
         isFlipped,
         isVertical,
         children
     } = props
 
+    console.log(images.length)
     return (
-        <div className="overflow-hidden bg-white md:p-8 lg:py-16 rounded-[2rem] lg:m-8 m-4">
-            <div className={`lg:mx-8 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:max-w-none 
+        <div className="overflow-hidden bg-white md:p-8  rounded-[2rem] lg:m-8 m-4">
+            <div className={`grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:max-w-none 
             ${isVertical ? "lg:grid-cols-1" : "lg:grid-cols-2  lg:items-center"}
             `}>
                 <div>
@@ -27,20 +28,21 @@ export default function FeatureSection(props) {
                     </div>
                 </div>
                 <div className={`${isFlipped ? "lg:-order-1" : ""}`}>
-                    {isVideo ?
+                    {images.map(e => (isVideo ?
                         <video
                             className="rounded-lg"
                             autoPlay
                             loop
-                            src={image}
+                            src={e}
                         />
                         :
-                        //TODO: Fix image scaling
                         <Image
+                            style={{ width: "100%" }}
                             className="rounded-lg"
-                            width={"500"}
-                            height={"500"}
-                            src={image} />}
+                            width={0}
+                            height={0}
+                            src={e} />)
+                    )}
                 </div>
             </div>
         </div>
