@@ -14,7 +14,7 @@ export default function FeatureSection(props) {
 
     console.log(images.length)
     return (
-        <div className="overflow-hidden bg-white md:p-8  rounded-[2rem] lg:m-8 m-4">
+        <div className="overflow-hidden bg-white p-4 md:p-8  rounded-[2rem] lg:m-8 m-4">
             <div className={`grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:max-w-none 
             ${isVertical || images.length == 0 ? "lg:grid-cols-1" : "lg:grid-cols-2  lg:items-center"}
             `}>
