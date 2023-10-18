@@ -1,12 +1,18 @@
+import { StarIcon } from '@heroicons/react/20/solid'
 import { Container } from '@/components/Container'
-import FeatureSection from '@/components/FeatureSection'
 import { PageHero } from '@/components/Hero/PageHero'
+import { Faq } from '@/components/Faq'
+import FeatureSection from '@/components/FeatureSection'
 import backgroundImage from '@/images/backgrounds/trafikutbildare.jpg'
-import denny from '@/images/testimonials/denny.jpg'
 import getBase64 from '@/utils/getLocalBase64'
 import Image from 'next/image'
-import { StarIcon } from '@heroicons/react/20/solid'
-import { Faq } from '@/components/Faq'
+
+import denny from '@/images/testimonials/denny.jpg'
+import christian from '@/images/testimonials/christian.jpg'
+import anders from '@/images/testimonials/anders.png'
+import hevy from '@/images/testimonials/hevy.png'
+import johan from '@/images/testimonials/johan.png'
+import maria from '@/images/testimonials/maria.png'
 
 const title = 'För trafikutbildare'
 const description = 'Plattformen som hjälper trafikskolor att växa'
@@ -105,31 +111,31 @@ export default async function Page({ params }) {
               name={"Maria Selling"}
               text={"\"Att kunna sälja teorimaterial direkt till kund är en självklarhet för oss och det kan vi fortsätta göra med Teoricentralen.\""}
               company={"Stenstans Trafikskola"}
-              image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/63f5e6c664b133c0129f6332_Maria%20recenstion.png"} />
+              image={maria} />
 
             <TestimonialCard
               name={"Anders Persson"}
               text={"\"Det finns inget annat alternativ som uppfyller våra krav samt att priset är konkurrenskraftigt!\""}
               company={"Ottossons Trafikskola"}
-              image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/63f5e44d919e4140ba9156ba_Anders%20recention.png"}
+              image={anders}
             />
             <TestimonialCard
               name={"Christian Kaumi"}
               text={"\"Framtiden ser väldigt ljus ut. Ett otroligt bra gäng som utvecklar och gör det efter våra önskemål.\""}
               company={"CK Trafikskola"}
-              image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/641303a7c3de727b89a63511_a57950ba-4f4d-4f95-b76f-2f428311fc77-p-500.jpg"}
+              image={christian}
             />
             <TestimonialCard
               name={"Hevy Kamal"}
               text={"\"Våra elever älskar vårt nya utbildningsmaterial. Super nöjd med supporten från Teoricentralen\""}
               company={"Hevs Trafikskola"}
-              image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640e0bbf90971b466d16ef6f_hevs.jpeg"}
+              image={hevy}
             />
             <TestimonialCard
               name={"Johan Krekola"}
               text={"\"Teoricentralen delar vår ambition att ligga i framkant och vi vill vara med på tåget och utveckla oss för framtiden.\""}
               company={"Krekolas Trafikskola"}
-              image={"https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/63f5e8bf3a53631498aa0077_Johan%20recenstion.png"}
+              image={johan}
             />
           </div>
         </FeatureSection>
@@ -261,7 +267,9 @@ export function TestimonialCard({ name, text, company, image }) {
           <p>{text}</p>
         </blockquote>
         <figcaption className="mt-4 flex items-center gap-x-6">
-          <img
+          <Image
+            width={0}
+            height={0}
             className="h-12 w-12 rounded-full bg-gray-50 object-cover"
             src={image}
             alt={name}
