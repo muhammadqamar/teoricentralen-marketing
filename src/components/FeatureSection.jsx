@@ -12,7 +12,6 @@ export default function FeatureSection(props) {
         children
     } = props
 
-    console.log(images.length)
     return (
         <div className="overflow-hidden bg-white sm:p-4 p-6 md:p-8  rounded-[2rem] lg:m-8 m-4">
             <div className={`grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:max-w-none 
