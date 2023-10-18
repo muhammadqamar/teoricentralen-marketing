@@ -8,6 +8,7 @@ import Image from 'next/image'
 import backgroundImage from '@/images/backgrounds/barn.jpg'
 import PlaceholderImg from '@/images/og-image.png'
 import { Link } from '@/navigation'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 const title = 'Ordlista'
 const description = 'Framtidens trafikutbildning är här'
@@ -27,6 +28,14 @@ export default async function Page({ params: { locale } }) {
   const { isEnabled } = draftMode()
   const allList = await getAllOrdlista(isEnabled, locale)
 
+  const pages = [
+    {
+      name: locale === 'sv' ? 'Ordlista' : locale === 'en' && 'Dictionary',
+      href: locale === 'sv' ? '/ordlista' : locale === 'en' && '/dictionary',
+      current: false,
+    },
+  ]
+
   return (
     <>
       <PageHero
@@ -35,13 +44,17 @@ export default async function Page({ params: { locale } }) {
         backgroundImage={backgroundImage}
       />
 
+      <Container className="my-8">
+        <Breadcrumbs pages={pages} />
+      </Container>
+
       <Container className="my-16">
         <div className="md:border-l md:border-zinc-100 md:dark:border-zinc-700/40">
           <div className=" grid max-w-[1120px] grid-cols-4  gap-6 space-y-16">
             {allList?.map((fact, index) => (
               <Link
                 className="!m-0 h-full"
-                href={fact.slug}
+                href={`ordlista/${fact.slug}`}
                 locale={locale}
                 key={fact.slug}
               >
