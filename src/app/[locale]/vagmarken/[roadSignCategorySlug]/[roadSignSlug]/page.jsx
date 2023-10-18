@@ -1,6 +1,10 @@
 export const dynamic = 'force-dynamic'
 import { Container } from '@/components/Container'
-import { getAllRoadSign, getRoadSign, getCategorySignDetail } from '@/lib/roadSign'
+import {
+  getAllRoadSign,
+  getRoadSign,
+  getCategorySignDetail,
+} from '@/lib/roadSign'
 import { draftMode } from 'next/headers'
 import backgroundImage from '@/images/backgrounds/vagmarke.jpg'
 import { PageHero } from '@/components/Hero/PageHero'
@@ -11,7 +15,6 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 export async function generateMetadata({ params: { roadSignSlug, locale } }) {
   const { isEnabled } = draftMode()
   const signDetail = await getRoadSign(roadSignSlug, isEnabled, locale)
-
 
   const title = signDetail?.[0]?.title || 'Teoricentralen'
 
@@ -67,7 +70,7 @@ export default async function Page({ params }) {
     {
       name:
         params.locale === 'sv'
-          ? 'Vagmarken'
+          ? 'Vägmärken'
           : params.locale === 'en' && 'Road Signs',
       href:
         params.locale === 'sv'
@@ -106,6 +109,7 @@ export default async function Page({ params }) {
       <Container className="my-8">
         <Breadcrumbs pages={pages} />
       </Container>
+
       <Container className="my-16">
         <div className="flex flex-col gap-6">
           {signDetail?.map((data) => {
@@ -119,13 +123,13 @@ export default async function Page({ params }) {
                     quality={90}
                     fill
                     style={{ objectFit: 'contain' }}
-                    className="inset-0 w-full h-full aspect-square animate-pulse "
+                    className="inset-0 aspect-square h-full w-full animate-pulse "
                     placeholder={
                       'data:image/jpeg;base64,/9j/4gxYSUNDX1BST0ZJTEUAAQEAAAxITGlub...'
                     }
                   />
                 </div>
-                <div className="px-5 py-4 bg-white ">
+                <div className="bg-white px-5 py-4 ">
                   <p className="mb-2">{data?.title}</p>
                   {ContentfulRender(data.content?.json)}
                 </div>

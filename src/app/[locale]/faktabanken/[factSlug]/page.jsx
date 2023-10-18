@@ -50,5 +50,5 @@ export default async function Page({ params: { locale, factSlug } }) {
   const { isEnabled } = draftMode()
   const { fact } = await getFact(factSlug, isEnabled, locale)
 
-  return <FaktabankenSlug data={fact} />
+  return <FaktabankenSlug data={fact} factSlug={factSlug} locale={locale} />
 }

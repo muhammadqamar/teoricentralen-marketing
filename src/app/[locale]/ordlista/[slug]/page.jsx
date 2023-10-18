@@ -7,6 +7,7 @@ import backgroundImage from '@/images/backgrounds/barn.jpg'
 import { ContentfulRender } from '@/utils/contentful'
 import { Card } from '@/components/Card'
 import { ContentDateFormat } from '@/lib/formatDate'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export async function generateMetadata({ params: { locale, slug } }) {
   const { isEnabled } = draftMode()
@@ -52,6 +53,22 @@ export default async function Page({ params: { locale, slug } }) {
   const { isEnabled } = draftMode()
   const { fact } = await getOrdlista(slug, isEnabled, locale)
 
+  const pages = [
+    {
+      name: locale === 'sv' ? 'Ordlista' : locale === 'en' && 'Dictionary',
+      href: locale === 'sv' ? '/ordlista' : locale === 'en' && '/dictionary',
+      current: false,
+    },
+    {
+      name: fact?.title,
+      href:
+        locale === 'sv'
+          ? `/ordlista/${slug}`
+          : locale === 'en' && `/dictionary/${slug}`,
+      current: true,
+    },
+  ]
+
   return (
     <>
       <PageHero
@@ -59,6 +76,10 @@ export default async function Page({ params: { locale, slug } }) {
         description={''}
         backgroundImage={fact?.image?.url || backgroundImage}
       />
+
+      <Container className="my-8">
+        <Breadcrumbs pages={pages} />
+      </Container>
       <Container className="my-16 ">
         <div className="flex flex-col gap-6">
           {fact?.sys?.publishedAt && (
