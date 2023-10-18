@@ -46,7 +46,7 @@ const faqs = [
 export function Faq() {
   return (
     <div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-      <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900">
+      <h2 className="text-4xl font-bold leading-10 tracking-tight text-gray-900 text-center">
         Vanliga frågor och svar
       </h2>
       <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
