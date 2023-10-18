@@ -41,7 +41,7 @@ export default async function Page({ params }) {
       <Container className="bg-slate-100 py-8">
         <FeatureSection
           title={"Vi stöttar din verksamhet"}
-          text={"“Vi utvecklar ditt nya affärssystem för att möta dina framtida utmaningar. Hos oss bedriver du din verksamhet på dina villkor.”"}
+          text={"\"Vi utvecklar ditt nya affärssystem för att möta dina framtida utmaningar. Hos oss bedriver du din verksamhet på dina villkor.\""}
           images={["https://uploads-ssl.webflow.com/63eaaf48b5d45c04b3775fc9/640a4874cdb3d1770f94a5fe_enkel%20view-transcode.mp4"]}
           isVideo>
 
@@ -140,10 +140,40 @@ export default async function Page({ params }) {
           </div>
         </FeatureSection>
 
-        <div className='mt-16'>
+        <div className='my-16'>
           <Faq />
         </div>
 
+        <div className='grid bg-black lg:p-8 p-4 rounded-[2rem] lg:grid-cols-2 gap-16'>
+          <div>
+            <h2 className='text-4xl lg:text-5xl font-extrabold text-white'>Sätt gång idag.</h2>
+            <form className='p-1 rounded-lg bg-neutral-800 flex mt-8' >
+              <input placeholder='Intresseanmälan' type="email" name="" id="" className='w-full bg-transparent border-transparent active:border-transparent' />
+              <input type='submit' className='py-2 px-2 bg-lime-400 rounded-lg' value={"Vi är redo"}></input>
+            </form>
+          </div>
+          <div className='bg-neutral-800 p-8 rounded-[2rem]'>
+            <p className='text-neutral-400'>"Vi utvecklar framtidens affärssystem med Sveriges bästa utbildningsmaterial. För dig som vill ta din verksamhet till nästa nivå"</p>
+            <figcaption className="mt-6 flex gap-x-4 leading-6 text-white">
+              <Image
+                width={64}
+                height={64}
+                src={denny}
+                alt="Denny Soulaka"
+                className="h-12 w-12 flex-none rounded-full"
+              />
+              <div>
+                <p className="text-gray-300">Denny Soulaka</p>
+                <p className="font-semibold">Teoricentralen Sverige AB </p>
+              </div>
+            </figcaption>
+          </div>
+          {/* <TestimonialCard
+            stars={false}
+            name={"Denny Soulaka"}
+            text={"\"Vi utvecklar framtidens affärssystem med Sveriges bästa utbildningsmaterial. För dig som vill ta din verksamhet till nästa nivå\""}
+            image={denny} /> */}
+        </div>
 
         {/* placeholder content */}
         {/* <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
@@ -232,7 +262,7 @@ export default async function Page({ params }) {
             </div>
           </div>
         </div> */}
-      </Container>
+      </Container >
     </>
   )
 }
@@ -251,18 +281,21 @@ export function CheckMarkText({ text }) {
   )
 }
 
-export function TestimonialCard({ name, text, company, image }) {
+export function TestimonialCard({ name, text, company, image, stars = true }) {
   return (
     <section className="bg-white p-4 s lg:p-8 lg:max-w-[24rem] max-w-[12rem] bg-slate-200 rounded-xl shrink-0">
       <figure className="mx-auto max-w-2xl">
-        <p className="sr-only">5 out of 5 stars</p>
-        <div className="flex gap-x-1 text-yellow-600">
-          <StarIcon className="h-5 w-5 flex-none" aria-hidden="true" />
-          <StarIcon className="h-5 w-5 flex-none" aria-hidden="true" />
-          <StarIcon className="h-5 w-5 flex-none" aria-hidden="true" />
-          <StarIcon className="h-5 w-5 flex-none" aria-hidden="true" />
-          <StarIcon className="h-5 w-5 flex-none" aria-hidden="true" />
-        </div>
+        {stars ?
+          <div>
+            <p className="sr-only">5 out of 5 stars</p>
+            <div className="flex gap-x-1 text-yellow-600">
+              <StarIcon className="h-5 w-5 flex-none" aria-hidden="true" />
+              <StarIcon className="h-5 w-5 flex-none" aria-hidden="true" />
+              <StarIcon className="h-5 w-5 flex-none" aria-hidden="true" />
+              <StarIcon className="h-5 w-5 flex-none" aria-hidden="true" />
+              <StarIcon className="h-5 w-5 flex-none" aria-hidden="true" />
+            </div>
+          </div> : null}
         <blockquote className="mt-4 text-lg tracking-tight text-gray-900 text-2xl">
           <p>{text}</p>
         </blockquote>
