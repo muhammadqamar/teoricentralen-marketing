@@ -32,7 +32,7 @@ export default async function Page({ params: { locale } }) {
 
   const pages = [
     {
-      name: await translationHook(locale, 'faktabanken', 'seoTitle'),
+      name: locale === 'sv' ? 'Faktabanken' : locale === 'en' && 'Faktabanken',
       href: locale === 'sv' ? '/faktabanken' : locale === 'en' && '/facts',
       current: false,
     },

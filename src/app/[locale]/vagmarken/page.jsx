@@ -3,16 +3,19 @@ import PlaceholderImg from '@/images/og-image.png'
 import backgroundImage from '@/images/backgrounds/vagmarke.jpg'
 import { PageHero } from '@/components/Hero/PageHero'
 import { Container } from '@/components/Container'
-import { draftMode } from 'next/headers'
 import { getAllRoadSignCategory } from '@/lib/roadSign'
 import { Link } from '@/navigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import { translationHook } from '@/utils/translationHook';
-
+import { translationHook } from '@/utils/translationHook'
+import { draftMode } from 'next/headers'
 
 export async function generateMetadata({ params: { locale } }) {
   const title = await translationHook(locale, 'vagmarken', 'seoTitle')
-  const description = await translationHook(locale, 'vagmarken', 'seoDescription')
+  const description = await translationHook(
+    locale,
+    'vagmarken',
+    'seoDescription',
+  )
   const ogImage = '/og-image.png'
   return {
     title,
@@ -41,7 +44,11 @@ export default async function Page({ params: { locale } }) {
     <>
       <PageHero
         title={await translationHook(locale, 'vagmarken', 'seoTitle')}
-        description={await translationHook(locale, 'vagmarken', 'seoDescription')}
+        description={await translationHook(
+          locale,
+          'vagmarken',
+          'seoDescription',
+        )}
         backgroundImage={backgroundImage}
       />
       <Container className="my-8">

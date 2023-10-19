@@ -3,6 +3,7 @@ import { PageHero } from '@/components/Hero/PageHero'
 import { ReadMore } from '@/utils/readMore'
 import backgroundImage from '@/images/backgrounds/barn.jpg'
 import { getPathname } from '@/navigation'
+import { translationHook } from '@/utils/translationHook'
 
 export async function generateMetadata({ params: { locale } }) {
   const title = await translationHook(locale, 'användarvillkor', 'seoTitle')
