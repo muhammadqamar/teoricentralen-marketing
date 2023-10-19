@@ -102,7 +102,7 @@ export default async function Page({ params }) {
           </div>
         </FeatureSection>
 
-        <FeatureSection
+        {/* <FeatureSection
           title={"Vad säger våra användare?"}
           text={""}
           images={[]}>
@@ -138,13 +138,13 @@ export default async function Page({ params }) {
               image={johan}
             />
           </div>
-        </FeatureSection>
+        </FeatureSection> */}
 
         <div className='my-16'>
           <Faq />
         </div>
 
-        <div className='grid bg-black lg:p-8 p-4 rounded-[2rem] lg:grid-cols-2 gap-16'>
+        {/* <div className='grid bg-black lg:p-8 p-4 rounded-[2rem] lg:grid-cols-2 gap-16'>
           <div>
             <h2 className='text-4xl lg:text-5xl font-extrabold text-white'>Sätt gång idag.</h2>
             <form className='p-1 rounded-lg bg-neutral-800 flex mt-8' >
@@ -168,12 +168,7 @@ export default async function Page({ params }) {
               </div>
             </figcaption>
           </div>
-          {/* <TestimonialCard
-            stars={false}
-            name={"Denny Soulaka"}
-            text={"\"Vi utvecklar framtidens affärssystem med Sveriges bästa utbildningsmaterial. För dig som vill ta din verksamhet till nästa nivå\""}
-            image={denny} /> */}
-        </div>
+        </div> */}
 
         {/* placeholder content */}
         {/* <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
