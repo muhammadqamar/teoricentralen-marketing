@@ -83,7 +83,6 @@ export default function LocaleLayout({ children, params: { locale } }) {
           <Header locale={locale} />
           <main>{children}</main>
           <Footer locale={locale} />
-
           <Analytics />
         </NextIntlClientProvider>
       </body>
