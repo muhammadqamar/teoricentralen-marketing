@@ -206,6 +206,11 @@
       ]
     ]
   },
+
+  "default": {
+    "seoTitle": "Theory Centre - a training platform for driving theory",
+    "seoDescription": "Training platform for driving instructors and students wishing to obtain driving licences"
+  },
   "home": {
     "heading": "The platform that helps driving schools grow."
   },
@@ -215,5 +220,81 @@
   "vagmarken": {
     "seoTitle": "Road Signs",
     "seoDescription": "All of Sweden's road signs"
+  },
+  "faktabanken": {
+    "seoTitle": "The Fact Bank",
+    "seoDescription": "The Fact Bank"
+  },
+  "ordlista": {
+    "seoTitle": "Dictionary",
+    "seoDescription": "The future of traffic education is here"
+  },
+  "körkortsfrågor": {
+    "seoTitle": "Driving theory questions",
+    "seoDescription": "Current driving licence questions for you to become a safe driver."
+  },
+  "omOss": {
+    "seoTitle": "About Us",
+    "seoDescription": "The future of traffic education is here"
+  },
+  "demo": {
+    "seoTitle": "Demo",
+    "seoDescription": "Do you want to know how Teoricentralen can help you and your business? Book a personal briefing with one of our experts."
+  },
+  "användarvillkor": {
+    "seoTitle": "Terms",
+    "seoDescription": "Terms"
+  },
+  "frågorOchSvar": {
+    "seoTitle": "Questions and Answers",
+    "seoDescription": " We have answers to the most frequently asked questions"
+  },
+  "integritetspolicy": {
+    "seoTitle": "Privacy policy",
+    "seoDescription": "The future of traffic education is here"
+  },
+  "karriär": {
+    "seoTitle": "Career",
+    "seoDescription": "Be involved in influencing the future of driving licence training"
+  },
+  "kontakt": {
+    "seoTitle": "Contact",
+    "seoDescription": "The future of traffic education is here"
+  },
+  "körkortsbloggen": {
+    "seoTitle": "The Driving Licence Blog",
+    "seoDescription": "The future of traffic education is here"
+  },
+  "recensioner": {
+    "seoTitle": "Reviews",
+    "seoDescription": "The future of traffic education is here"
+  },
+  "förTrafikutbildare": {
+    "seoTitle": "For traffic trainers",
+    "seoDescription": "Platform to help traffic schools grow"
+  },
+  "buss": {
+    "seoTitle": "Driving licences for buses and coaches",
+    "seoDescription": "We train on all four different driving licences for buses: D1, D1E, D and D."
+  },
+  "lastbil": {
+    "seoTitle": "Heavy goods vehicle driving licence",
+    "seoDescription": "We train on all four different driving licences for heavy goods vehicles: C1, C1E, C and CE."
+  },
+  "moped": {
+    "seoTitle": "Moped training for AM driving licences",
+    "seoDescription": "Take your AM driver's license to drive a moped."
+  },
+  "motorcykel": {
+    "seoTitle": "Motorcycle for A, A1 and A2",
+    "seoDescription": "We answer the most common questions"
+  },
+  "car": {
+    "seoTitle": "Car",
+    "seoDescription": "We answer the most common questions"
+  },
+  "carWithTrailer": {
+    "seoTitle": "Car with trailer",
+    "seoDescription": "We answer the most common questions"
   }
 }

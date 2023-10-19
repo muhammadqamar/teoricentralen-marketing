@@ -1,33 +1,42 @@
 import { Container } from '@/components/Container'
 import { PageHero } from '@/components/Hero/PageHero'
 import backgroundImage from '@/images/backgrounds/barn.jpg'
+import { translationHook } from '@/utils/translationHook'
 
-const title = 'Integritetspolicy'
-const description = 'Framtidens trafikutbildning är här'
-
-const image = '/og-image.png'
-
-export const metadata = {
-  title,
-  description,
-  openGraph: {
+export async function generateMetadata({ params: { locale } }) {
+  const title = await translationHook(locale, 'integritetspolicy', 'seoTitle')
+  const description = await translationHook(
+    locale,
+    'integritetspolicy',
+    'seoDescription',
+  )
+  const ogImage = '/og-image.png'
+  return {
     title,
     description,
-    images: [{ url: image }],
-  },
+    openGraph: {
+      title,
+      description,
+      images: [{ url: ogImage }],
+    },
+  }
 }
-export default function PrivacyPolicy() {
+export default async function PrivacyPolicy({ params: { locale } }) {
   return (
     <>
       <PageHero
-        title={title}
-        description={description}
+        title={await translationHook(locale, 'integritetspolicy', 'seoTitle')}
+        description={await translationHook(
+          locale,
+          'integritetspolicy',
+          'seoDescription',
+        )}
         backgroundImage={backgroundImage}
       />
 
       <Container className="my-16">
         <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-          {title}
+          {await translationHook(locale, 'integritetspolicy', 'seoTitle')}
         </h1>
         <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
           <p>

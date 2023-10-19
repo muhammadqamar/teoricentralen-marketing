@@ -2,32 +2,36 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 import { Calendly } from '@/components/Calendly'
 import { PageHero } from '@/components/Hero/PageHero'
 import backgroundImage from '@/images/backgrounds/barn.jpg'
+import { translationHook } from '@/utils/translationHook'
 
-const title = 'Demo'
-const description =
-  'Vill du veta hur Teoricentralen kan hjälpa dig och din verksamhet? Boka en personlig genomgång med en av våra experter.'
-const image = '/og-image.png'
-
-export const metadata = {
-  title,
-  description,
-  openGraph: {
+export async function generateMetadata({ params: { locale } }) {
+  const title = await translationHook(locale, 'demo', 'seoTitle')
+  const description = await translationHook(locale, 'demo', 'seoDescription')
+  const ogImage = '/og-image.png'
+  return {
     title,
     description,
-    images: [{ url: image }],
-  },
+    openGraph: {
+      title,
+      description,
+      images: [{ url: ogImage }],
+    },
+  }
 }
 
-export default function Demo() {
+export default async function Demo({ params: { locale } }) {
   return (
     <>
       <PageHero
-        title={title}
-        description={description}
+        title={await translationHook(locale, 'demo', 'seoTitle')}
+        description={await translationHook(locale, 'demo', 'seoDescription')}
         backgroundImage={backgroundImage}
       />
 
-      <SimpleLayout title={title} intro={description}>
+      <SimpleLayout
+        title={await translationHook(locale, 'demo', 'seoTitle')}
+        intro={await translationHook(locale, 'demo', 'seoDescription')}
+      >
         <Calendly />
       </SimpleLayout>
     </>

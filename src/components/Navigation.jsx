@@ -70,7 +70,7 @@ const callsToAction = [
   },
 ]
 
-function NavItem({ href, locale, desktopOpen, children }) {
+function NavItem({ href, locale, open, children }) {
   let isActive = usePathname() === href
 
   return (
@@ -78,7 +78,7 @@ function NavItem({ href, locale, desktopOpen, children }) {
       href={href}
       className={clsx(
         'relative block text-sm font-bold leading-6 transition hover:text-primary',
-        isActive ? 'text-primary' : desktopOpen ? 'text-dark' : 'text-white',
+        isActive ? 'text-primary' : open ? 'text-dark' : 'text-white',
       )}
       locale={locale}
     >

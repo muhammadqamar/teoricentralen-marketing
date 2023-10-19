@@ -2,19 +2,25 @@ import Testimonials from '@/components/Testimonials/Testimonials'
 import { getTranslations } from '../../../../getTranslations'
 import { PageHero } from '@/components/Hero/PageHero'
 import backgroundImage from '@/images/backgrounds/moped.jpg'
+import { translationHook } from '@/utils/translationHook'
 
-const title = 'Recensioner'
-const description = 'Framtidens trafikutbildning är här'
-const image = '/og-image.png'
-
-export const metadata = {
-  title,
-  description,
-  openGraph: {
+export async function generateMetadata({ params: { locale } }) {
+  const title = await translationHook(locale, 'recensioner', 'seoTitle')
+  const description = await translationHook(
+    locale,
+    'recensioner',
+    'seoDescription',
+  )
+  const ogImage = '/og-image.png'
+  return {
     title,
     description,
-    images: [{ url: image }],
-  },
+    openGraph: {
+      title,
+      description,
+      images: [{ url: ogImage }],
+    },
+  }
 }
 
 export default async function Page({ params: { locale } }) {
@@ -23,8 +29,12 @@ export default async function Page({ params: { locale } }) {
   return (
     <>
       <PageHero
-        title={title}
-        description={description}
+        title={await translationHook(locale, 'recensioner', 'seoTitle')}
+        description={await translationHook(
+          locale,
+          'recensioner',
+          'seoDescription',
+        )}
         backgroundImage={backgroundImage}
       />
 

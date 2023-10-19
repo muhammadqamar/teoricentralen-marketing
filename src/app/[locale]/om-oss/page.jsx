@@ -4,26 +4,28 @@ import { Container } from '@/components/Container'
 import portraitImage from '@/images/logo.png'
 import { PageHero } from '@/components/Hero/PageHero'
 import backgroundImage from '@/images/backgrounds/barn.jpg'
+import { translationHook } from '@/utils/translationHook'
 
-const title = 'Om oss'
-const description = 'Framtidens trafikutbildning är här'
-const image = '/og-image.png'
-
-export const metadata = {
-  title,
-  description,
-  openGraph: {
+export async function generateMetadata({ params: { locale } }) {
+  const title = await translationHook(locale, 'omOss', 'seoTitle')
+  const description = await translationHook(locale, 'omOss', 'seoDescription')
+  const ogImage = '/og-image.png'
+  return {
     title,
     description,
-    images: [{ url: image }],
-  },
+    openGraph: {
+      title,
+      description,
+      images: [{ url: ogImage }],
+    },
+  }
 }
-export default async function Page({ params }) {
+export default async function Page({ params: { locale } }) {
   return (
     <>
       <PageHero
-        title={title}
-        description={description}
+        title={await translationHook(locale, 'omOss', 'seoTitle')}
+        description={await translationHook(locale, 'omOss', 'seoDescription')}
         backgroundImage={backgroundImage}
       />
 
@@ -41,10 +43,10 @@ export default async function Page({ params }) {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-extrabold tracking-tight text-dark sm:text-5xl">
-              {title}
+              {await translationHook(locale, 'omOss', 'seoTitle')}
             </h1>
             <div className="mt-6 space-y-7 font-medium text-gray-600">
-              <p>{description}</p>
+              {await translationHook(locale, 'omOss', 'seoDescription')}
               <p>
                 Smidig inskrivning av elever. Låt dina kunder själv skriva in
                 sig på din trafikskola med hjälp av enkel BankID identifiering.

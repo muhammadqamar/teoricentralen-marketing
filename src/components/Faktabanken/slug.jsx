@@ -7,11 +7,13 @@ import { ContentDateFormat } from '@/lib/formatDate'
 import { Container } from '@/components/Container'
 import portraitImage from '@/images/blog-image.jpg'
 import Breadcrumbs from '../Breadcrumbs'
+import { useTranslations } from 'next-intl'
 
 const Slug = ({ data, factSlug, locale }) => {
+  const t = useTranslations('faktabanken')
   const pages = [
     {
-      name: locale === 'sv' ? 'Faktabanken' : locale === 'en' && 'Faktabanken',
+      name: t('seoTitle'),
       href: locale === 'sv' ? '/faktabanken' : locale === 'en' && '/facts',
       current: false,
     },

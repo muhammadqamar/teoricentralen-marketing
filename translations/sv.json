@@ -203,6 +203,11 @@
       ]
     ]
   },
+
+  "default": {
+    "seoTitle": "Teoricentralen - en utbildningsplattform för körkortsteori",
+    "seoDescription": "Utbildningsplattform för trafikutbildare och elever som vill ta körkort"
+  },
   "home": {
     "heading": "Plattformen som hjälper trafikskolor att växa."
   },
@@ -212,5 +217,81 @@
   "vagmarken": {
     "seoTitle": "vagmarken",
     "seoDescription": "Alla Sveriges Vägmärken"
+  },
+  "faktabanken": {
+    "seoTitle": "Faktabanken",
+    "seoDescription": "Faktabanken"
+  },
+  "ordlista": {
+    "seoTitle": "Ordlista",
+    "seoDescription": "Framtidens trafikutbildning är här"
+  },
+  "körkortsfrågor": {
+    "seoTitle": "Körkortsfrågor",
+    "seoDescription": "Aktuella körkortsfrågor för att du ska bli en trafiksäker förare."
+  },
+  "omOss": {
+    "seoTitle": "Om oss",
+    "seoDescription": "Framtidens trafikutbildning är här"
+  },
+  "demo": {
+    "seoTitle": "Demo",
+    "seoDescription": "Vill du veta hur Teoricentralen kan hjälpa dig och din verksamhet? Boka en personlig genomgång med en av våra experter."
+  },
+  "användarvillkor": {
+    "seoTitle": "Användarvillkor",
+    "seoDescription": "Användarvillkor"
+  },
+  "frågorOchSvar": {
+    "seoTitle": "Frågor och svar",
+    "seoDescription": "Vi har svar på de vanligaste frågorna"
+  },
+  "integritetspolicy": {
+    "seoTitle": "Integritetspolicy",
+    "seoDescription": "Framtidens trafikutbildning är här"
+  },
+  "karriär": {
+    "seoTitle": "Karriär",
+    "seoDescription": "Var med och påverka framtidens körkortsutbildning"
+  },
+  "kontakt": {
+    "seoTitle": "Kontakt",
+    "seoDescription": "Framtidens trafikutbildning är här"
+  },
+  "körkortsbloggen": {
+    "seoTitle": "Körkortsbloggen",
+    "seoDescription": "Framtidens trafikutbildning är här"
+  },
+  "recensioner": {
+    "seoTitle": "Recensioner",
+    "seoDescription": "Framtidens trafikutbildning är här"
+  },
+  "förTrafikutbildare": {
+    "seoTitle": "För trafikutbildare",
+    "seoDescription": "Plattformen som hjälper trafikskolor att växa"
+  },
+  "buss": {
+    "seoTitle": "Körkort för buss",
+    "seoDescription": "Vi utbildar på alla fyra olika körkortsbehörigheter för bussar: D1, D1E, D och D."
+  },
+  "lastbil": {
+    "seoTitle": "Körkort för tung lastbil",
+    "seoDescription": "Vi utbildar på alla fyra olika körkortsbehörigheter för tunga lastbilar: C1, C1E, C och CE."
+  },
+  "moped": {
+    "seoTitle": "Mopedutbildning för AM-körkort",
+    "seoDescription": "Ta ditt AM-körkort för att kunna köra moped."
+  },
+  "motorcykel": {
+    "seoTitle": "Motorcykel för A, A1 och A2",
+    "seoDescription": "Vi svarar på de vanligaste frågorna"
+  },
+  "car": {
+    "seoTitle": "Car",
+    "seoDescription": "Vi svarar på de vanligaste frågorna"
+  },
+  "carWithTrailer": {
+    "seoTitle": "Car with trailer",
+    "seoDescription": "Vi svarar på de vanligaste frågorna"
   }
 }

@@ -4,27 +4,29 @@ import { Container } from '@/components/Container'
 import portraitImage from '@/images/logo.png'
 import { PageHero } from '@/components/Hero/PageHero'
 import backgroundImage from '@/images/backgrounds/barn.jpg'
+import { translationHook } from '@/utils/translationHook'
 
-const title = 'Karriär'
-const description = 'Var med och påverka framtidens körkortsutbildning'
-const image = '/og-image.png'
-
-export const metadata = {
-  title,
-  description,
-  openGraph: {
+export async function generateMetadata({ params: { locale } }) {
+  const title = await translationHook(locale, 'karriär', 'seoTitle')
+  const description = await translationHook(locale, 'karriär', 'seoDescription')
+  const ogImage = '/og-image.png'
+  return {
     title,
     description,
-    images: [{ url: image }],
-  },
+    openGraph: {
+      title,
+      description,
+      images: [{ url: ogImage }],
+    },
+  }
 }
 
 export default async function Page({ params }) {
   return (
     <>
       <PageHero
-        title={title}
-        description={description}
+        title={await translationHook(locale, 'karriär', 'seoTitle')}
+        description={await translationHook(locale, 'karriär', 'seoDescription')}
         backgroundImage={backgroundImage}
       />
 

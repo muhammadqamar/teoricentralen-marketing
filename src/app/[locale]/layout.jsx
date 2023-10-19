@@ -7,15 +7,21 @@ import { NextIntlClientProvider } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import { locales } from '@/navigation'
 import { notFound } from 'next/navigation'
+import { translationHook } from '@/utils/translationHook'
 
 export async function generateMetadata({ params: { locale } }, params) {
+  const defaultTitle = await translationHook(locale, 'default', 'seoTitle')
+  const defaultDescription = await translationHook(
+    locale,
+    'default',
+    'seoDescription',
+  )
   return {
     title: {
       template: '%s | Teoricentralen',
-      default: 'Teoricentralen - en utbildningsplattform för körkortsteori',
+      default: defaultTitle,
     },
-    description:
-      'Utbildningsplattform för trafikutbildare och elever som vill ta körkort',
+    description: defaultDescription,
     applicationName: 'Teoricentralen',
     referrer: 'origin-when-cross-origin',
     keywords: [

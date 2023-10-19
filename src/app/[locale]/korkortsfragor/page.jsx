@@ -3,28 +3,36 @@ import { Container } from '@/components/Container'
 import { PageHero } from '@/components/Hero/PageHero'
 import portraitImage from '@/images/logo.png'
 import backgroundImage from '@/images/backgrounds/barn.jpg'
+import { translationHook } from '@/utils/translationHook'
 
-const title = 'Körkortsfrågor'
-const description =
-  'Aktuella körkortsfrågor för att du ska bli en trafiksäker förare.'
-const image = '/og-image.png'
-
-export const metadata = {
-  title,
-  description,
-  openGraph: {
+export async function generateMetadata({ params: { locale } }) {
+  const title = await translationHook(locale, 'körkortsfrågor', 'seoTitle')
+  const description = await translationHook(
+    locale,
+    'körkortsfrågor',
+    'seoDescription',
+  )
+  const ogImage = '/og-image.png'
+  return {
     title,
     description,
-    images: [{ url: image }],
-  },
+    openGraph: {
+      title,
+      description,
+      images: [{ url: ogImage }],
+    },
+  }
 }
-
-export default async function Page({ params }) {
+export default async function Page({ params: { locale } }) {
   return (
     <>
       <PageHero
-        title={title}
-        description={description}
+        title={await translationHook(locale, 'körkortsfrågor', 'seoTitle')}
+        description={await translationHook(
+          locale,
+          'körkortsfrågor',
+          'seoDescription',
+        )}
         backgroundImage={backgroundImage}
       />
 
@@ -41,10 +49,14 @@ export default async function Page({ params }) {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h2 className="text-4xl font-extrabold tracking-tight text-dark">
-              {title}
+              {await translationHook(locale, 'körkortsfrågor', 'seoTitle')}
             </h2>
             <div className="mt-6 space-y-7 font-medium text-gray-600">
-              <p>{description}</p>
+              {await translationHook(
+                locale,
+                'körkortsfrågor',
+                'seoDescription',
+              )}
               <p>
                 Smidig inskrivning av elever. Låt dina kunder själv skriva in
                 sig på din trafikskola med hjälp av enkel BankID identifiering.
