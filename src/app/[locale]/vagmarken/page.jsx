@@ -7,19 +7,22 @@ import { draftMode } from 'next/headers'
 import { getAllRoadSignCategory } from '@/lib/roadSign'
 import { Link } from '@/navigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import { translationHook } from '@/utils/translationHook';
 
-const title = 'Vägmärken'
-const description = 'Alla Sveriges Vägmärken'
-const ogImage = '/og-image.png'
 
-export const metadata = {
-  title,
-  description,
-  openGraph: {
+export async function generateMetadata({ params: { locale } }) {
+  const title = await translationHook(locale, 'vagmarken', 'seoTitle')
+  const description = await translationHook(locale, 'vagmarken', 'seoDescription')
+  const ogImage = '/og-image.png'
+  return {
     title,
     description,
-    images: [{ url: ogImage }],
-  },
+    openGraph: {
+      title,
+      description,
+      images: [{ url: ogImage }],
+    },
+  }
 }
 
 export default async function Page({ params: { locale } }) {
@@ -37,8 +40,8 @@ export default async function Page({ params: { locale } }) {
   return (
     <>
       <PageHero
-        title={title}
-        description={description}
+        title={await translationHook(locale, 'vagmarken', 'seoTitle')}
+        description={await translationHook(locale, 'vagmarken', 'seoDescription')}
         backgroundImage={backgroundImage}
       />
       <Container className="my-8">

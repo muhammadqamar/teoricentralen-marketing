@@ -208,5 +208,9 @@
   },
   "footer": {
     "copyright": "Copyright © 2023 Teoricentralen Sverige AB. Alla rättigheter reserveras."
+  },
+  "vagmarken": {
+    "seoTitle": "vagmarken",
+    "seoDescription": "Alla Sveriges Vägmärken"
   }
 }
